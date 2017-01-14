@@ -6,5 +6,4 @@ Ponto de Ônibus Inteligente
 
 Plataforma Android
 
-Developers: Alan Lyra
-            Saulo Lima
+Developers: Alan Lyra e Saulo Lima
