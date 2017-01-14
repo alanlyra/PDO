@@ -19,7 +19,6 @@
 
             sothree:umanoShadowHeight="10dp"
             sothree:umanoPanelHeight="0dp"
-            sothree:umanoAnchorPoint="0.5"
             sothree:umanoParallaxOffset="10dp"
             sothree:umanoScrollableView="@+id/list"
 
@@ -49,7 +48,7 @@
                 android:paddingRight="10dp"/>
 
                 <Button
-                    android:layout_width="220dp"
+                    android:layout_width="250dp"
                     android:layout_height="37dp"
                     android:id="@+id/linhas_desse_ponto"
                     android:layout_gravity="left|bottom"
@@ -65,7 +64,7 @@
                     android:paddingRight="10dp"/>
 
                 <Button
-                    android:layout_width="220dp"
+                    android:layout_width="250dp"
                     android:layout_height="37dp"
                     android:id="@+id/rotasdaqui"
                     android:layout_gravity="left|bottom"

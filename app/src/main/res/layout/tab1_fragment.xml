@@ -56,7 +56,7 @@
         <Button
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:text="@string/exibir_resultados"
+            android:text="@string/pesquisar_por_linha"
             android:id="@+id/buttonExibirResultado"
             android:background="@drawable/cornerborder"
             android:layout_gravity="center_horizontal"

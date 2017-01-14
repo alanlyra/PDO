@@ -293,11 +293,11 @@ public class ExibePontosProximosFragment extends Fragment implements OnMapReadyC
 
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.favoritarponto:
+                            /*case R.id.favoritarponto:
                                 favorito = new Favorito();
                                 favorito.atualizaFavoritos(getContext(), ponto);
 
-                                return true;
+                                return true;*/
                             case R.id.linhasponto:
                                 appSingleton.setEnderecoPonto(ponto.getEndereco());
                                 appSingleton.setIdPonto(ponto.getIdPonto());

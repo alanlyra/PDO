@@ -38,7 +38,6 @@ public class PrincipalActivity extends VDOAppCompatActivity implements Navigatio
     private Toolbar toolbar;
     private DrawerLayout drawer;
     public static TextView numeroLinhasProximas;
-
     private ExibeOnibusProximosFragment tab1;
     private ExibePontosProximosFragment tab2;
 
@@ -59,6 +58,8 @@ public class PrincipalActivity extends VDOAppCompatActivity implements Navigatio
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         if(tabLayout!=null) tabLayout.setupWithViewPager(viewPager);
+
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
     }
 
@@ -158,20 +159,20 @@ public class PrincipalActivity extends VDOAppCompatActivity implements Navigatio
 
         if (id == R.id.onibusproximos) {
             // Handle the action
-        } else if (id == R.id.favoritos) {
+        } /*else if (id == R.id.favoritos) {
             Intent i;
             i = new Intent(PrincipalActivity.this, FavoritoActivity.class);
             startActivity(i);
-        } /*else if (id == R.id.config) {
+        } *//*else if (id == R.id.config) {
 
         } else if (id == R.id.share) {
 
-        }*/ else if (id == R.id.avaliarapp) {
+        }*/ /*else if (id == R.id.avaliarapp) {
             String url = "https://play.google.com/store/apps/details?id=br.com.fetranspor.vadeonibus";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);
-        }
+        }*/
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if(drawer!=null) drawer.closeDrawer(GravityCompat.START);

@@ -79,6 +79,10 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     private Button outraslinhas;
     private Button outrasrotas;
     private ImageView backfromlist;
+    private String endereco = "";
+    private boolean partida = true;
+    private boolean atual = false;
+    private String enderecoAtual;
 
     private AppSingleton appSingleton = AppSingleton.getApp();
     private Usuario usuario;
@@ -111,7 +115,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         backfromlist = (ImageView) view.findViewById(R.id.backfromlist);
         layout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layouttab1);
 
-
+        enderecoAtual = getResources().getString(R.string.localizacao_atual);
 
         bar = (LinearLayout) view.findViewById(R.id.barLinear);
 
@@ -138,10 +142,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         rotasdaqui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                appSingleton.setAbaDefault(1);
-                Intent i;
-                i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), BuscaLinhaRotaActivity.class);
-                startActivity(i);
+                definirPosicaoAtual();
             }
         });
 
@@ -334,11 +335,11 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                     public boolean onMenuItemClick(MenuItem item) {
 
                         switch (item.getItemId()) {
-                            case R.id.favoritar:
+                           /* case R.id.favoritar:
                                 favorito = new Favorito();
                                 favorito.atualizaFavoritos(getContext(), linha);
 
-                                return true;
+                                return true;*/
                             case R.id.itinerario:
                                 appSingleton.setRouteNameExibirIitnerario(linha.getRouteName());
                                 appSingleton.setServicoExibirIitnerario(linha.getServico());
@@ -493,6 +494,59 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     public void tentarNovamenteCarregarLinhas(View v){
         exibirLoadingListaResultado();
         presenter.carregarLinhasProximas(usuario.getPosicao(), this.getContext());
+    }
+
+    private void enderecoSelecionado(String selecionado) {
+
+
+        endereco = selecionado;
+        setEnderecos(endereco,endereco);
+
+        Util.executaCallback("enderecoSelecionado", this);
+
+        appSingleton.setAbaDefault(1);
+        Intent i;
+        i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), BuscaLinhaRotaActivity.class);
+        startActivity(i);
+    }
+
+    public void setEnderecos(String endereco, String enderecoWS){
+        if(partida) {
+            appSingleton.setEnderecoOrigem(endereco, enderecoWS);
+        }
+        else{
+            appSingleton.setEnderecoDestino(endereco, enderecoWS);
+        }
+    }
+
+    public String getEndereco() {
+
+        if (atual) {
+            return enderecoAtual;
+        } else {
+            return endereco;
+
+        }
+    }
+
+
+    public LatLng getPosicao(){
+        return Usuario.getInstance().getPosicao();
+    }
+
+    public void definirPosicaoAtual(){
+        atual = true;
+        String pontoWS = "POINT(";
+        double lat = getPosicao().latitude;
+        double lon = getPosicao().longitude;
+        pontoWS=pontoWS+lon+" "+lat+")";
+        enderecoSelecionado(pontoWS);
+        if(partida) {
+            appSingleton.setEnderecoOrigem(enderecoAtual, pontoWS);
+        }
+        else{
+            appSingleton.setEnderecoDestino(enderecoAtual, pontoWS);
+        }
     }
 
 }

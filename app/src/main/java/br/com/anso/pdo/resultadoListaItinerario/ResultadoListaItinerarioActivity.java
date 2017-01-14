@@ -166,11 +166,11 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
 
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.favoritar:
+                            /*case R.id.favoritar:
                                 favorito = new Favorito();
                                 favorito.atualizaFavoritos(getBaseContext(), linha);
 
-                                return true;
+                                return true;*/
                             case R.id.itinerario:
                                 app.setRouteNameExibirIitnerario(linha.getRouteName());
                                 app.setServicoExibirIitnerario(linha.getServico());

@@ -7,7 +7,7 @@
             android:icon="@drawable/bus"
             android:title="@string/onibus_proximos" />
 
-        <item
+       <!-- <item
             android:id="@+id/favoritos"
             android:icon="@drawable/newbadge"
             android:title="@string/favoritos" />
@@ -15,7 +15,7 @@
         <item
             android:id="@+id/avaliarapp"
             android:icon="@drawable/badge2"
-            android:title="@string/avaliar_app" />
+            android:title="@string/avaliar_app" />-->
         <!--<item
             android:id="@+id/config"
             android:icon="@drawable/engine"

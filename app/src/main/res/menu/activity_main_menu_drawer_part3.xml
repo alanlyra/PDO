@@ -3,13 +3,13 @@
 
     <group android:checkableBehavior="single">
 
-        <item
+        <!--<item
             android:id="@+id/nav_private"
             android:title="@string/pol_tica_de_privacidade" />
         <item
             android:id="@+id/nav_service"
             android:title="@string/termos_de_servi_o" />
-
+-->
 
     </group>
 </menu>

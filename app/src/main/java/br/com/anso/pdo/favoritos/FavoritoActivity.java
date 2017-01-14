@@ -226,7 +226,7 @@ public class FavoritoActivity extends VDOAppCompatActivity implements Navigation
                     public boolean onMenuItemClick(MenuItem item) {
 
                         switch (item.getItemId()) {
-                            case R.id.favoritar:
+                            /*case R.id.favoritar:
                                 if(object.getClass().getName().equals(getBaseContext().getPackageName() + ".util.Linha")){
                                     for(int i = 0; i < appSingleton.getLinhasFavoritas().size(); i++){
                                         if (appSingleton.getLinhasFavoritas().get(i).getRouteName().equals(((Linha)object).getRouteName())){
@@ -247,7 +247,7 @@ public class FavoritoActivity extends VDOAppCompatActivity implements Navigation
                                         }
                                     }
                                 }
-
+*/
                             case R.id.itinerario:
                                 if(object.getClass().getName().equals(getBaseContext().getPackageName() + ".util.Linha")) {
                                     appSingleton.getLinhasFavoritas().clear();
@@ -316,7 +316,7 @@ public class FavoritoActivity extends VDOAppCompatActivity implements Navigation
                     startActivity(intent);
                 }
 
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                /*popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
                     public boolean onMenuItemClick(MenuItem item) {
 
@@ -346,7 +346,7 @@ public class FavoritoActivity extends VDOAppCompatActivity implements Navigation
                                 return false;
                         }
                     }
-                });
+                });*/
             }
 
         });

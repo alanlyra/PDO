@@ -120,4 +120,10 @@
     <string name="tutorial6">BÚSQUEDA DE NOMBRE O NÚMERO DE LA LÍNEA</string>
     <string name="skip">SALTAR</string>
     <string name="concluido">LISTO</string>
+    <string name="linhas_desse_ponto">LINHAS DESTE PONTO</string>
+    <string name="rotas_daqui">ROTAS A PARTIR DAQUI</string>
+    <string name="outras_linhas">OUTRAS LINHAS</string>
+    <string name="outras_rotas">OUTRAS ROTAS</string>
+    <string name="pesquisar_por_linha">PESQUISAR POR LINHA</string>
+    <string name="exibir_rotas">EXIBIR ROTAS</string>
 </resources>
