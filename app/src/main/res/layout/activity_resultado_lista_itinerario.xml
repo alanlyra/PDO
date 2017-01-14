@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_action_bar_splitter"
+    tools:context="br.com.anso.pdo.resultadoListaItinerario.ResultadoListaItinerarioActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:background="#2c3e50">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#2c3e50"
+            android:id="@+id/frameLayout">
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="75dp"
+                    android:onClick="voltar">
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView9"
+                        android:paddingRight="10dp"
+                        android:background="@drawable/arrow"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:nestedScrollingEnabled="true" />
+                </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/resultado_da_busca_por_linhas"
+                android:id="@+id/tituloBuscaLinha"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:textSize="12dp"
+                android:textColor="#00ffe5"
+                android:textAlignment="center"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="#95a4a6"
+                android:text="@string/resultado_da_busca_por_centro"
+                android:id="@+id/tituloResultadoBuscaLinha"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:background="#263646"
+                android:textAlignment="center"/>
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dividerHeight="0.1dp"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentTop="false"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:drawSelectorOnTop="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nenhumaLinhaEncontrada"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nenhumaLinhaEncontradaText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text=""
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:paddingTop="4dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <Button
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tentar_novamente"
+                    android:id="@+id/tentarNovamente"
+                    android:background="@drawable/cornerborder"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="tentarNovamente"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/barLinear"
+            android:visibility="gone"
+            android:layout_centerInParent="true">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:indeterminateDrawable="@drawable/progress_circle"
+                android:layout_gravity="center_horizontal|top">
+            </ProgressBar>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/buscando_dados"
+                android:id="@+id/progressTxt"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/color_primary"
+                android:textSize="14dp"
+                android:layout_gravity="center_horizontal|bottom" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
+

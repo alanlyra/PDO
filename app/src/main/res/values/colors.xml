@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#00ffe5</color>
+    <color name="color_primaryDark">#263646</color>
+    <color name="default_screen_bg">#f9f9f9</color>
+    <color name="rounded_container_bg">#222222</color>
+    <color name="rounded_container_border">#3b3f44</color>
+    <color name="light_gray_header_color">#646663</color>
+    <color name="not_selected_tab_color">#95a4a6</color>
+    <color name="text_color_navigation">#646663</color>
+    <color name="listview1">#2c3e50</color>
+    <color name="listview2">#263646</color>
+    <color name="listview_linhasdoponto1">#f7f7f7</color>
+    <color name="listview_linhasdoponto2">#f0f0f0</color>
+    <color name="polylineItinerario">#2c3e50</color>
+
+
+</resources>

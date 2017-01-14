@@ -1,0 +1,63 @@
+<RelativeLayout android:id="@+id/main_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2C3E50"
+    tools:context=".buscaLinhaRota.BuscaLinhaRotaActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#2c3e50"
+        android:id="@+id/frameLayout">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="75dp"
+            android:onClick="voltar">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageView9"
+                android:paddingRight="10dp"
+                android:background="@drawable/arrow"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="15dp"
+                android:nestedScrollingEnabled="true" />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buscar_por_linhas_e_rotas"
+            android:id="@+id/textView6"
+            android:layout_gravity="left|center_vertical"
+            android:textSize="12dp"
+            android:layout_marginLeft="55dp"
+            android:textColor="#00ffe5"
+            android:paddingLeft="55dp" />
+    </FrameLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#263646"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_below="@+id/frameLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tab_layout"/>
+
+</RelativeLayout>

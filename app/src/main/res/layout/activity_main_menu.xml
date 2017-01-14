@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/principal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00ffe5"
+        android:textColor="#00ffe5"/>
+
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main_menu"
+        app:menu="@menu/activity_main_menu_drawer"
+        android:background="#2c3e50"
+        android:textColor="#00ffe5">
+
+        <FrameLayout
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:background="#2c3e50"
+            android:layout_marginTop="176dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:layout_gravity="center"
+                android:background="@drawable/count" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="0"
+                android:id="@+id/numerolinhas"
+                android:layout_gravity="center"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!--<android.support.v7.widget.SwitchCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="205dp"
+            android:layout_marginRight="5dp"/>-->
+
+      <!--  <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            >
+
+
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="310dp"
+            >
+            <android.support.design.widget.NavigationView
+                android:id="@+id/nav_view3"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:menu="@menu/activity_main_menu_drawer_part3"
+                android:background="#2c3e50"
+                android:textColor="#00ffe5"
+                android:layout_marginLeft="57dp"
+                app:elevation="0.1dp" />
+
+     <!--       <android.support.design.widget.NavigationView
+                android:id="@+id/nav_view2"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:menu="@menu/activity_main_menu_drawer_part2"
+                android:background="#2c3e50"
+                android:textColor="#00ffe5"
+                app:elevation="0.1dp" />-->
+
+
+        </LinearLayout>
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

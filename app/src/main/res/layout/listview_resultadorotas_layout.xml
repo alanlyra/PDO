@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/itemLista"
+        >
+
+        <!-- ROTA: VIAGEM 1 -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rotaLayout"
+            android:paddingTop="-10dp"
+            android:layout_gravity="center"
+            android:background="#ADB1B6"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rota_1"
+                android:id="@+id/numeroRota"
+                android:textSize="12dp"
+                android:layout_gravity="center"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rotaitem1"
+            >
+
+            <LinearLayout
+                android:id="@+id/flag1"
+                android:layout_height="45dp"
+                android:layout_width="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="1dp"
+                android:background="@android:color/holo_blue_light"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/itemLista1"
+                android:layout_marginTop="3dp">
+                <TextView
+                    android:id="@+id/vista1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="1dp"
+                    android:textSize="14dp"
+                    android:textColor="#f7f7f7"
+                    android:layout_marginTop="2dp"
+                    android:paddingRight="3dp"
+                    android:text="VISTA"/>
+
+                <TextView
+                    android:id="@+id/consorcio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textColor="#95a4a6"
+                    android:text="@string/consorcio"
+                    />
+                <TextView
+                    android:id="@+id/tempoviagem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textColor="@color/color_primary" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ROTA: VIAGEM 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rotaitem2"
+            >
+
+            <LinearLayout
+                android:id="@+id/flag2"
+                android:layout_height="45dp"
+                android:layout_width="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="1dp"
+                android:background="@android:color/holo_blue_light"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/itemLista2"
+                android:layout_marginTop="3dp">
+                <TextView
+                    android:id="@+id/vista2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="1dp"
+                    android:textSize="14dp"
+                    android:textColor="#f7f7f7"
+                    android:layout_marginTop="2dp"
+                    android:paddingRight="3dp"
+                    android:text="@string/vista"/>
+
+                <TextView
+                    android:id="@+id/consorcio2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textColor="#95a4a6"
+                    android:text="@string/consorcio"
+                    />
+                <TextView
+                    android:id="@+id/tempoviagem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textColor="@color/color_primary" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ROTA: VIAGEM 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rotaitem3"
+            >
+
+            <LinearLayout
+                android:id="@+id/flag3"
+                android:layout_height="45dp"
+                android:layout_width="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="1dp"
+                android:background="@android:color/holo_blue_light"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/itemLista3"
+                >
+                <TextView
+                    android:id="@+id/vista3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="1dp"
+                    android:textSize="14dp"
+                    android:textColor="#f7f7f7"
+                    android:layout_marginTop="2dp"
+                    android:paddingRight="3dp"
+                    android:text="@string/vista"/>
+
+                <TextView
+                    android:id="@+id/consorcio3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textColor="#95a4a6"
+                    android:text="@string/consorcio"
+                    />
+
+                <TextView
+                    android:id="@+id/tempoviagem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textColor="@color/color_primary" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

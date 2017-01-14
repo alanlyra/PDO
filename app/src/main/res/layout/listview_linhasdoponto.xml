@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:id="@+id/flag"
+        android:layout_height="55dp"
+        android:layout_width="5dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/holo_blue_light"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+         />
+
+
+    <LinearLayout
+        android:layout_width="291dp"
+        android:layout_height="72dp"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        >
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:textSize="15dp"
+            android:textColor="#2c3e50"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/cur"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:textSize="11dp"
+            android:textColor="#2c3e50"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="-3dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/tempodeviagem">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:id="@+id/imageView3"
+                android:layout_gravity="left|top"
+                android:background="@drawable/time"
+                android:adjustViewBounds="true"
+                android:paddingTop="2dp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/timetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="9dp"
+                android:textColor="#95a4a6"
+                android:layout_marginLeft="13dp" />
+
+            <TextView
+                android:id="@+id/tempochegada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="9dp"
+                android:textColor="#2c3e50"
+                android:layout_marginLeft="95dp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:id="@+id/frameoptionsLinhadoPonto" >
+
+        <ImageView
+            android:id="@+id/options"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:background="@android:color/transparent"
+            android:nestedScrollingEnabled="true"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+
+</LinearLayout>

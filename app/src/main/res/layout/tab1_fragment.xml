@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:baselineAligned="false"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="297dp"
+            android:layout_height="25dp"
+            android:background="@drawable/border"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="40dp"
+            android:weightSum="1"
+            android:layout_weight="0.17">
+
+            <EditText
+                android:layout_width="247dp"
+                android:layout_height="49dp"
+                android:id="@+id/nomeOuNumeroLinha"
+                android:hint="@string/digite_o_n_mero_ou_o_nome_da_linha"
+                android:textColorHint="#95a4a6"
+                android:paddingLeft="10dp"
+                android:textSize="12dp"
+                android:imeOptions="actionDone"
+                android:textColor="#00ffe5"
+                android:backgroundTint="@color/listview1"
+                android:layout_weight="0.96"
+                android:layout_marginTop="-13dp" />
+
+            <LinearLayout
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:id="@+id/clear"
+                android:layout_weight="14.08"
+                android:weightSum="1">
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:background="@drawable/cleartexto"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text="@string/exibir_resultados"
+            android:id="@+id/buttonExibirResultado"
+            android:background="@drawable/cornerborder"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="40dp"
+            android:onClick="pesquisarLinhas"/>
+    </LinearLayout>
+
+</RelativeLayout>

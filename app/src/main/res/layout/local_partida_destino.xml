@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2c3e50"
+    tools:context="br.com.anso.pdo.buscaPontosEstacoes.BuscaPontosEstacoesActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#2c3e50">
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="75dp"
+                android:onClick="voltar">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/imageView9"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/arrow"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:nestedScrollingEnabled="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textLocal"
+                android:textSize="12dp"
+                android:textColor="#00ffe5"
+                android:paddingLeft="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="75dp"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#263646"
+            android:onClick="definirPosicaoAtual">
+            <!--android:onClick="buscapontoseestacoes"> -->
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:id="@+id/imageView11"
+                android:paddingRight="10dp"
+                android:background="@drawable/gps"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:nestedScrollingEnabled="true"
+                android:layout_marginTop="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/deseja_usar_sua_localiza_o_atual"
+                android:id="@+id/textView5"
+                android:layout_gravity="left|center_vertical"
+                android:textSize="12dp"
+                android:textColor="#95a4a6"
+                android:phoneNumber="false"
+                android:layout_marginLeft="50dp" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:weightSum="1"
+            android:layout_weight="0.03">
+
+            <Spinner
+                android:id="@+id/listaMunicipios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="12dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="#00ffe5">
+
+
+            </Spinner>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:weightSum="1">
+
+                <br.com.anso.pdo.selecionarEndereco.AutoCompleteEnderecoWidget
+                    android:id="@+id/autoComplete"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:hint="@string/digite_o_endere_o"
+                    android:textColorHint="#95a4a6"
+                    android:textSize="12dp"
+                    android:layout_marginStart="6dp"
+                    android:textColor="#00ffe5"
+                    android:backgroundTint="@color/listview1"
+                    android:layout_marginTop="-5dp" />
+
+                <LinearLayout
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/clear"
+                    android:layout_weight="14.08"
+                    android:weightSum="1"
+                    android:layout_marginBottom="-5dp">
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:background="@drawable/cleartexto"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/confirmarEndereco"
+            android:background="@drawable/cornerborder" />
+
+    </LinearLayout>
+</RelativeLayout>

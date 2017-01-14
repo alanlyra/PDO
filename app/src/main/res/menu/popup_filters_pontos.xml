@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/favoritarponto"
+        android:icon="@drawable/badge3"
+        android:title="@string/favoritar_esse_ponto" />
+
+    <item android:id="@+id/linhasponto"
+        android:icon="@drawable/bus4"
+        android:title="@string/visualizar_linhas_desse_ponto" />
+
+    <item android:id="@+id/comochegar"
+        android:icon="@drawable/person2"
+        android:title="@string/como_chegar" />
+
+    <item android:id="@+id/localpartida"
+        android:icon="@drawable/arrowup_popup"
+        android:title="@string/usar_como_local_de_partida" />
+
+    <item android:id="@+id/localdestino"
+        android:icon="@drawable/arrowdown_popup"
+        android:title="@string/usar_como_local_de_destino" />
+</menu>

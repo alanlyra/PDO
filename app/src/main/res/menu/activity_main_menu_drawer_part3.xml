@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_private"
+            android:title="@string/pol_tica_de_privacidade" />
+        <item
+            android:id="@+id/nav_service"
+            android:title="@string/termos_de_servi_o" />
+
+
+    </group>
+</menu>

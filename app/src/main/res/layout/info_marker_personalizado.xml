@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/caption_id"
+        android:background="@android:color/white"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:maxWidth="200dp"
+            android:minHeight="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="rua de teste ficticia n 200001010"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:id="@+id/caption_text_id"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:src="@drawable/seta_info"/>
+    </LinearLayout>
+</LinearLayout>

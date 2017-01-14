@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/onibusproximos"
+            android:icon="@drawable/bus"
+            android:title="@string/onibus_proximos" />
+
+        <item
+            android:id="@+id/favoritos"
+            android:icon="@drawable/newbadge"
+            android:title="@string/favoritos" />
+
+        <item
+            android:id="@+id/avaliarapp"
+            android:icon="@drawable/badge2"
+            android:title="@string/avaliar_app" />
+        <!--<item
+            android:id="@+id/config"
+            android:icon="@drawable/engine"
+            android:title="Configuração" />-->
+
+
+    </group>
+</menu>
