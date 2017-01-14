@@ -9,6 +9,7 @@
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
+        android:visibility="gone"
         app:elevation="0.1dp">
 
         <android.support.v7.widget.Toolbar
@@ -16,15 +17,42 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#2c3e50"
+            android:visibility="gone"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="#2c3e50">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:id="@+id/backfromlist"
+                android:paddingRight="10dp"
+                android:paddingLeft="30dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do Projeto"
+                android:id="@+id/textView4"
+                android:textColor="@color/color_primary"
+                android:layout_gravity="left|center_vertical"
+                android:textSize="12dp"
+                android:layout_marginLeft="55dp" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:orientation="horizontal"
@@ -44,7 +72,8 @@
                 app:tabTextColor="@color/not_selected_tab_color"
                 app:tabSelectedTextColor="@color/color_primary"
                 app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-                app:tabMode="fixed"/>
+                app:tabMode="fixed"
+                android:visibility="gone" />
         </LinearLayout>
 
         <android.support.v4.view.ViewPager
