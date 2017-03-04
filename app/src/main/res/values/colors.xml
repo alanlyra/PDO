@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">#00ffe5</color>
+
+    <color name="color_primary1">#ECECEC</color>
+
+    <color name="color_primary">#ECECEC</color>#00ffe5
     <color name="color_primaryDark">#263646</color>
     <color name="default_screen_bg">#f9f9f9</color>
     <color name="rounded_container_bg">#222222</color>

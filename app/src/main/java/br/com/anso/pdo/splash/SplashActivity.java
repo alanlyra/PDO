@@ -70,7 +70,7 @@ public class SplashActivity extends VDOAppCompatActivity implements ISplashView 
 
     public void abrirProximaView(){
         if(presenter.carregaPreferencias(getBaseContext())){
-            Intent i = new Intent(SplashActivity.this, TutorialActivity.class);
+            Intent i = new Intent(SplashActivity.this, PrincipalActivity.class); //TutorialActivity
             startActivity(i);
             finish();
         }
