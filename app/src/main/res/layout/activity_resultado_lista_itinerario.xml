@@ -45,7 +45,7 @@
                 android:id="@+id/tituloBuscaLinha"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:textSize="12dp"
-                android:textColor="#00ffe5"
+                android:textColor="#009FD6"
                 android:textAlignment="center"/>
 
         </FrameLayout>

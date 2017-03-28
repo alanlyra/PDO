@@ -12,8 +12,8 @@
         layout="@layout/principal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00ffe5"
-        android:textColor="#00ffe5"/>
+        android:background="#009FD6"
+        android:textColor="#009FD6"/>
 
 
     <android.support.design.widget.NavigationView
@@ -25,7 +25,7 @@
         app:headerLayout="@layout/nav_header_main_menu"
         app:menu="@menu/activity_main_menu_drawer"
         android:background="#2c3e50"
-        android:textColor="#00ffe5">
+        android:textColor="#009FD6">
 
         <FrameLayout
             android:layout_width="19dp"
@@ -83,7 +83,7 @@
                 android:fitsSystemWindows="true"
                 app:menu="@menu/activity_main_menu_drawer_part3"
                 android:background="#2c3e50"
-                android:textColor="#00ffe5"
+                android:textColor="#009FD6"
                 android:layout_marginLeft="57dp"
                 app:elevation="0.1dp" />
 
@@ -95,7 +95,7 @@
                 android:fitsSystemWindows="true"
                 app:menu="@menu/activity_main_menu_drawer_part2"
                 android:background="#2c3e50"
-                android:textColor="#00ffe5"
+                android:textColor="#009FD6"
                 app:elevation="0.1dp" />-->
 
 

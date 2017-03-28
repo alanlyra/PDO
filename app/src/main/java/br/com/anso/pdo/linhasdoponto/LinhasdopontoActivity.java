@@ -35,10 +35,10 @@ import br.com.anso.pdo.itinerario.ItinerarioActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Linha;
 import br.com.anso.pdo.util.Ponto;
-import br.com.anso.pdo.util.VdoLocationCallback;
+import br.com.anso.pdo.util.PdoLocationCallback;
 import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
 
-public class LinhasdopontoActivity extends VDOAppCompatActivity implements ILinhasdopontoView, OnMapReadyCallback, VdoLocationCallback {
+public class LinhasdopontoActivity extends VDOAppCompatActivity implements ILinhasdopontoView, OnMapReadyCallback, PdoLocationCallback {
 
     private ILinhasdopontoView.ILinhasdopontoPresenter presenter;
     private GoogleMap googleMap;

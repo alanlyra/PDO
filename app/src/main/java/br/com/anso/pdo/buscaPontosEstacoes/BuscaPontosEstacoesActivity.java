@@ -47,10 +47,10 @@ import br.com.anso.pdo.util.InfoMarkerPersonalizado;
 import br.com.anso.pdo.util.Ponto;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.util.VdoLocationCallback;
+import br.com.anso.pdo.util.PdoLocationCallback;
 import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
 
-public class BuscaPontosEstacoesActivity extends VDOAppCompatActivity implements OnMapReadyCallback, IBuscaPontosEstacoesView, VdoLocationCallback, SeekBar.OnSeekBarChangeListener {
+public class BuscaPontosEstacoesActivity extends VDOAppCompatActivity implements OnMapReadyCallback, IBuscaPontosEstacoesView, PdoLocationCallback, SeekBar.OnSeekBarChangeListener {
 
     private IBuscaPontosEstacoesView.IBuscaPontosEstacoesPresenter presenter;
     private TextView localDestinoBuscaPontosEstacoes;

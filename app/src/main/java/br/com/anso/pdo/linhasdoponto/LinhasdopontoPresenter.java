@@ -11,8 +11,8 @@ import java.util.List;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.util.VDOConsulta;
-import br.com.anso.pdo.util.VDOConsultaCallback;
+import br.com.anso.pdo.util.PDOConsulta;
+import br.com.anso.pdo.util.PDOConsultaCallback;
 
 
 public class LinhasdopontoPresenter implements ILinhasdopontoView.ILinhasdopontoPresenter {
@@ -81,9 +81,9 @@ public class LinhasdopontoPresenter implements ILinhasdopontoView.ILinhasdoponto
     }
 
     public void consultaLinhasWebservice(String ponto, final Context context) {
-        String url = VDOConsulta.URL_BASE_WS + "obterlinhasdoponto?token="+ VDOConsulta.TOKEN + "&ponto_id="+ponto;
+        String url = PDOConsulta.URL_BASE_WS + "obterlinhasdoponto?token="+ PDOConsulta.TOKEN + "&ponto_id="+ponto;
 
-        new VDOConsulta(new VDOConsultaCallback() {
+        new PDOConsulta(new PDOConsultaCallback() {
             @Override
             public void callback(String result) {
                 carregarLinhasDoPonto(result, context);

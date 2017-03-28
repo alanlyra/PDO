@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.anso.pdo.R;
-import br.com.anso.pdo.util.VDOConsulta;
-import br.com.anso.pdo.util.VDOConsultaCallback;
+import br.com.anso.pdo.util.PDOConsulta;
+import br.com.anso.pdo.util.PDOConsultaCallback;
 
 public class SuggestionAdapter extends BaseAdapter implements Filterable {
 
@@ -78,9 +78,9 @@ public class SuggestionAdapter extends BaseAdapter implements Filterable {
     }
 
     public void carregaAutocompleteEndereco(String texto, String municipio) {
-        String url = VDOConsulta.URL_BASE_WS + "enderecoautocomplete?token="+ VDOConsulta.TOKEN +"&consulta=" + texto.trim().replace(" ","+") + "&municipio=" + municipio.trim().replaceAll(" ", "+");
+        String url = PDOConsulta.URL_BASE_WS + "enderecoautocomplete?token="+ PDOConsulta.TOKEN +"&consulta=" + texto.trim().replace(" ","+") + "&municipio=" + municipio.trim().replaceAll(" ", "+");
 
-        new VDOConsulta(new VDOConsultaCallback() {
+        new PDOConsulta(new PDOConsultaCallback() {
 
             @Override
             public void callback(String result) {

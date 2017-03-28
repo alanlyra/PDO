@@ -128,7 +128,7 @@ public class Linha {
                                 Util.setStringNegrito(context.getString(R.string.sentido), String.valueOf(Color.GRAY)) + " " + sentido;
         this.markerOptions = new MarkerOptions()
                 .position(posicao)
-                .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(resources, R.drawable.pin_bus, 65, 65)))
+                .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(resources, R.drawable.pin_bus, 90, 90)))
                 .title(context.getString(R.string.detalhes)).snippet(tituloMarcador)
                 .anchor((float) 0.5, (float) 1);
     }

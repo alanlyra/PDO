@@ -10,7 +10,7 @@
                 android:shape="rectangle" >
                 <stroke android:color="@android:color/transparent" android:width="10dp"/>
                 <solid
-                    android:color="@color/color_primary1" />
+                    android:color="@color/color_primary" />
             </shape>
         </rotate>
     </item>
@@ -20,7 +20,7 @@
         <shape
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle" >
-            <solid android:color="@color/color_primary1" />
+            <solid android:color="@color/color_primary" />
         </shape>
     </item>
 

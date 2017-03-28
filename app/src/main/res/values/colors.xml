@@ -2,8 +2,10 @@
 <resources>
 
     <color name="color_primary1">#ECECEC</color>
-
-    <color name="color_primary">#ECECEC</color>#00ffe5
+    <color name="color_primary2">#ECECEC</color>#ECECEC
+    <color name="color_primary3">#002F3F</color>
+    <color name="color_primary4">#DDDDDD</color>
+    <color name="color_primary">#009FD6</color>#009FD6
     <color name="color_primaryDark">#263646</color>
     <color name="default_screen_bg">#f9f9f9</color>
     <color name="rounded_container_bg">#222222</color>

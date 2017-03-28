@@ -30,14 +30,14 @@
             android:layout_height="wrap_content"
             android:paddingTop="6dp"
             android:textSize="15dp"
-            android:textColor="#f7f7f7" />
+            android:textColor="@color/color_primary3"/>
 
         <TextView
             android:id="@+id/cur"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:textSize="11dp"
-            android:textColor="#f7f7f7"
+            android:textColor="@color/color_primary3"
             android:layout_marginTop="-3dp" />
 
         <FrameLayout
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="9dp"
-                android:textColor="#95a4a6"
+                android:textColor="@color/color_primary2"
                 android:layout_marginLeft="13dp" />
 
         </FrameLayout>

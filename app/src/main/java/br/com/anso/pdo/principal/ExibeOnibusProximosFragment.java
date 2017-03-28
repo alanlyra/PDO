@@ -4,15 +4,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.text.Html;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -39,21 +35,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Timer;
-import java.util.TimerTask;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
 import br.com.anso.pdo.favoritos.Favorito;
 import br.com.anso.pdo.itinerario.ItinerarioActivity;
-import br.com.anso.pdo.selecionarEndereco.SelecionarEnderecoActivity;
 import br.com.anso.pdo.util.AppSingleton;
-import br.com.anso.pdo.util.DoubleClick;
 import br.com.anso.pdo.util.Linha;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.util.VdoLocationCallback;
+import br.com.anso.pdo.util.PdoLocationCallback;
 
-public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyCallback, IPrincipalTab1View, VdoLocationCallback {
+public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyCallback, IPrincipalTab1View, PdoLocationCallback {
 
     private IPrincipalTab1View.IPrincipalTab1Presenter presenter;
     private ListView listView;
@@ -282,7 +275,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 TextView tempoviagem = (TextView) view.findViewById(R.id.tempochegada);
 
                 String txtviagem = Util.setString(getResources().getString(R.string.tempo_chegada), "#95a4a6");
-                String viagem = Util.setString(String.valueOf(tempo), "#00ffe5");
+                String viagem = Util.setString(String.valueOf(tempo), "#009FD6");
                 tempoviagem.setText(Html.fromHtml(txtviagem + " " + viagem));
 
                 if(tempo.contains("N/D"))
@@ -291,9 +284,9 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                     tempoViagem.setVisibility(View.VISIBLE);
 
                 if (position % 2 == 1) {
-                    view.setBackgroundResource(R.color.listview2);
+                    view.setBackgroundResource(R.color.color_primary2);
                 } else if (position % 2 == 0) {
-                    view.setBackgroundResource(R.color.listview1);
+                    view.setBackgroundResource(R.color.color_primary4);
                 }
                 corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio")));
                 attachPopupHandler(new Linha(routeName, servico, "", corConsorcio, numero, referencia), popUp_btn);

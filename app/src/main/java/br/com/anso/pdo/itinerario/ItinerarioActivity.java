@@ -327,7 +327,7 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
         int[] to = {R.id.referencia};
 
         TextView tempoviagem = (TextView) findViewById(R.id.duracao);
-        String viagem = Util.setString(String.valueOf(tempo), "#00ffe5");
+        String viagem = Util.setString(String.valueOf(tempo), "#009FD6");
         String txtviagem = Util.setString(getResources().getString(R.string.de_viagem), "#95a4a6");
         tempoviagem.setText(Html.fromHtml(viagem + " " + txtviagem));
 

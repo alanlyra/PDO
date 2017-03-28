@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textLocal"
                 android:textSize="12dp"
-                android:textColor="#00ffe5"
+                android:textColor="#009FD6"
                 android:paddingLeft="45dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="75dp"/>
@@ -96,7 +96,7 @@
                 android:layout_marginRight="20dp"
                 android:textSize="12dp"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="#00ffe5">
+                android:backgroundTint="#009FD6">
 
 
             </Spinner>
@@ -120,7 +120,7 @@
                     android:textColorHint="#95a4a6"
                     android:textSize="12dp"
                     android:layout_marginStart="6dp"
-                    android:textColor="#00ffe5"
+                    android:textColor="#009FD6"
                     android:backgroundTint="@color/listview1"
                     android:layout_marginTop="-5dp" />
 

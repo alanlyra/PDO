@@ -11,8 +11,8 @@ import java.util.List;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.util.AppSingleton;
-import br.com.anso.pdo.util.VDOConsulta;
-import br.com.anso.pdo.util.VDOConsultaCallback;
+import br.com.anso.pdo.util.PDOConsulta;
+import br.com.anso.pdo.util.PDOConsultaCallback;
 
 
 public class ResultadoListaItinerarioPresenter implements IResultadoListaItinerarioView.IResultadoListaItinerarioPresenter {
@@ -77,9 +77,9 @@ public class ResultadoListaItinerarioPresenter implements IResultadoListaItinera
     }
 
     public void buscarLinhasWebservice(String textoBusca, final Context context) {
-        String url = VDOConsulta.URL_BASE_WS + "obterlistalinhas?token="+ VDOConsulta.TOKEN +"&consulta=" + textoBusca.replaceAll(" ", "+");
+        String url = PDOConsulta.URL_BASE_WS + "obterlistalinhas?token="+ PDOConsulta.TOKEN +"&consulta=" + textoBusca.replaceAll(" ", "+");
 
-        new VDOConsulta(new VDOConsultaCallback() {
+        new PDOConsulta(new PDOConsultaCallback() {
             @Override
             public void callback(String result) {
                 carregarResultadoBuscaLinhas(result, context);

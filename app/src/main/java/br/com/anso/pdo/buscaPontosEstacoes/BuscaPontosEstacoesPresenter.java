@@ -13,8 +13,8 @@ import java.util.List;
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Ponto;
-import br.com.anso.pdo.util.VDOConsulta;
-import br.com.anso.pdo.util.VDOConsultaCallback;
+import br.com.anso.pdo.util.PDOConsulta;
+import br.com.anso.pdo.util.PDOConsultaCallback;
 
 public class BuscaPontosEstacoesPresenter implements IBuscaPontosEstacoesView.IBuscaPontosEstacoesPresenter {
 
@@ -29,9 +29,9 @@ public class BuscaPontosEstacoesPresenter implements IBuscaPontosEstacoesView.IB
 
     public void consultaPontosEstacoesWebservice(LatLng posicao, final Context context) {
 
-        String url = VDOConsulta.URL_BASE_WS + "obterpedproximogps?token="+ VDOConsulta.TOKEN +"&lat=" + posicao.latitude + "&lon=" + posicao.longitude+"&raio=2000";
+        String url = PDOConsulta.URL_BASE_WS + "obterpedproximogps?token="+ PDOConsulta.TOKEN +"&lat=" + posicao.latitude + "&lon=" + posicao.longitude+"&raio=2000";
 
-        new VDOConsulta(new VDOConsultaCallback() {
+        new PDOConsulta(new PDOConsultaCallback() {
             @Override
             public void callback(String result) {
                 carregarPontosProximos(result, context);

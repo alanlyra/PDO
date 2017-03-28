@@ -16,8 +16,8 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="colorControlNormal">#00ffe5</item>
-        <item name="android:textColorPrimary">#00ffe5</item>
+        <item name="colorControlNormal">#009FD6</item>
+        <item name="android:textColorPrimary">#009FD6</item>
     </style>
 
     <style name="AppTheme.PopupOverlay" parent="Base.ThemeOverlay.AppCompat.Light" />

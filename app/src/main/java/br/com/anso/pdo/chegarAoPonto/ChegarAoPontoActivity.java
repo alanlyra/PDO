@@ -32,11 +32,11 @@ import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Caminhada;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.util.VdoLocationCallback;
+import br.com.anso.pdo.util.PdoLocationCallback;
 import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
 
 
-public class ChegarAoPontoActivity extends VDOAppCompatActivity implements OnMapReadyCallback, IChegarAoPontoView, VdoLocationCallback {
+public class ChegarAoPontoActivity extends VDOAppCompatActivity implements OnMapReadyCallback, IChegarAoPontoView, PdoLocationCallback {
 
     private IChegarAoPontoView.IChegarAoPontoPresenter presenter;
     private HashMap<String, Marker> markersMap;

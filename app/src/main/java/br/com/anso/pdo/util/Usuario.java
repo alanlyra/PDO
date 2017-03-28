@@ -55,7 +55,7 @@ public class Usuario {
 
         this.marker = new MarkerOptions()
                 .position(posicao)
-                .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(resources, R.drawable.pinperson, 120, 140)))
+                .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(resources, R.drawable.pinperson, 130, 200)))
                 .anchor((float) 0.5, (float) 1);
     }
 

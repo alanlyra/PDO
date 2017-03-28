@@ -16,8 +16,8 @@ import br.com.anso.pdo.R;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Linha;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.util.VDOConsulta;
-import br.com.anso.pdo.util.VDOConsultaCallback;
+import br.com.anso.pdo.util.PDOConsulta;
+import br.com.anso.pdo.util.PDOConsultaCallback;
 
 
 public class ExibeOnibusProximosPresenter implements IPrincipalTab1View.IPrincipalTab1Presenter {
@@ -30,9 +30,9 @@ public class ExibeOnibusProximosPresenter implements IPrincipalTab1View.IPrincip
     }
 
     public void carregarLinhasProximas(LatLng posicao, final Context context) {
-        String url = VDOConsulta.URL_BASE_WS + "buscarlinhasproximasgps?token="+ VDOConsulta.TOKEN +"&lat=" + posicao.latitude + "&lon=" + posicao.longitude;
+        String url = PDOConsulta.URL_BASE_WS + "buscarlinhasproximasgps?token="+ PDOConsulta.TOKEN +"&lat=" + posicao.latitude + "&lon=" + posicao.longitude;
 
-        new VDOConsulta(new VDOConsultaCallback() {
+        new PDOConsulta(new PDOConsultaCallback() {
             @Override
             public void callback(String result) {
                 carregarLinhasProximas(result, context);

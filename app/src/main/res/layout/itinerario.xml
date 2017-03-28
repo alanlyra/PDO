@@ -36,7 +36,7 @@
             android:id="@+id/textView2"
             android:layout_gravity="center"
             android:textSize="12dp"
-            android:textColor="#00ffe5"
+            android:textColor="#009FD6"
             android:paddingLeft="45dp"
             android:layout_marginRight="20dp" />
 
@@ -143,7 +143,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12dp"
-                            android:textColor="#00ffe5"
+                            android:textColor="#009FD6"
                             android:layout_marginLeft="15dp"
                             android:layout_gravity="center_vertical" />
 

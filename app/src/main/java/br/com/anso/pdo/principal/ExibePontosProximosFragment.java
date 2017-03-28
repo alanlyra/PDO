@@ -52,9 +52,9 @@ import br.com.anso.pdo.util.InfoMarkerPersonalizado;
 import br.com.anso.pdo.util.Ponto;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.util.VdoLocationCallback;
+import br.com.anso.pdo.util.PdoLocationCallback;
 
-public class ExibePontosProximosFragment extends Fragment implements OnMapReadyCallback, IPrincipalTab2View, VdoLocationCallback {
+public class ExibePontosProximosFragment extends Fragment implements OnMapReadyCallback, IPrincipalTab2View, PdoLocationCallback {
 
     private IPrincipalTab2View.IPrincipalTab2Presenter presenter;
     private ListView listView;
@@ -218,7 +218,7 @@ public class ExibePontosProximosFragment extends Fragment implements OnMapReadyC
                 TextView tempoviagem = (TextView) view.findViewById(R.id.tempochegada);
 
                 String txtviagem = Util.setString(getResources().getString(R.string.a_pe), "#95a4a6");
-                String viagem = Util.setString(Util.converterSegundosParaTempoViagem(Double.parseDouble(tempo)), "#00ffe5");
+                String viagem = Util.setString(Util.converterSegundosParaTempoViagem(Double.parseDouble(tempo)), "#009FD6");
                 tempoviagem.setText(Html.fromHtml(txtviagem + " " + viagem));
 
                 if (position % 2 == 1) {

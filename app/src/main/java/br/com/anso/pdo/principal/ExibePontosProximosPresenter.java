@@ -12,8 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import br.com.anso.pdo.R;
-import br.com.anso.pdo.util.VDOConsulta;
-import br.com.anso.pdo.util.VDOConsultaCallback;
+import br.com.anso.pdo.util.PDOConsulta;
+import br.com.anso.pdo.util.PDOConsultaCallback;
 
 
 public class ExibePontosProximosPresenter implements IPrincipalTab2View.IPrincipalTab2Presenter {
@@ -26,9 +26,9 @@ public class ExibePontosProximosPresenter implements IPrincipalTab2View.IPrincip
     }
 
     public void carregarPontosProximos(LatLng posicao, final Context context){
-        String url = VDOConsulta.URL_BASE_WS + "obterpedproximogps?token="+ VDOConsulta.TOKEN +"&lat=" + posicao.latitude + "&lon=" + posicao.longitude+"&raio="+raio;
+        String url = PDOConsulta.URL_BASE_WS + "obterpedproximogps?token="+ PDOConsulta.TOKEN +"&lat=" + posicao.latitude + "&lon=" + posicao.longitude+"&raio="+raio;
 
-        new VDOConsulta(new VDOConsultaCallback() {
+        new PDOConsulta(new PDOConsultaCallback() {
             @Override
             public void callback(String result) {
                 carregarPontosProximos(result, context);

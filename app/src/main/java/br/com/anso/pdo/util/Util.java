@@ -230,9 +230,9 @@ public class Util {
         municipiosPre.add("Rio de Janeiro");
         app.setMunicipios(municipiosPre);
 
-        String url = VDOConsulta.URL_BASE_WS + "obtermunicipiosatendidos?token=" + VDOConsulta.TOKEN;
+        String url = PDOConsulta.URL_BASE_WS + "obtermunicipiosatendidos?token=" + PDOConsulta.TOKEN;
 
-        new VDOConsulta(new VDOConsultaCallback() {
+        new PDOConsulta(new PDOConsultaCallback() {
             @Override
             public void callback(String result) {
                 preencherListaMunicipios(result);
@@ -379,9 +379,9 @@ public class Util {
             app.appVersionCode = verCode;
             app.appVersionName = verName;
 
-            String url = VDOConsulta.URL_BASE_WS + "obterinfoversaoapp?token=" + VDOConsulta.TOKEN + "&plataforma=android&nomeVersao=" + verName;
+            String url = PDOConsulta.URL_BASE_WS + "obterinfoversaoapp?token=" + PDOConsulta.TOKEN + "&plataforma=android&nomeVersao=" + verName;
 
-            new VDOConsulta(new VDOConsultaCallback() {
+            new PDOConsulta(new PDOConsultaCallback() {
                 @Override
                 public void callback(String result) {
                     try {

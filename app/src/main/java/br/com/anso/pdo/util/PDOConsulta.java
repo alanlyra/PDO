@@ -9,14 +9,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public class VDOConsulta extends AsyncTask<String, Void, String> {
+public class PDOConsulta extends AsyncTask<String, Void, String> {
 
     public static final String TOKEN = "17412336481479";
     public static final String URL_BASE_WS = "http://www.vadeonibus.com.br/VdoWS1.0/vdoconsulta/";
 
-    VDOConsultaCallback callback;
+    PDOConsultaCallback callback;
 
-    public VDOConsulta(VDOConsultaCallback c){
+    public PDOConsulta(PDOConsultaCallback c){
         this.callback = c;
     }
 

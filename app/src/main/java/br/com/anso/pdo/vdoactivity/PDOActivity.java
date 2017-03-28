@@ -2,7 +2,7 @@ package br.com.anso.pdo.vdoactivity;
 
 import android.app.Activity;
 
-public class VDOActivity extends Activity {
+public class PDOActivity extends Activity {
     public static boolean active = false;
 
     @Override

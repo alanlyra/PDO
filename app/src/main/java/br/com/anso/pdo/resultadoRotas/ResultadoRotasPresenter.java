@@ -13,8 +13,8 @@ import br.com.anso.pdo.R;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Consulta;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.util.VDOConsulta;
-import br.com.anso.pdo.util.VDOConsultaCallback;
+import br.com.anso.pdo.util.PDOConsulta;
+import br.com.anso.pdo.util.PDOConsultaCallback;
 
 
 public class ResultadoRotasPresenter implements IResultadoRotasView.IResultadoRotasPresenter {
@@ -92,11 +92,11 @@ public class ResultadoRotasPresenter implements IResultadoRotasView.IResultadoRo
     public void pesquisarRotasWebService(Consulta c, final Context context){
         String queryString = Util.construirQueryUrlConsultaRotas(c);
 
-        String url = VDOConsulta.URL_BASE_WS + "obterrotas?token="+ VDOConsulta.TOKEN + queryString;
+        String url = PDOConsulta.URL_BASE_WS + "obterrotas?token="+ PDOConsulta.TOKEN + queryString;
 
         //Log.v("TAG", url);
 
-        new VDOConsulta(new VDOConsultaCallback() {
+        new PDOConsulta(new PDOConsultaCallback() {
             @Override
             public void callback(String result) {
                 carregarResultadoBuscaRotas(result, context);

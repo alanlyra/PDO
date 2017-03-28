@@ -39,7 +39,7 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
             tabLayout.addTab(tabLayout.newTab().setText(getResources().getString(R.string.linhas)));
             tabLayout.addTab(tabLayout.newTab().setText(getResources().getString(R.string.rotas)));
             tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-            tabLayout.setTabTextColors(Color.parseColor("#95a4a6"), Color.parseColor("#00ffe5"));
+            tabLayout.setTabTextColors(Color.parseColor("#95a4a6"), Color.parseColor("#009FD6"));
 
             /*tabLayout.setTabTextColors(R.color.not_selected_tab_color, R.color.color_primary);*/
 

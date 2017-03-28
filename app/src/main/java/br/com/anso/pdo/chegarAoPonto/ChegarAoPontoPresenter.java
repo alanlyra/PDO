@@ -9,8 +9,8 @@ import java.util.List;
 
 import br.com.anso.pdo.util.Caminhada;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.util.VDOConsulta;
-import br.com.anso.pdo.util.VDOConsultaCallback;
+import br.com.anso.pdo.util.PDOConsulta;
+import br.com.anso.pdo.util.PDOConsultaCallback;
 
 public class ChegarAoPontoPresenter implements IChegarAoPontoView.IChegarAoPontoPresenter {
 
@@ -22,11 +22,11 @@ public class ChegarAoPontoPresenter implements IChegarAoPontoView.IChegarAoPonto
 
     public void carregarComoChegarAoPontoWebservice() {
         if(view.getOrigem() != null && view.getDestino() != null) {
-            String url = VDOConsulta.URL_BASE_WS + "obtercomochegarcaminhada?token=" + VDOConsulta.TOKEN +
+            String url = PDOConsulta.URL_BASE_WS + "obtercomochegarcaminhada?token=" + PDOConsulta.TOKEN +
                     "&origemX=" + view.getOrigem().longitude + "&origemY=" + view.getOrigem().latitude +
                     "&destinoX=" + view.getDestino().longitude + "&destinoY=" + view.getDestino().latitude;
 
-            new VDOConsulta(new VDOConsultaCallback() {
+            new PDOConsulta(new PDOConsultaCallback() {
                 @Override
                 public void callback(String result) {
                     carregarListaDeCaminhadas(result);

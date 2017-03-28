@@ -1,6 +1,6 @@
 package br.com.anso.pdo.util;
 
 
-public interface VDOConsultaCallback {
+public interface PDOConsultaCallback {
     void callback(String result);
 }

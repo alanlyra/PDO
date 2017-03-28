@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.util.VDOConsulta;
-import br.com.anso.pdo.util.VDOConsultaCallback;
+import br.com.anso.pdo.util.PDOConsulta;
+import br.com.anso.pdo.util.PDOConsultaCallback;
 
 
 public class ItinerarioPresenter implements IItinerarioView.IItinerarioPresenter{
@@ -24,10 +24,10 @@ public class ItinerarioPresenter implements IItinerarioView.IItinerarioPresenter
 
     public void carregarItinerariosWebservice() {
         if( Util.nonBlank( view.getRouteName() ) && Util.nonBlank( view.getServico() ) ) {
-            String url = VDOConsulta.URL_BASE_WS + "obteritinerarioslinha?token=" + VDOConsulta.TOKEN + "&routeName=" + view.getRouteName() + "&servico=" + view.getServico();
+            String url = PDOConsulta.URL_BASE_WS + "obteritinerarioslinha?token=" + PDOConsulta.TOKEN + "&routeName=" + view.getRouteName() + "&servico=" + view.getServico();
 
             //Log.d( "URL: ", url);
-            new VDOConsulta(new VDOConsultaCallback() {
+            new PDOConsulta(new PDOConsultaCallback() {
                 @Override
                 public void callback(String result) {
                     carregarListaDeItinerarios(result);

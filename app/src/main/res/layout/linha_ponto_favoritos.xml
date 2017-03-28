@@ -39,7 +39,7 @@
                 android:id="@+id/textView"
                 android:layout_gravity="center"
                 android:textSize="12dp"
-                android:textColor="#00ffe5" />
+                android:textColor="#009FD6" />
         </FrameLayout>
 
 
@@ -67,7 +67,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="#00ffe5">
+                    android:background="#009FD6">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:background="#00ffe5">
+                    android:background="#009FD6">
 
                     <ImageView
                         android:layout_width="20dp"

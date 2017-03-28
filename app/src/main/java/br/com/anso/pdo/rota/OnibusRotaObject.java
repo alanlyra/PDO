@@ -23,7 +23,7 @@ import br.com.anso.pdo.util.Viagem;
 
 public class OnibusRotaObject implements RecursoMapaObject, View.OnClickListener {
     public static final String COR_LINE_ONIBUS = "#2C3E50";
-    public static final String COR_LINE_ONIBUS_SELECIONADO = "#00FFE5";
+    public static final String COR_LINE_ONIBUS_SELECIONADO = "#009FD6";
 
     private ArrayList<Polyline> polylineArraList;
     private ArrayList<Marker> markersArrayList;
