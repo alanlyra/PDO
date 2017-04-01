@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Vá de Ônibus</string>
+    <string name="app_name">Ponto Inteligente</string>
     <string name="google_app_id">br.com.fetranspor.vadeonibus</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Ajustes</string>

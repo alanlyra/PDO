@@ -30,29 +30,36 @@
         android:background="#ECECEC">
 
         <LinearLayout
-            android:layout_width="167dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="#ECECEC"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical">
 
             <ImageView
                 android:layout_width="166dp"
                 android:layout_height="33dp"
                 android:id="@+id/backfromlist"
-                android:layout_margin="2dp"
                 android:background="@drawable/logoextendeded1"
+                android:layout_gravity="left|center_vertical"/>
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="23dp"
+                android:id="@+id/backfromlist2"
+                android:layout_marginLeft="85dp"
+                android:background="@drawable/anso"
                 android:layout_gravity="right|center_vertical"/>
 
-            <!--<TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nome do Projeto"
-                android:id="@+id/textView4"
-                android:textColor="@color/color_primary"
-                android:layout_gravity="left|center_vertical"
-                android:textSize="12dp"
-                android:layout_marginLeft="55dp" />-->
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="30dp"
+                android:id="@+id/backfromlist3"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/logopref"
+                android:layout_gravity="right|center_vertical"/>
         </LinearLayout>
+
 
 
         <android.support.v4.view.ViewPager
