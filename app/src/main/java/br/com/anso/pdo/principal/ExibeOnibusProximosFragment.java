@@ -70,7 +70,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     private Button linhasdoponto;
     private Button rotasdaqui;
     private Button outraslinhas;
-    private Button outrasrotas;
+    //private Button outrasrotas;
     private ImageView backfromlist;
     private String endereco = "";
     private boolean partida = true;
@@ -104,7 +104,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         linhasdoponto = (Button) view.findViewById(R.id.linhas_desse_ponto);
         rotasdaqui = (Button) view.findViewById(R.id.rotasdaqui);
         outraslinhas = (Button) view.findViewById(R.id.outraslinhas);
-        outrasrotas = (Button) view.findViewById(R.id.outrasrotas);
+        //outrasrotas = (Button) view.findViewById(R.id.outrasrotas);
         backfromlist = (ImageView) view.findViewById(R.id.backfromlist);
         layout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layouttab1);
 
@@ -149,7 +149,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
             }
         });
 
-        outrasrotas.setOnClickListener(new View.OnClickListener() {
+      /*  outrasrotas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 appSingleton.setAbaDefault(1);
@@ -157,7 +157,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), BuscaLinhaRotaActivity.class);
                 startActivity(i);
             }
-        });
+        });*/
         /*buscalinhas.setOnClickListener(new DoubleClick() {
 
             @Override

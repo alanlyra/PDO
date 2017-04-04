@@ -33,31 +33,33 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="#ECECEC"
-            android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="30dp"
+                android:id="@+id/backfromlist3"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/logopref"
+                android:layout_gravity="right|center_vertical"/>
 
             <ImageView
                 android:layout_width="166dp"
                 android:layout_height="33dp"
                 android:id="@+id/backfromlist"
-                android:background="@drawable/logoextendeded1"
+                android:layout_marginLeft="62dp"
+                android:background="@drawable/logoextended"
                 android:layout_gravity="left|center_vertical"/>
 
             <ImageView
                 android:layout_width="39dp"
                 android:layout_height="23dp"
                 android:id="@+id/backfromlist2"
-                android:layout_marginLeft="85dp"
+                android:layout_marginLeft="45dp"
                 android:background="@drawable/anso"
-                android:layout_gravity="right|center_vertical"/>
+                android:layout_gravity="left|center_vertical"/>
 
-            <ImageView
-                android:layout_width="39dp"
-                android:layout_height="30dp"
-                android:id="@+id/backfromlist3"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/logopref"
-                android:layout_gravity="right|center_vertical"/>
+
         </LinearLayout>
 
 

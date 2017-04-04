@@ -7,6 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:orientation="vertical"
         android:baselineAligned="false" >
 
@@ -30,8 +31,8 @@
                     android:id="@+id/localPartidaLinhasRotas"
                     android:layout_gravity="left|center_vertical"
                     android:textSize="14dp"
-                    android:textColor="#95a4a6"
-                    android:textColorHint="#95a4a6"
+                    android:textColor="#002F3F"
+                    android:textColorHint="#002F3F"
                     android:padding="10dp"
                     android:onClick="definirlocalpartida"
                     android:scrollHorizontally="false"
@@ -53,8 +54,8 @@
                     android:id="@+id/localDestinoLinhasRotas"
                     android:layout_gravity="left|center_vertical"
                     android:textSize="14dp"
-                    android:textColor="#95a4a6"
-                    android:textColorHint="#95a4a6"
+                    android:textColor="#002F3F"
+                    android:textColorHint="#002F3F"
                     android:padding="10dp"
                     android:onClick="definirlocaldestino"
                     android:scrollHorizontally="false"

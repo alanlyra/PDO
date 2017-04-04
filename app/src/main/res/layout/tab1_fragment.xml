@@ -7,6 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:orientation="vertical"
         android:baselineAligned="false"
         android:weightSum="1">
@@ -20,6 +21,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="40dp"
+            android:backgroundTint="#ECECEC"
             android:weightSum="1"
             android:layout_weight="0.17">
 
@@ -28,12 +30,12 @@
                 android:layout_height="49dp"
                 android:id="@+id/nomeOuNumeroLinha"
                 android:hint="@string/digite_o_n_mero_ou_o_nome_da_linha"
-                android:textColorHint="#95a4a6"
+                android:textColorHint="#002F3F"
                 android:paddingLeft="10dp"
                 android:textSize="12dp"
                 android:imeOptions="actionDone"
                 android:textColor="#009FD6"
-                android:backgroundTint="@color/listview1"
+                android:backgroundTint="@color/color_primary1"
                 android:layout_weight="0.96"
                 android:layout_marginTop="-13dp" />
 
