@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,6 +31,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -56,15 +58,16 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
     private IItinerarioView.IItinerarioPresenter presenter;
     private GoogleMap googleMap;
     private ListView listView;
-    private ImageView botaoDeInversao;
+    private Button botaoDeInversao;
     private Polyline line;
     private AppSingleton appSingleton = AppSingleton.getApp();
-
+    private SlidingUpPanelLayout layout;
     private int sentido = 0;//0 - IDA   1 - VOLTA
     private TextView consorcioTV;
     private TextView numLinhaTV;
     private TextView sentidoTV;
     private LinearLayout corConsorcio;
+    private Button detalhesItinerario;
     SimpleAdapter adapter;
 
     private int positionListView = 0;
@@ -90,8 +93,10 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
         consorcioTV = (TextView) findViewById(R.id.consorcio);
         numLinhaTV = (TextView) findViewById(R.id.num_linha);
         sentidoTV = (TextView) findViewById(R.id.sentido);
-        botaoDeInversao = (ImageView) findViewById(R.id.botaoDeInversao);
+        botaoDeInversao = (Button) findViewById(R.id.botaoDeInversao);
         corConsorcio = (LinearLayout) findViewById(R.id.flag_itinerario);
+        layout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layoutItinerario);
+        detalhesItinerario = (Button) findViewById(R.id.botaoDeItinerario);
 
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -108,16 +113,28 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
         super.onBackPressed();
     }
 
+    public void MostrarDetalhesItinerario (View v){
+        if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED){
+            layout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+            detalhesItinerario.setText(R.string.detalhes_Itinerario_Abrir);
+        }
+        if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED){
+            layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+            detalhesItinerario.setText(R.string.detalhes_Itinerario_Fechar);
+        }
+
+    }
+
     public void InverterPartidaeDestino(View v) {
 
 
-        RotateAnimation rotate = new RotateAnimation(0, 180, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        /*RotateAnimation rotate = new RotateAnimation(0, 180, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setDuration(250);
         rotate.setInterpolator(new LinearInterpolator());
 
         ImageView image= (ImageView) findViewById(R.id.botaoDeInversao);
 
-        image.startAnimation(rotate);
+        image.startAnimation(rotate);*/
 
         if (sentido == 1)
             sentido = 0;

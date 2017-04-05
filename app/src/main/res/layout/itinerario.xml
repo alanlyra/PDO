@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:background="#2c3e50">
+        android:background="@color/color_primary3">
 
         <LinearLayout
             android:layout_height="match_parent"
@@ -44,7 +44,7 @@
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:sothree="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/sliding_layout"
+        android:id="@+id/sliding_layoutItinerario"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
@@ -55,8 +55,8 @@
         sothree:umanoScrollableView="@+id/listlinhasdoponto"
         sothree:umanoAnchorPoint="1"
         sothree:umanoFadeColor="@android:color/transparent"
-        sothree:umanoInitialState="anchored"
-        >
+        sothree:umanoInitialState="collapsed"
+        android:clickable="false">
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -173,7 +173,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:id="@+id/sentido"
+                        android:layout_marginTop="-20dp"
                         android:textColor="#2c3e50"
+                        android:text="Sentido"
                         android:layout_gravity="center"
                         android:textSize="12dp"
                         android:textColorHint="#2c3e50"
@@ -189,16 +191,45 @@
                     android:orientation="vertical"
                     android:weightSum="1">
 
-                    <ImageView
+                    <!--<ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_marginTop="70dp"
                         android:id="@+id/botaoDeInversao"
                         android:background="@drawable/reverse2"
-                        android:layout_marginRight="19dp"
+                        android:layout_marginRight="22dp"
                         android:layout_gravity="right"
                         android:onClick="InverterPartidaeDestino"
-                        android:visibility="gone"/>
+                        android:visibility="visible"/>-->
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="90dp"
+                        android:id="@+id/botaoDeInversao"
+                        android:text="@string/inverter_sentido"
+                        android:textSize="9dp"
+                        android:backgroundTint="@color/color_primary"
+                        android:textColor="@color/color_primary1"
+                        android:layout_gravity="center"
+                        android:onClick="InverterPartidaeDestino"
+                        android:visibility="visible"
+                        android:layout_weight="0.02" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="-130dp"
+                        android:id="@+id/botaoDeItinerario"
+                        android:text="@string/detalhes_Itinerario_Abrir"
+                        android:textSize="9dp"
+                        android:backgroundTint="@color/color_primary"
+                        android:textColor="@color/color_primary1"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="right"
+                        android:onClick="MostrarDetalhesItinerario"
+                        android:visibility="visible"
+                        android:layout_weight="0.02" />
 
                 </LinearLayout>
 

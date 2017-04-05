@@ -48,6 +48,7 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
             final PagerAdapter adapter = new PagerAdapter
                     (getSupportFragmentManager(), tabLayout.getTabCount());
 
+
             if (viewPager != null) {
                 viewPager.setAdapter(adapter);
                 viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

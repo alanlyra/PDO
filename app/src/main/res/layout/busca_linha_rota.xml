@@ -6,12 +6,63 @@
     android:background="#ECECEC"
     tools:context=".buscaLinhaRota.BuscaLinhaRotaActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ECECEC"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/linearLayout2">
+
+        <ImageView
+            android:layout_width="39dp"
+            android:layout_height="30dp"
+            android:id="@+id/backfromlist3"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/logopref"
+            android:layout_gravity="right|center_vertical"/>
+
+        <ImageView
+            android:layout_width="166dp"
+            android:layout_height="33dp"
+            android:id="@+id/backfromlist"
+            android:layout_marginLeft="62dp"
+            android:background="@drawable/logoextended"
+            android:layout_gravity="left|center_vertical"/>
+
+        <ImageView
+            android:layout_width="39dp"
+            android:layout_height="23dp"
+            android:id="@+id/backfromlist2"
+            android:layout_marginLeft="45dp"
+            android:background="@drawable/anso"
+            android:layout_gravity="left|center_vertical"/>
+
+
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#263646"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_below="@+id/frameLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone" />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:background="#2c3e50"
-        android:id="@+id/frameLayout">
+        android:id="@+id/frameLayout"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_height="match_parent"
@@ -42,25 +93,12 @@
             android:paddingLeft="55dp" />
     </FrameLayout>
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#263646"
-        android:elevation="6dp"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:layout_below="@+id/frameLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:visibility="gone" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/frameLayout" />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/tab_layout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
 </RelativeLayout>

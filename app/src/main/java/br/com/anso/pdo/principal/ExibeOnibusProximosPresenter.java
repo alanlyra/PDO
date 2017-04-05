@@ -69,7 +69,7 @@ public class ExibeOnibusProximosPresenter implements IPrincipalTab1View.IPrincip
         int[] options = new int[qtdResultLinhas];
 
         for(int i = 0; i < qtdResultLinhas; i++)
-            options[i] = R.drawable.more;
+            options[i] = R.drawable.touchpoint;
 
 
         List<HashMap<String, String>> aList = new ArrayList<>();
