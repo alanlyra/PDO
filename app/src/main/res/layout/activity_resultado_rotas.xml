@@ -15,7 +15,7 @@ tools:context="br.com.anso.pdo.resultadoRotas.ResultadoRotasActivity">
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
-        android:background="#2c3e50">
+        android:background="@color/color_primary2">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -59,12 +59,12 @@ tools:context="br.com.anso.pdo.resultadoRotas.ResultadoRotasActivity">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:textColor="#95a4a6"
+                android:textColor="@color/color_primary3"
                 android:text="@string/resultado_da_busca_por_rotas"
                 android:id="@+id/tituloResultadoBuscaRotas"
                 android:gravity="center"
                 android:textSize="12dp"
-                android:background="#263646"
+                android:background="@color/color_primary"
                 android:textAlignment="center"/>
 
             <ListView

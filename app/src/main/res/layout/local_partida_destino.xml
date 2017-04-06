@@ -14,7 +14,39 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#ECECEC"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/linearLayout2">
 
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="30dp"
+                android:id="@+id/backfromlist3"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/logopref"
+                android:layout_gravity="right|center_vertical"/>
+
+            <ImageView
+                android:layout_width="166dp"
+                android:layout_height="33dp"
+                android:id="@+id/backfromlist"
+                android:layout_marginLeft="62dp"
+                android:background="@drawable/logoextended"
+                android:layout_gravity="left|center_vertical"/>
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="23dp"
+                android:id="@+id/backfromlist2"
+                android:layout_marginLeft="45dp"
+                android:background="@drawable/anso"
+                android:layout_gravity="left|center_vertical"/>
+
+
+        </LinearLayout>
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -88,7 +120,7 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:background="@drawable/touchpoint"
+                android:background="@drawable/touchpoint3"
                 android:rotation="180"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="30dp"/>
@@ -170,14 +202,15 @@
             android:text="@string/exibir_rotas"
             android:layout_gravity="center_horizontal"
             android:id="@+id/confirmarEndereco"
+            android:layout_marginTop="-10dp"
             android:background="@drawable/cornerborder" />
 
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:background="@drawable/touchpoint"
+            android:background="@drawable/touchpoint4"
             android:layout_marginTop="-5dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center" />
 
     </LinearLayout>
 </RelativeLayout>

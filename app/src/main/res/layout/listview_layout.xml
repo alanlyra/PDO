@@ -60,8 +60,8 @@
                 android:id="@+id/tempochegada"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="9dp"
-                android:textColor="@color/color_primary2"
+                android:textSize="10dp"
+                android:textColor="@color/light_gray_header_color"
                 android:layout_marginLeft="13dp" />
 
         </FrameLayout>

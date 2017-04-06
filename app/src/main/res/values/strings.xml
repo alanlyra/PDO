@@ -121,14 +121,15 @@
     <string name="tutorial6">SEARCH FOR NAME OR NUMBER OF THE LINE</string>
     <string name="skip">SKIP</string>
     <string name="concluido">DONE</string>
-    <string name="linhas_desse_ponto">LINHAS DESTE PONTO</string>
-    <string name="rotas_daqui">ROTAS A PARTIR DAQUI</string>
-    <string name="outras_linhas">OUTRAS LINHAS</string>
-    <string name="outras_rotas">OUTRAS ROTAS</string>
-    <string name="pesquisar_por_linha">PESQUISAR POR LINHA</string>
-    <string name="exibir_rotas">EXIBIR ROTAS</string>
-    <string name="detalhes_Itinerario_Abrir">Abrir Passo a Passo</string>
-    <string name="detalhes_Itinerario_Fechar">Fechar Passo a Passo</string>
-    <string name="inverter_sentido">Inverter Sentido</string>
-    <string name="clique_para_municipio">Clique para escolher município</string>
+    <string name="linhas_desse_ponto">LINES FROM THIS POINT</string>
+    <string name="rotas_daqui">ROUTES FROM HERE</string>
+    <string name="outras_linhas">OTHER LINES</string>
+    <string name="outras_rotas">OTHER ROUTES</string>
+    <string name="pesquisar_por_linha">SEACRH FOR LINE</string>
+    <string name="exibir_rotas">SHOW ROUTES</string>
+    <string name="detalhes_Itinerario_Abrir">Open Details</string>
+    <string name="detalhes_Itinerario_Fechar">Close Details</string>
+    <string name="inverter_sentido">Reverse Direction</string>
+    <string name="clique_para_municipio">Touch to select city</string>
+    <string name="buscar_por_linhas">SEARCH FOR LINES</string>
 </resources>

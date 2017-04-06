@@ -120,14 +120,15 @@
     <string name="tutorial6">BÚSQUEDA DE NOMBRE O NÚMERO DE LA LÍNEA</string>
     <string name="skip">SALTAR</string>
     <string name="concluido">LISTO</string>
-    <string name="linhas_desse_ponto">LINHAS DESTE PONTO</string>
-    <string name="rotas_daqui">ROTAS A PARTIR DAQUI</string>
-    <string name="outras_linhas">OUTRAS LINHAS</string>
-    <string name="outras_rotas">OUTRAS ROTAS</string>
-    <string name="pesquisar_por_linha">PESQUISAR POR LINHA</string>
-    <string name="exibir_rotas">EXIBIR ROTAS</string>
-    <string name="detalhes_Itinerario_Abrir">Abrir Passo a Passo</string>
-    <string name="detalhes_Itinerario_Fechar">Fechar Passo a Passo</string>
-    <string name="inverter_sentido">Inverter Sentido</string>
-    <string name="clique_para_municipio">Clique para escolher município</string>
+    <string name="linhas_desse_ponto">LÍNEAS DESTE PUNTO</string>
+    <string name="rotas_daqui">RUTAS DESDE AQUÍ</string>
+    <string name="outras_linhas">OTRAS LÍNEAS</string>
+    <string name="outras_rotas">OTRAS RUTAS</string>
+    <string name="pesquisar_por_linha">BÚSQUEDA DE LÍNEA</string>
+    <string name="exibir_rotas">MOSTRAR RUTAS</string>
+    <string name="detalhes_Itinerario_Abrir">Abrir Detalles</string>
+    <string name="detalhes_Itinerario_Fechar">Cerrar Detalles</string>
+    <string name="inverter_sentido">Direccion contraria</string>
+    <string name="clique_para_municipio">Toca para seleccionar ciudad</string>
+    <string name="buscar_por_linhas">BÚSQUEDA DE LÍNEAS</string>
 </resources>

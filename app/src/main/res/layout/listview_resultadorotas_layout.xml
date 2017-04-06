@@ -22,13 +22,15 @@
             android:id="@+id/rotaLayout"
             android:paddingTop="-10dp"
             android:layout_gravity="center"
-            android:background="#ADB1B6"
+            android:background="@color/color_primary3"
             android:layout_marginBottom="5dp">
 
+            <!--android:background="#ADB1B6"-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/rota_1"
+                android:textColor="@color/color_primary2"
                 android:id="@+id/numeroRota"
                 android:textSize="12dp"
                 android:layout_gravity="center"
@@ -67,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="1dp"
                     android:textSize="14dp"
-                    android:textColor="#f7f7f7"
+                    android:textColor="@color/color_primary3"
                     android:layout_marginTop="2dp"
                     android:paddingRight="3dp"
                     android:text="VISTA"/>
@@ -77,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10dp"
-                    android:textColor="#95a4a6"
+                    android:textColor="@color/light_gray_header_color"
                     android:text="@string/consorcio"
                     />
                 <TextView
@@ -122,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="1dp"
                     android:textSize="14dp"
-                    android:textColor="#f7f7f7"
+                    android:textColor="@color/color_primary3"
                     android:layout_marginTop="2dp"
                     android:paddingRight="3dp"
                     android:text="@string/vista"/>
@@ -132,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10dp"
-                    android:textColor="#95a4a6"
+                    android:textColor="@color/light_gray_header_color"
                     android:text="@string/consorcio"
                     />
                 <TextView
@@ -177,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="1dp"
                     android:textSize="14dp"
-                    android:textColor="#f7f7f7"
+                    android:textColor="@color/color_primary3"
                     android:layout_marginTop="2dp"
                     android:paddingRight="3dp"
                     android:text="@string/vista"/>
@@ -187,7 +189,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10dp"
-                    android:textColor="#95a4a6"
+                    android:textColor="@color/light_gray_header_color"
                     android:text="@string/consorcio"
                     />
 

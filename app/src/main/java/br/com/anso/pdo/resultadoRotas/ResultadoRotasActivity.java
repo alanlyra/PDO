@@ -136,10 +136,10 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
                 attachClickItemHandler(position, (LinearLayout) view.findViewById(R.id.itemLista));
 
                 if (position % 2 == 1) {
-                    view.setBackgroundResource(R.color.listview2);
+                    view.setBackgroundResource(R.color.color_primary2);
                 }
                 else if (position % 2 == 0) {
-                    view.setBackgroundResource(R.color.listview1);
+                    view.setBackgroundResource(R.color.color_primary4);
 
                 }
 
