@@ -1,5 +1,6 @@
 package br.com.anso.pdo.selecionarEndereco;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.LatLng;
 
 import br.com.anso.pdo.R;
+import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
@@ -160,7 +162,11 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
 
         Util.executaCallback("enderecoSelecionado", this);
 
-        super.onBackPressed();
+        Intent i;
+        i = new Intent(SelecionarEnderecoActivity.this, BuscaLinhaRotaActivity.class);
+        startActivity(i);
+
+        //super.onBackPressed();
     }
 
     public void setEnderecos(String endereco, String enderecoWS){

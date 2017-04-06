@@ -108,10 +108,10 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
                 attachClickItemHandler(linha.getRouteName(), linha.getServico(), (LinearLayout) view.findViewById(R.id.itemLista));
 
                 if (position % 2 == 1) {
-                    view.setBackgroundResource(R.color.listview2);
+                    view.setBackgroundResource(R.color.color_primary2);
                 }
                 else if (position % 2 == 0) {
-                    view.setBackgroundResource(R.color.listview1);
+                    view.setBackgroundResource(R.color.color_primary4);
 
                 }
 
@@ -143,7 +143,15 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
         optionsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(getActivity().getBaseContext(), popUp_btn);
+
+                app.setRouteNameExibirIitnerario(linha.getRouteName());
+                app.setServicoExibirIitnerario(linha.getServico());
+                app.setCorConsorcio(linha.getCorConsorcio());
+                Intent i;
+                i = new Intent(getActivity(), ItinerarioActivity.class);
+                startActivity(i);
+
+                /*PopupMenu popup = new PopupMenu(getActivity().getBaseContext(), popUp_btn);
 
                 try {
                     Field[] fields = popup.getClass().getDeclaredFields();
@@ -166,11 +174,11 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
 
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
-                            /*case R.id.favoritar:
+                            *//*case R.id.favoritar:
                                 favorito = new Favorito();
                                 favorito.atualizaFavoritos(getBaseContext(), linha);
 
-                                return true;*/
+                                return true;*//*
                             case R.id.itinerario:
                                 app.setRouteNameExibirIitnerario(linha.getRouteName());
                                 app.setServicoExibirIitnerario(linha.getServico());
@@ -185,7 +193,7 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
                     }
                 });
 
-                popup.show();
+                popup.show();*/
             }
         });
 

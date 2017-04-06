@@ -53,7 +53,7 @@ public class ResultadoListaItinerarioPresenter implements IResultadoListaItinera
 
         int[] options = new int[qtdResultLinhas];
         for(int i = 0; i < qtdResultLinhas; i++)
-            options[i] = R.drawable.more;
+            options[i] = R.drawable.touchpoint;
 
         List<HashMap<String, String>> aList = new ArrayList<>();
 

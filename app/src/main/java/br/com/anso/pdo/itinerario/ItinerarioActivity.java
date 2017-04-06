@@ -99,6 +99,8 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
         detalhesItinerario = (Button) findViewById(R.id.botaoDeItinerario);
 
 
+
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 

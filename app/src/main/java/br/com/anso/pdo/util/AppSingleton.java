@@ -46,6 +46,7 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
     private String idPonto="";
     private String enderecoPonto="";
     private String corConsorcio="";
+    private String localDestinoRota="";
 
     private JSONArray listaLinhas = new JSONArray();
     private JSONArray listaRotas = new JSONArray();
@@ -331,6 +332,14 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
 
     public String getEnderecoDestinoWS(){
         return enderecoDestinoWS;
+    }
+
+    public void setlocalDestinoRota (String localDestinoRota ) {
+        this.localDestinoRota = localDestinoRota;
+    }
+
+    public String getLocalDestinoRota(){
+        return this.localDestinoRota;
     }
 }
 

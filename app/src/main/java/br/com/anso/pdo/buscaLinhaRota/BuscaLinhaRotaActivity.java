@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.com.anso.pdo.R;
+import br.com.anso.pdo.principal.ExibeOnibusProximosFragment;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Util;
 import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
@@ -25,10 +27,12 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
     private Tab2Fragment tab2;
     private AppSingleton app = AppSingleton.getApp();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.busca_linha_rota);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -73,7 +77,19 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
                 tab1 = (Tab1Fragment) adapter.getItem(0);
                 tab2 = (Tab2Fragment) adapter.getItem(1);
 
+
                 viewPager.setCurrentItem(app.getAbaDefault());
+
+                viewPager.setOnTouchListener(new View.OnTouchListener()
+                {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event)
+                    {
+                        return true;
+                    }
+                });
+
+                //localDestinoLinhasRotas.setText(app.getLocalDestinoRota());
             }
         }
     }

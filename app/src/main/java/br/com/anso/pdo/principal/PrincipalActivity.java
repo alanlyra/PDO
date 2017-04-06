@@ -68,10 +68,10 @@ public class PrincipalActivity extends VDOAppCompatActivity implements Navigatio
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         tab1 = new ExibeOnibusProximosFragment();
-        tab2 = new ExibePontosProximosFragment();
+        //tab2 = new ExibePontosProximosFragment();
 
         adapter.addFragment(tab1, getResources().getString(R.string.titulo_tab_linhas));
-        adapter.addFragment(tab2, getResources().getString(R.string.titulo_tab_pontos));
+        //adapter.addFragment(tab2, getResources().getString(R.string.titulo_tab_pontos));
         viewPager.setAdapter(adapter);
         criaMenu();
     }

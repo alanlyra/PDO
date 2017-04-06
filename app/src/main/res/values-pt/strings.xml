@@ -129,5 +129,6 @@
     <string name="detalhes_Itinerario_Abrir">Abrir Passo a Passo</string>
     <string name="detalhes_Itinerario_Fechar">Fechar Passo a Passo</string>
     <string name="inverter_sentido">Inverter Sentido</string>
+    <string name="clique_para_municipio">Clique para escolher município</string>
 
 </resources>

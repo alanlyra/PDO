@@ -36,7 +36,6 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
 
         presenter = new ResultadoRotasPresenter(this);
 
-
         TextView tituloTextView = (TextView) findViewById(R.id.tituloResultadoBuscaRotas);
         listView = (ListView) findViewById(R.id.list);
 

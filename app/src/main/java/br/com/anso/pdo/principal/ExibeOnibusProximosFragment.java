@@ -21,6 +21,7 @@ import android.widget.PopupMenu;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -135,7 +136,36 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         rotasdaqui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                definirPosicaoAtual();
+                //localDestinoLinhasRotas = (TextView) view.findViewById(R.id.localDestinoLinhasRotas);
+                Util.selecionarLocal(getContext(), getResources().getString(R.string.definir_local_destino), new Util.ISetTextCallBack() {
+                    @Override
+                    public void setText(String value) {
+                        String municipio = "";
+                        if(Util.nonBlank(value))
+                            municipio = " - " + appSingleton.getMunicipios().get(appSingleton.getIndexMunicipioDestino());
+
+                        appSingleton.setAbaDefault(1);
+                        appSingleton.setlocalDestinoRota(value.concat(municipio));
+                        //localDestinoLinhasRotas.setText( value.concat(municipio));
+                        appSingleton.setEnderecoDestino( value, appSingleton.getEnderecoDestinoWS() );
+                        appSingleton.setEnderecoDestino(appSingleton.getEnderecoDestinoExibicao(), value);
+
+                        atual = true;
+                        String pontoWS = "POINT(";
+                        double lat = getPosicao().latitude;
+                        double lon = getPosicao().longitude;
+                        pontoWS=pontoWS+lon+" "+lat+")";
+                        enderecoSelecionado(pontoWS);
+                        if(partida) {
+                            appSingleton.setEnderecoOrigem(enderecoAtual, pontoWS);
+                        }
+                        else{
+                            appSingleton.setEnderecoDestino(enderecoAtual, pontoWS);
+                        }
+
+                    }
+                });
+
             }
         });
 
@@ -234,7 +264,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 return false;
             }
         });*/
-
         return view;
     }
 
@@ -304,7 +333,16 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         frameoptions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(getActivity().getBaseContext(), popUp_btn);
+
+                appSingleton.setRouteNameExibirIitnerario(linha.getRouteName());
+                appSingleton.setServicoExibirIitnerario(linha.getServico());
+                appSingleton.setCorConsorcio(linha.getCorConsorcio());
+                Intent i;
+                i = new Intent(getActivity(), ItinerarioActivity.class);
+                startActivity(i);
+
+
+                /*PopupMenu popup = new PopupMenu(getActivity().getBaseContext(), popUp_btn);
 
                 try {
                     Field[] fields = popup.getClass().getDeclaredFields();
@@ -328,11 +366,11 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                     public boolean onMenuItemClick(MenuItem item) {
 
                         switch (item.getItemId()) {
-                           /* case R.id.favoritar:
+                           *//* case R.id.favoritar:
                                 favorito = new Favorito();
                                 favorito.atualizaFavoritos(getContext(), linha);
 
-                                return true;*/
+                                return true;*//*
                             case R.id.itinerario:
                                 appSingleton.setRouteNameExibirIitnerario(linha.getRouteName());
                                 appSingleton.setServicoExibirIitnerario(linha.getServico());
@@ -347,7 +385,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                     }
                 });
 
-                popup.show();
+                popup.show();*/
             }
         });
     }
@@ -407,10 +445,8 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                             snippet.setText(Html.fromHtml(marker.getSnippet()));
                             info.addView(snippet);
                         }
-
                         return info;
                     }
-
                     return null;
                 }
             });
@@ -421,12 +457,15 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 l.setMarkerOptions(getResources(), this.getContext());
                 Marker b = googleMap.addMarker(l.getMarker());//marcador das onibus proximos
                 busMarkers.add(b);
+                //b.showInfoWindow();
             }
 
             appSingleton.setNumeroOnibusProximos(lista.size());
             PrincipalActivity.numeroLinhasProximas.setText(String.valueOf(appSingleton.getNumeroOnibusProximos()));
 
         }
+       /* for(int i =0;i<busMarkers.size();i++)
+            busMarkers.get(i).showInfoWindow();*/
     }
 
     @Override
@@ -464,6 +503,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
         userMaker = googleMap.addMarker(usuario.getMarker().draggable(true));//marcador do usuário
 
+
         presenter.carregarLinhasProximas(posicaoUsuario, this.getContext());
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posicaoUsuario, 15));
     }
@@ -497,10 +537,10 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
         Util.executaCallback("enderecoSelecionado", this);
 
-        appSingleton.setAbaDefault(1);
+       /* appSingleton.setAbaDefault(1);
         Intent i;
         i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), BuscaLinhaRotaActivity.class);
-        startActivity(i);
+        startActivity(i);*/
     }
 
     public void setEnderecos(String endereco, String enderecoWS){

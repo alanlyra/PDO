@@ -39,6 +39,9 @@ public class Tab2Fragment extends Fragment {
             localDestinoLinhasRotas.setText(app.getEnderecoDestinoExibicao().concat(municipioDestino));
         }
 
+        if(app.getAbaDefault()==1)
+            pesquisarRotas(inflatedView);
+
         return inflatedView;
     }
 
