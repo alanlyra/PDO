@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:background="#2c3e50"
+        android:background="@color/color_primary3"
         android:id="@+id/frameLayout"
         android:layout_below="@+id/linearLayout2"
         android:layout_alignParentLeft="true"

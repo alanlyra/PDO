@@ -77,6 +77,9 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     private boolean partida = true;
     private boolean atual = false;
     private String enderecoAtual;
+    private ImageView icon1;
+    private ImageView icon2;
+    private ImageView icon3;
 
     private AppSingleton appSingleton = AppSingleton.getApp();
     private Usuario usuario;
@@ -108,6 +111,13 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         //outrasrotas = (Button) view.findViewById(R.id.outrasrotas);
         backfromlist = (ImageView) view.findViewById(R.id.backfromlist);
         layout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layouttab1);
+        icon1 = (ImageView) view.findViewById(R.id.icon1);
+        icon2 = (ImageView) view.findViewById(R.id.icon2);
+        icon3 = (ImageView) view.findViewById(R.id.icon3);
+
+        icon1.bringToFront();
+        icon2.bringToFront();
+        icon3.bringToFront();
 
         enderecoAtual = getResources().getString(R.string.localizacao_atual);
 

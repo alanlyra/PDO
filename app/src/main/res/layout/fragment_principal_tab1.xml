@@ -63,6 +63,16 @@
                     android:alpha="0.8"
                     android:paddingRight="10dp"/>
 
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/icon1"
+                    android:layout_gravity="left|bottom"
+                    android:padding="0dp"
+                    android:layout_marginBottom="115dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@drawable/bus4"/>
+
                 <Button
                     android:layout_width="250dp"
                     android:layout_height="37dp"
@@ -79,6 +89,16 @@
                     android:alpha="0.8"
                     android:paddingRight="10dp"/>
 
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/icon2"
+                    android:layout_gravity="left|bottom"
+                    android:padding="0dp"
+                    android:layout_marginBottom="70dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@drawable/routeroad"/>
+
                 <Button
                     android:layout_width="250dp"
                     android:layout_height="37dp"
@@ -94,6 +114,16 @@
                     android:background="@drawable/bordermenu"
                     android:alpha="0.8"
                     android:paddingRight="10dp"/>
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:id="@+id/icon3"
+                    android:layout_gravity="left|bottom"
+                    android:padding="0dp"
+                    android:layout_marginBottom="27dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@drawable/search"/>
 
               <!--  <Button
                     android:layout_width="220dp"
@@ -233,9 +263,9 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@color/listview1"
+                android:background="@color/color_primary3"
                 android:id="@+id/buscarlinhaserotas">
 
                 <ImageView
@@ -254,9 +284,9 @@
                     android:text="@string/linhas_desse_ponto"
                     android:id="@+id/textView4"
                     android:textColor="@color/color_primary"
-                    android:layout_gravity="left|center_vertical"
-                    android:textSize="12dp"
-                    android:layout_marginLeft="55dp" />
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12dp" />
             </FrameLayout>
 
             <ListView
