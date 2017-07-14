@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ import com.google.android.gms.maps.model.LatLng;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
+import br.com.anso.pdo.principal.ExibeOnibusProximosFragment;
+import br.com.anso.pdo.principal.PrincipalActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
@@ -34,6 +37,8 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
     private boolean atual = false;
     private String enderecoAtual;
     private LinearLayout clear;
+    private ImageView back;
+
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -52,7 +57,7 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
 
         partida = titulo != null && titulo.toUpperCase().contains("PARTIDA");
 
-
+        back = (ImageView) findViewById(R.id.backToPrincipal);
         acTextView = (AutoCompleteEnderecoWidget) findViewById(R.id.autoComplete);
         if(acTextView!=null) acTextView.setThreshold(2);//busca a partir da terceira letra
 
@@ -116,7 +121,16 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
                 }
             });
         }
-        
+
+        back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i;
+                        i = new Intent(SelecionarEnderecoActivity.this, PrincipalActivity.class);
+                        startActivity(i);
+                    }
+        });
+
         constroiListaMunicipios(this.partida);
     }
 
@@ -178,9 +192,9 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
         }
     }
 
-    public void voltar(View view){
+    /*public void voltar(View view){
         super.onBackPressed();
-    }
+    }*/
 
     @Override
     public String getEndereco() {

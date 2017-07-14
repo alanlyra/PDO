@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
@@ -77,6 +79,7 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
     private Usuario usuario;
     private Timer timer = null;
     private int DELAY   = 280;
+    private ImageView click5;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -97,9 +100,8 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
         corConsorcio = (LinearLayout) findViewById(R.id.flag_itinerario);
         layout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layoutItinerario);
         detalhesItinerario = (Button) findViewById(R.id.botaoDeItinerario);
-
-
-
+        click5 = (ImageView) findViewById(R.id.click5);
+        click5.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -126,6 +128,10 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
         }
 
     }
+
+
+
+
 
     public void InverterPartidaeDestino(View v) {
 

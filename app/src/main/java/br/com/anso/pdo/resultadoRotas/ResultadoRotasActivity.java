@@ -6,19 +6,25 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.HashMap;
 import java.util.List;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.rota.RotaActivity;
+import br.com.anso.pdo.selecionarEndereco.SelecionarEnderecoActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Consulta;
 import br.com.anso.pdo.util.ConsultaFactory;
+import br.com.anso.pdo.util.Usuario;
+import br.com.anso.pdo.util.Util;
 
 public class ResultadoRotasActivity extends Activity implements IResultadoRotasView {
 
@@ -28,6 +34,11 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
     private ListView listView;
     private LinearLayout emptyView;
     private LinearLayout bar;
+    private boolean atual = false;
+    private boolean partida = true;
+    private String enderecoAtual;
+    private String endereco = "";
+    private ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +54,84 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
 
         bar = (LinearLayout) this.findViewById(R.id.barLinear);
         bar.setVisibility(View.VISIBLE);
+        back = (ImageView) findViewById(R.id.backToAdress);
+
+        enderecoAtual = getResources().getString(R.string.localizacao_atual);
 
         Consulta c = ConsultaFactory.construirConsulta();
 
         tituloTextView.setText(getResources().getString(R.string.origem).concat(" ").concat(app.getEnderecoOrigemExibicao()).concat(" - ").concat(app.getMunicipios().get(app.getIndexMunicipioOrigem())).concat("\n").
                                concat(getResources().getString(R.string.destino)).concat(" ").concat(app.getEnderecoDestinoExibicao()).concat(" - ").concat(app.getMunicipios().get(app.getIndexMunicipioDestino())));
 
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //localDestinoLinhasRotas = (TextView) view.findViewById(R.id.localDestinoLinhasRotas);
+                Util.selecionarLocal(ResultadoRotasActivity.this, getResources().getString(R.string.definir_local_destino), new Util.ISetTextCallBack() {
+                    @Override
+                    public void setText(String value) {
+                        String municipio = "";
+                        if(Util.nonBlank(value))
+                            municipio = " - " + app.getMunicipios().get(app.getIndexMunicipioDestino());
+
+                        app.setAbaDefault(1);
+                        app.setlocalDestinoRota(value.concat(municipio));
+                        //localDestinoLinhasRotas.setText( value.concat(municipio));
+                        app.setEnderecoDestino( value, app.getEnderecoDestinoWS() );
+                        app.setEnderecoDestino(app.getEnderecoDestinoExibicao(), value);
+
+                        atual = true;
+                        String pontoWS = "POINT(";
+                        double lat = getPosicao().latitude;
+                        double lon = getPosicao().longitude;
+                        pontoWS=pontoWS+lon+" "+lat+")";
+                        enderecoSelecionado(pontoWS);
+                        if(partida) {
+                            app.setEnderecoOrigem(enderecoAtual, pontoWS);
+                        }
+                        else{
+                            app.setEnderecoDestino(enderecoAtual, pontoWS);
+                        }
+
+                    }
+
+                    public LatLng getPosicao(){
+                        return Usuario.getInstance().getPosicao();
+                    }
+
+
+                    public void enderecoSelecionado(String selecionado) {
+
+
+                        endereco = selecionado;
+                        setEnderecos(endereco,endereco);
+
+                        Util.executaCallback("enderecoSelecionado", this);
+
+                    }
+
+                    public void setEnderecos(String endereco, String enderecoWS){
+                        if(partida) {
+                            app.setEnderecoOrigem(endereco, enderecoWS);
+                        }
+                        else{
+                            app.setEnderecoDestino(endereco, enderecoWS);
+                        }
+                    }
+                });
+
+            }
+        });
+
+
         presenter.pesquisarRotas(c, this.getBaseContext());
     }
 
-    public void voltar(View view){
-        super.onBackPressed();
-    }
+
+
+
+
 
     @Override
     public void setErroTimeout(String msg){
@@ -165,6 +242,9 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
             }
         });
     }
+
+
+
 
     private void exibirLoadingListaResultado(){
         listView.setVisibility(View.GONE);
