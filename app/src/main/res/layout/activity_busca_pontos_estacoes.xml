@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2c3e50"
+    android:background="#002F3F"
     tools:context="br.com.anso.pdo.buscaPontosEstacoes.BuscaPontosEstacoesActivity">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:background="#2c3e50">
+            android:background="#002F3F">
 
             <LinearLayout
                 android:layout_height="match_parent"

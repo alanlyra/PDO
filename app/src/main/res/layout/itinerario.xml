@@ -174,11 +174,11 @@
                         android:gravity="center"
                         android:id="@+id/sentido"
                         android:layout_marginTop="-20dp"
-                        android:textColor="#2c3e50"
+                        android:textColor="#002F3F"
                         android:text="Sentido"
                         android:layout_gravity="center"
                         android:textSize="12dp"
-                        android:textColorHint="#2c3e50"
+                        android:textColorHint="#002F3F"
                         android:textIsSelectable="true"
                         android:textAlignment="center"
                         android:singleLine="false" />

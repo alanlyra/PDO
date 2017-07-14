@@ -75,7 +75,7 @@ public class ResultadoRotasPresenter implements IResultadoRotasView.IResultadoRo
                         }
 
                         double tempoViagem = v.optDouble("tempoViagem");
-                        String tempoViagemStr = Util.converterMinutosParaTempoViagem(tempoViagem, context);
+                        String tempoViagemStr = Util.converterMinutosParaTempoViagemCompleto(tempoViagem, context);
 
                         map.put("tempoviagem"+embarque, tempoViagemStr);
                         String numTransbordo = embarque > 1 ? context.getResources().getString(R.string.onibusPlural) : context.getResources().getString(R.string.onibus);

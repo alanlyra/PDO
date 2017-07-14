@@ -24,13 +24,13 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main_menu"
         app:menu="@menu/activity_main_menu_drawer"
-        android:background="#2c3e50"
+        android:background="#002F3F"
         android:textColor="#009FD6">
 
         <FrameLayout
             android:layout_width="19dp"
             android:layout_height="19dp"
-            android:background="#2c3e50"
+            android:background="#002F3F"
             android:layout_marginTop="176dp"
             android:layout_gravity="right"
             android:layout_marginRight="20dp">
@@ -82,7 +82,7 @@
                 android:layout_gravity="start"
                 android:fitsSystemWindows="true"
                 app:menu="@menu/activity_main_menu_drawer_part3"
-                android:background="#2c3e50"
+                android:background="#002F3F"
                 android:textColor="#009FD6"
                 android:layout_marginLeft="57dp"
                 app:elevation="0.1dp" />
@@ -94,7 +94,7 @@
                 android:layout_gravity="start"
                 android:fitsSystemWindows="true"
                 app:menu="@menu/activity_main_menu_drawer_part2"
-                android:background="#2c3e50"
+                android:background="#002F3F"
                 android:textColor="#009FD6"
                 app:elevation="0.1dp" />-->
 

@@ -230,7 +230,7 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
                 }
             }
 
-            PolylineOptions options = new PolylineOptions().width(10).color(Color.parseColor("#2c3e50")).geodesic(true);
+            PolylineOptions options = new PolylineOptions().width(10).color(Color.parseColor("#002F3F")).geodesic(true);
 
             if(itinerariosJSON!=null){
                 for (int i = 0; i < itinerariosJSON.length(); i++) {

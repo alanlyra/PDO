@@ -5,8 +5,10 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,6 +25,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import org.json.JSONException;
 
@@ -60,6 +63,11 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
     private ArrayAdapter adapter;
     private ArrayList<String> aList;
 
+    private SlidingUpPanelLayout layout;
+    private Button detalhesRota;
+
+    private ImageView click4;
+
     private HashMap<Integer, RecursoMapaObject> associacaoListaObjeto;
 
     private Usuario usuario;
@@ -71,6 +79,8 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
         listView = (ListView) findViewById(R.id.list);
 
         layoutLinhaSelecionada = (LinearLayout) findViewById(R.id.layoutViagemSelecionada);
+        layout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layoutRota);
+        detalhesRota = (Button) findViewById(R.id.botaoDeRotaDetalhes);
 
         bar = (LinearLayout) this.findViewById(R.id.barLinear);
         if(bar!=null) bar.setVisibility(View.VISIBLE);
@@ -78,6 +88,8 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
                 .findFragmentById(R.id.map);
 
         tempoViagem = (TextView) findViewById(R.id.tempoViagem);
+        click4 = (ImageView) findViewById(R.id.click4);
+        click4.startAnimation(AnimationUtils.loadAnimation(RotaActivity.this, R.anim.flicker));
 
         onibusRota = new ArrayList<>();
         caminhadaRota = new ArrayList<>();
@@ -149,50 +161,61 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
             ArrayList<Polyline> polylines = new ArrayList<>();
             LatLngBounds.Builder itemBounds = new LatLngBounds.Builder();
 
+
             if(v.getTipoTransporte().equals("Caminhada")) { // VIAGEM É UMA CAMINHADA
 
-                ultimaViagemIsCaminhada = true;
+                if(v.getDistancia()>200){  //SOMENTE INSERE CAMINHADAS ACIMA DE 200m
 
-                if(v.getPolylines().size() > 0) {
-                    for(ArrayList<LatLng> l : v.getDecodedPolyline()) {
-                        for(LatLng place : l) {
-                            itemBounds.include(place);
-                            geralBounds.include(place);
+                    ultimaViagemIsCaminhada = true;
+
+                    if(v.getPolylines().size() > 0) {
+                        for(ArrayList<LatLng> l : v.getDecodedPolyline()) {
+                            for(LatLng place : l) {
+                                itemBounds.include(place);
+                                geralBounds.include(place);
+                            }
+
+                            // Adicionando Polyline ao Mapa
+                            Polyline p = googleMap.addPolyline(new PolylineOptions().addAll(l).width(10).color(Color.parseColor(CaminhadaRotaObject.COR_LINE_CAMINHADA)).geodesic(true));
+
+                            polylines.add(p);
                         }
-
-                        // Adicionando Polyline ao Mapa
-                        Polyline p = googleMap.addPolyline(new PolylineOptions().addAll(l).width(10).color(Color.parseColor(CaminhadaRotaObject.COR_LINE_CAMINHADA)).geodesic(true));
-
-                        polylines.add(p);
                     }
+
+                    int listPosition = aList.size();
+                    aList.add(getResources().getString(R.string.caminhe) + " "+(int) v.getDistancia() + " "+getResources().getString(R.string.metros_ate) + " "+construirTextoEndereco(v.getPontoDestino().getLogradouro(),
+                                                                                                                          v.getPontoDestino().getNumero(),
+                                                                                                                          v.getPontoDestino().getReferencia()));
+
+                    Marker origemDestinoMarkers[] = new Marker[2];
+
+                    origemDestinoMarkers[0] = googleMap.addMarker(new MarkerOptions()
+                                                                    .position(origem.getCoordenadas())
+                                                                    .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(getResources(), R.drawable.circle1, 26, 26)))
+                                                                    .title(construirTextoEndereco(origem.getLogradouro(), origem.getNumero(), origem.getReferencia()))
+                                                                    .anchor((float) 0.5, (float) 0.5));
+
+                    origemDestinoMarkers[1] = googleMap.addMarker(new MarkerOptions()
+                                                                    .position(v.getPontoDestino().getCoordenadas())
+                                                                    .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(getResources(), R.drawable.circle1, 26, 26)))
+                                                                    .title(construirTextoEndereco(v.getPontoDestino().getLogradouro(), v.getPontoDestino().getNumero(), v.getPontoDestino().getReferencia()))
+                                                                    .anchor((float) 0.5, (float) 0.5));
+
+                    Button button = caminhadaButtons.get(caminhada_i);
+                    CaminhadaRotaObject c = new CaminhadaRotaObject(v, polylines, origemDestinoMarkers, listPosition, itemBounds.build(), button, this, tempoViagem, googleMap, layoutLinhaSelecionada, listView);
+
+                    associacaoListaObjeto.put(listPosition, c);
+
+                    caminhadaRota.add(c);
+                    caminhada_i++;
+
+                    if(transicao_i > 5)
+                        transicaoImageViews.get(transicao_i-1).setVisibility(View.VISIBLE);
+                    else
+                        transicaoImageViews.get(transicao_i).setVisibility(View.VISIBLE);
+                    transicao_i++;
+                    origem = v.getPontoDestino();
                 }
-
-                int listPosition = aList.size();
-                aList.add(getResources().getString(R.string.caminhe) + " "+(int) v.getDistancia() + " "+getResources().getString(R.string.metros_ate) + " "+construirTextoEndereco(v.getPontoDestino().getLogradouro(),
-                                                                                                                      v.getPontoDestino().getNumero(),
-                                                                                                                      v.getPontoDestino().getReferencia()));
-
-                Marker origemDestinoMarkers[] = new Marker[2];
-
-                origemDestinoMarkers[0] = googleMap.addMarker(new MarkerOptions()
-                                                                .position(origem.getCoordenadas())
-                                                                .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(getResources(), R.drawable.circle1, 26, 26)))
-                                                                .title(construirTextoEndereco(origem.getLogradouro(), origem.getNumero(), origem.getReferencia()))
-                                                                .anchor((float) 0.5, (float) 0.5));
-
-                origemDestinoMarkers[1] = googleMap.addMarker(new MarkerOptions()
-                                                                .position(v.getPontoDestino().getCoordenadas())
-                                                                .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(getResources(), R.drawable.circle1, 26, 26)))
-                                                                .title(construirTextoEndereco(v.getPontoDestino().getLogradouro(), v.getPontoDestino().getNumero(), v.getPontoDestino().getReferencia()))
-                                                                .anchor((float) 0.5, (float) 0.5));
-
-                Button button = caminhadaButtons.get(caminhada_i);
-                CaminhadaRotaObject c = new CaminhadaRotaObject(v, polylines, origemDestinoMarkers, listPosition, itemBounds.build(), button, this, tempoViagem, googleMap, layoutLinhaSelecionada, listView);
-
-                associacaoListaObjeto.put(listPosition, c);
-
-                caminhadaRota.add(c);
-                caminhada_i++;
             }
 
             else{   // VIAGEM É ÔNIBUS/TREM/METRÔ/ETC.
@@ -251,14 +274,15 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
                     transicao_i++;
                 }
                 ultimaViagemIsCaminhada = false;
+
+                if(transicao_i > 5)
+                    transicaoImageViews.get(transicao_i-1).setVisibility(View.VISIBLE);
+                else
+                    transicaoImageViews.get(transicao_i).setVisibility(View.VISIBLE);
+                transicao_i++;
+                origem = v.getPontoDestino();
             }
 
-            if(transicao_i > 5)
-                transicaoImageViews.get(transicao_i-1).setVisibility(View.VISIBLE);
-            else
-                transicaoImageViews.get(transicao_i).setVisibility(View.VISIBLE);
-            transicao_i++;
-            origem = v.getPontoDestino();
         }
 
         if(transicao_i > 0 && transicao_i <=6)
@@ -278,13 +302,26 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
 
     }
 
+    public void MostrarDetalhesRota (View v){
+        if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED){
+            layout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+            detalhesRota.setText(R.string.detalhes_Itinerario_Abrir);
+        }
+        if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED){
+            layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+            detalhesRota.setText(R.string.detalhes_Itinerario_Fechar);
+        }
+
+    }
     private void selecionarPrimeiraViagem(Rota rota) {
-        if(rota.getViagens().get(0).getTipoTransporte().equals("Caminhada")){
+
+        onibusButtons.get(0).performClick(); //Inicia com o Onibus (Otimizar mais tarde)
+        /*if(rota.getViagens().get(0).getTipoTransporte().equals("Caminhada")){
             caminhadaButtons.get(0).performClick();
         }
         else{
             onibusButtons.get(0).performClick();
-        }
+        }*/
     }
 
     private String construirTextoEndereco(String logradouro, String numero, String referencia) {

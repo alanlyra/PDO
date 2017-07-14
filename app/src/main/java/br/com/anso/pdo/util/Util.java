@@ -128,6 +128,32 @@ public class Util {
             int hrs = (int) tempoViagem / 60;
             int min = (int) tempoViagem % 60;
 
+            if(hrs>=1)
+                str += hrs + "h";
+            else if(min>=0)
+                str += min;
+
+            /*str += (hrs > 0 ? hrs + " h " : "");
+            str += (min > 0 ? min + " min " : "");*/
+
+            //str += context.getResources().getString(R.string.tempo_viagem_parte2);
+        }
+
+        return str;
+    }
+
+    public static String converterMinutosParaTempoViagemCompleto(double tempoViagem, Context context) {
+        String str = "";
+
+        if(tempoViagem <= 0){
+            str = "N/D";
+        }
+        else if (tempoViagem > 0 && tempoViagem < 1) {
+            str = context.getResources().getString(R.string.tempo_viagem_parte1);//"Tempo de viagem N/D";
+        } else {
+            int hrs = (int) tempoViagem / 60;
+            int min = (int) tempoViagem % 60;
+
             str += (hrs > 0 ? hrs + " h " : "");
             str += (min > 0 ? min + " min " : "");
 

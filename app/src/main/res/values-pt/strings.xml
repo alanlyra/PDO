@@ -131,5 +131,6 @@
     <string name="inverter_sentido">Inverter Sentido</string>
     <string name="clique_para_municipio">Toque para escolher município</string>
     <string name="buscar_por_linhas">BUSCAR POR LINHAS</string>
+    <string name="clique_para_visualizar">Toque para visualizar a rota</string>
 
 </resources>

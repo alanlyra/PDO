@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:background="#2c3e50">
+        android:background="#002F3F">
 
         <LinearLayout
             android:layout_height="match_parent"
@@ -45,18 +45,18 @@
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:sothree="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/sliding_layout"
+        android:id="@+id/sliding_layoutRota"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
         android:gravity="bottom"
-        sothree:umanoPanelHeight="70dp"
+        sothree:umanoPanelHeight="104dp"
         sothree:umanoParallaxOffset="100dp"
         sothree:umanoShadowHeight="0dp"
         sothree:umanoScrollableView="@+id/listlinhasdoponto"
         sothree:umanoAnchorPoint="1"
         sothree:umanoFadeColor="@android:color/transparent"
-        sothree:umanoInitialState="anchored"
+        sothree:umanoInitialState="collapsed"
         >
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
@@ -90,14 +90,14 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_height="105dp"
                 android:layout_gravity="top"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:background="@color/listview1"
+                    android:background="@color/color_primary2"
                     android:id="@+id/layoutViagemSelecionada">
 
                     <LinearLayout
@@ -119,10 +119,10 @@
                             android:textColorHint="#95a4a6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingTop="7dp"
+                            android:paddingTop="2dp"
                             android:layout_marginLeft="10dp"
                             android:textSize="16dp"
-                            android:textColor="#f7f7f7"
+                            android:textColor="@color/color_primary3"
                             android:layout_marginTop="2dp"
                             android:text="" />
 
@@ -133,9 +133,24 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="11dp"
-                            android:textColor="#95a4a6"
+                            android:textColor="@color/color_primary3"
                             android:layout_gravity="left|center_vertical"
                             android:layout_marginLeft="10dp"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="22dp"
+                            android:layout_marginTop="-29dp"
+                            android:id="@+id/botaoDeRotaDetalhes"
+                            android:text="@string/detalhes_Itinerario_Abrir"
+                            android:textSize="9dp"
+                            android:background="@drawable/cornerborder"
+                            android:textColor="@color/color_primary1"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="right"
+                            android:onClick="MostrarDetalhesRota"
+                            android:visibility="visible"
+                            android:layout_weight="0.02" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -143,7 +158,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_marginTop="45dp"
-                    android:background="@color/listview2"
+                    android:background="@color/color_primary3"
                     android:orientation="horizontal"
                     android:paddingLeft="10dp">
                     
@@ -156,8 +171,8 @@
                         android:visibility="gone"
                         />
                     <Button
-                        android:layout_width="12dp"
-                        android:layout_height="3dp"
+                        android:layout_width="16dp"
+                        android:layout_height="9dp"
                         android:background="@drawable/more_2"
                         android:layout_margin="3dp"
                         android:layout_gravity="center_vertical"
@@ -171,8 +186,8 @@
                         android:id="@+id/onibus_0"
                         android:visibility="gone"/>
                     <Button
-                        android:layout_width="12dp"
-                        android:layout_height="3dp"
+                        android:layout_width="16dp"
+                        android:layout_height="9dp"
                         android:background="@drawable/more_2"
                         android:layout_margin="3dp"
                         android:layout_gravity="center_vertical"
@@ -186,8 +201,8 @@
                         android:id="@+id/caminhada_1"
                         android:visibility="gone"/>
                     <Button
-                        android:layout_width="12dp"
-                        android:layout_height="3dp"
+                        android:layout_width="16dp"
+                        android:layout_height="9dp"
                         android:background="@drawable/more_2"
                         android:layout_margin="3dp"
                         android:layout_gravity="center_vertical"
@@ -201,8 +216,8 @@
                         android:id="@+id/onibus_1"
                         android:visibility="gone"/>
                     <Button
-                        android:layout_width="12dp"
-                        android:layout_height="3dp"
+                        android:layout_width="16dp"
+                        android:layout_height="9dp"
                         android:background="@drawable/more_2"
                         android:layout_margin="3dp"
                         android:layout_gravity="center_vertical"
@@ -216,8 +231,8 @@
                         android:id="@+id/caminhada_2"
                         android:visibility="gone"/>
                     <Button
-                        android:layout_width="12dp"
-                        android:layout_height="3dp"
+                        android:layout_width="16dp"
+                        android:layout_height="9dp"
                         android:background="@drawable/more_2"
                         android:layout_margin="3dp"
                         android:layout_gravity="center_vertical"
@@ -231,8 +246,8 @@
                         android:id="@+id/onibus_2"
                         android:visibility="gone"/>
                     <Button
-                        android:layout_width="12dp"
-                        android:layout_height="3dp"
+                        android:layout_width="16dp"
+                        android:layout_height="9dp"
                         android:background="@drawable/more_2"
                         android:layout_margin="3dp"
                         android:layout_gravity="center_vertical"
@@ -254,6 +269,35 @@
                         android:text=""
                         android:textColor="@color/color_primary"
                         android:gravity="center_vertical"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="75dp"
+                    android:background="@color/color_primary3"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp">
+
+                    <ImageView
+                        android:id="@+id/click4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/touchpoint3"
+                        android:repeatCount="infinite"
+                        android:duration="6000"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="3dp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/clique_para_visualizar"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/not_selected_tab_color"/>
+
                 </LinearLayout>
 
             </RelativeLayout>

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -80,6 +81,15 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     private ImageView icon1;
     private ImageView icon2;
     private ImageView icon3;
+    private ImageView minORhour;
+    private ImageView click1;
+    private ImageView click2;
+    private ImageView click3;
+    private ImageView clock;
+    private ImageView min;
+
+
+
 
     private AppSingleton appSingleton = AppSingleton.getApp();
     private Usuario usuario;
@@ -114,6 +124,12 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         icon1 = (ImageView) view.findViewById(R.id.icon1);
         icon2 = (ImageView) view.findViewById(R.id.icon2);
         icon3 = (ImageView) view.findViewById(R.id.icon3);
+        click1 = (ImageView) view.findViewById(R.id.click1);
+        click2 = (ImageView) view.findViewById(R.id.click2);
+        click3 = (ImageView) view.findViewById(R.id.click3);
+
+
+
 
         icon1.bringToFront();
         icon2.bringToFront();
@@ -312,13 +328,22 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 frameoptions = (FrameLayout) view.findViewById(R.id.frameoptions);
                 FrameLayout tempoViagem = (FrameLayout) view.findViewById(R.id.tempodeviagem);
                 TextView tempoviagem = (TextView) view.findViewById(R.id.tempochegada);
+                minORhour = (ImageView) view.findViewById(R.id.minORhour);
+                clock = (ImageView) view.findViewById(R.id.clock);
 
-                String txtviagem = Util.setString(getResources().getString(R.string.tempo_chegada), "#95a4a6");
+                //String txtviagem = Util.setString(getResources().getString(R.string.tempo_chegada), "#95a4a6");
                 String viagem = Util.setString(String.valueOf(tempo), "#009FD6");
-                tempoviagem.setText(Html.fromHtml(txtviagem + " " + viagem));
+                if(tempo.contains("h")){
+                    minORhour.setBackgroundResource(R.drawable.de);
+                }
+                tempoviagem.setText(Html.fromHtml(viagem));
 
-                if(tempo.contains("N/D"))
-                    tempoViagem.setVisibility(View.GONE);
+                if(tempo.contains("N/D")) {
+                    //tempoViagem.setVisibility(View.GONE);
+                    tempoviagem.setText("");
+                    clock.setVisibility(View.GONE);
+                    minORhour.setVisibility(View.GONE);
+                }
                 else
                     tempoViagem.setVisibility(View.VISIBLE);
 
@@ -486,6 +511,10 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         this.googleMap.getUiSettings().setZoomControlsEnabled(true);
 
         posicionarUsuarioMapaGPS(usuario.getPosicao());
+
+        click1.startAnimation(AnimationUtils.loadAnimation(this.getContext(), R.anim.flicker));
+        click2.startAnimation(AnimationUtils.loadAnimation(this.getContext(), R.anim.flicker));
+        click3.startAnimation(AnimationUtils.loadAnimation(this.getContext(), R.anim.flicker));
 
         this.googleMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
             @Override

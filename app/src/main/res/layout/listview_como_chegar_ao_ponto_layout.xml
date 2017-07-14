@@ -162,7 +162,7 @@
                             android:layout_marginTop="5dp"
                             android:gravity="center_vertical"
                             android:textSize="14dp"
-                            android:textColor="#2c3e50"
+                            android:textColor="#002F3F"
                             android:layout_marginLeft="10dp" />
                     </LinearLayout>
                 </LinearLayout>

@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="6dp"
             android:textSize="15dp"
-            android:textColor="#2c3e50"
+            android:textColor="#002F3F"
             android:layout_gravity="center_vertical" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:textSize="11dp"
-            android:textColor="#2c3e50"
+            android:textColor="#002F3F"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="-3dp" />
 
@@ -72,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="9dp"
-                android:textColor="#2c3e50"
+                android:textColor="#002F3F"
                 android:layout_marginLeft="95dp" />
         </FrameLayout>
     </LinearLayout>

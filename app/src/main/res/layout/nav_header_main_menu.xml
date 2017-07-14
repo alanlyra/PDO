@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:background="#2c3e50"
+    android:background="#002F3F"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingBottom="5dp"

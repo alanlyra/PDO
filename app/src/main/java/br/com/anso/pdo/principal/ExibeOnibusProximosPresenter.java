@@ -86,7 +86,8 @@ public class ExibeOnibusProximosPresenter implements IPrincipalTab1View.IPrincip
                     tempo_chegada = Util.converterMinutosParaTempoViagem(l.optDouble("tempo_chegada"), context).replace("de viagem", "");
                 map.put("corconsorcio", l.optString("corconsorcio"));
                 map.put("txt", l.optString("numero_linha"));
-                map.put("cur", l.optString("vista") + "(SERVIÇO: " + l.optString("servico") + ")");
+                map.put("cur", l.optString("vista"));
+                //map.put("cur", l.optString("vista") + "(SERVIÇO: " + l.optString("servico") + ")");
                 map.put("route_name", l.optString("route_name"));
                 map.put("servico", l.optString("servico"));
                 map.put("consorcio", consorcio);

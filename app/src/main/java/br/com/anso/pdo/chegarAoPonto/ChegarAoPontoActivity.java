@@ -200,7 +200,7 @@ public class ChegarAoPontoActivity extends VDOAppCompatActivity implements OnMap
 
             for (Caminhada c:  aList){
                 tempoCaminhada+=c.getDistancia();
-                PolylineOptions options = new PolylineOptions().width(10).color(Color.parseColor("#2c3e50")).geodesic(true);
+                PolylineOptions options = new PolylineOptions().width(10).color(Color.parseColor("#002F3F")).geodesic(true);
                 List<LatLng> posicoes = Util.decodePoly(c.getPolilinha());
 
                 for (int i = 0; i < posicoes.size(); i++) {
