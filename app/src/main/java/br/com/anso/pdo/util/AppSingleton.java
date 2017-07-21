@@ -1,5 +1,7 @@
 package br.com.anso.pdo.util;
 
+import android.content.Intent;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
@@ -12,6 +14,7 @@ import br.com.anso.pdo.buscaPontosEstacoes.BuscaPontosEstacoesActivity;
 import br.com.anso.pdo.principal.ExibeOnibusProximosFragment;
 import br.com.anso.pdo.principal.ExibePontosProximosFragment;
 import br.com.anso.pdo.principal.IPrincipalView;
+import br.com.anso.pdo.principal.PrincipalActivity;
 
 /**
  * Essa classe é um singleton e armazena as informações da aplicação.
@@ -32,6 +35,7 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
     private int indexMunicipioDestino = 0;
     private int positionOpcaoRota;
     private int abaDefault;
+    private int userTime = 180000; //2000
 
     private String enderecoOrigemExibicao = "";
     private String enderecoDestinoExibicao = "";
@@ -73,6 +77,7 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
         return app;
     }
 
+
     private AppSingleton(){}
 
     /***          Getters and Setters            **/
@@ -91,6 +96,14 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
 
     public void setViewPontos(ExibePontosProximosFragment viewPontos) {
         this.viewPontos = viewPontos;
+    }
+
+    public int getUserTime() {
+        return userTime;
+    }
+
+    public void setUserTime(int userTime) {
+        this.userTime = userTime;
     }
 
     public BuscaPontosEstacoesActivity getViewPontosEstacoes(){

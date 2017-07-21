@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SlidingPaneLayout;
 import android.text.Html;
+import android.util.Log;
+import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -149,6 +153,12 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
             @Override
             public void onClick(View v) {
                 layout.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        layout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                    }
+                }, appSingleton.getUserTime());
             }
         });
 
@@ -205,91 +215,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
             }
         });
 
-      /*  outrasrotas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                appSingleton.setAbaDefault(1);
-                Intent i;
-                i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), BuscaLinhaRotaActivity.class);
-                startActivity(i);
-            }
-        });*/
-        /*buscalinhas.setOnClickListener(new DoubleClick() {
-
-            @Override
-            public void onSingleClick(View v) {
-
-                final Handler handler          = new Handler();
-                final Runnable mRunnable        = new Runnable() {
-                    public void run() {
-                        Intent i;
-                        i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), BuscaLinhaRotaActivity.class);
-                        startActivity(i);
-                    }
-                };
-
-                TimerTask timertask = new TimerTask() {
-                    @Override
-                    public void run() {
-                        handler.post(mRunnable);
-                    }
-                };
-                timer   =   new Timer();
-                timer.schedule(timertask, DELAY);
-
-            }
-
-            @Override
-            public void onDoubleClick(View v) {
-                if(timer!=null)
-                {
-                    timer.cancel();
-                    timer.purge();
-                }
-                if(!collapseLayout) {
-                    layout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-                    collapseLayout = true;
-                }
-                else{
-                    layout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
-                    collapseLayout = false;
-                }
-                }
-
-        });
-
-        buscalinhas.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event)
-            {
-                // TODO Auto-generated method stub
-                switch (event.getAction())
-                {
-                    case MotionEvent.ACTION_DOWN:
-                        historicX = event.getX();
-                        historicY = event.getY();
-                        break;
-
-                    case MotionEvent.ACTION_UP:
-                        if (event.getX() - historicX < -DELTA)
-                        {
-                            Log.d("SWIPE: ", "LEFT");
-
-                            ViewPager viewPager = (ViewPager)getActivity().findViewById(R.id.viewpager);
-                            viewPager.setCurrentItem(1);
-                            return true;
-                        }
-                        else if (event.getX() - historicX > DELTA)
-                        {
-                            Log.d("SWIPE: ", "RIGHT");
-
-                            return true;
-                        } break;
-                    default: return false;
-                }
-                return false;
-            }
-        });*/
         return view;
     }
 

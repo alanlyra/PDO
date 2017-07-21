@@ -1,7 +1,9 @@
 package br.com.anso.pdo.buscaLinhaRota;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.principal.ExibeOnibusProximosFragment;
+import br.com.anso.pdo.principal.PrincipalActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Util;
 import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
@@ -26,7 +29,7 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
     private Tab1Fragment tab1;
     private Tab2Fragment tab2;
     private AppSingleton app = AppSingleton.getApp();
-
+    private static int userTimeBuscaLinhaRota = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +95,16 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
                 //localDestinoLinhasRotas.setText(app.getLocalDestinoRota());
             }
         }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i;
+                i = new Intent(BuscaLinhaRotaActivity.this, PrincipalActivity.class);
+                startActivity(i);
+                finish();
+            }
+        }, app.getUserTime());
     }
 
     @Override
@@ -118,6 +131,7 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
     public void voltar(View view){
         app.setAbaDefault(0);
         super.onBackPressed();
+        finish();
     }
 
     public void definirlocalpartida(View v){

@@ -1,6 +1,7 @@
 package br.com.anso.pdo.itinerario;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -45,6 +46,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import br.com.anso.pdo.R;
+import br.com.anso.pdo.principal.PrincipalActivity;
+import br.com.anso.pdo.rota.RotaActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Linha;
 import br.com.anso.pdo.util.Ponto;
@@ -109,6 +112,16 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
         mapFragment.getMapAsync(this);
 
         exibirLoadingListaResultado();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i;
+                i = new Intent(ItinerarioActivity.this, PrincipalActivity.class);
+                startActivity(i);
+                finish();
+            }
+        }, appSingleton.getUserTime());
 
         presenter = new ItinerarioPresenter(this);
     }

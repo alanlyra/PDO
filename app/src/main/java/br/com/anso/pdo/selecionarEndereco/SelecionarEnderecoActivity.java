@@ -2,6 +2,7 @@ package br.com.anso.pdo.selecionarEndereco;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -130,6 +131,9 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
                         startActivity(i);
                     }
         });
+
+
+        //time.restartUserTime();
 
         constroiListaMunicipios(this.partida);
     }

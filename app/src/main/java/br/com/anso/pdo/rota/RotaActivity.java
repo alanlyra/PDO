@@ -1,8 +1,10 @@
 package br.com.anso.pdo.rota;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -33,6 +35,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import br.com.anso.pdo.R;
+import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
+import br.com.anso.pdo.principal.PrincipalActivity;
+import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Ponto;
 import br.com.anso.pdo.util.PontoGeometrico;
 import br.com.anso.pdo.util.Rota;
@@ -48,6 +53,7 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
     private GoogleMap googleMap;
     private IRotaView.IRotaPresenter presenter;
     private LatLngBounds bounds;
+    private AppSingleton app = AppSingleton.getApp();
 
     private ArrayList<Button> caminhadaButtons = new ArrayList<>();
     private ArrayList<Button> onibusButtons = new ArrayList<>();
@@ -98,6 +104,16 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
         viewsList = new ArrayList<>();
 
         inicializarListaViewsButtons();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i;
+                i = new Intent(RotaActivity.this, PrincipalActivity.class);
+                startActivity(i);
+                finish();
+            }
+        }, app.getUserTime());
 
         mapFragment.getMapAsync(this);
         presenter = new RotaPresenter(this);
