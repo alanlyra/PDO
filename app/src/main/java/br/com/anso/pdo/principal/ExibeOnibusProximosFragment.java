@@ -1,8 +1,10 @@
 package br.com.anso.pdo.principal;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -40,6 +42,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Timer;
 
 import br.com.anso.pdo.R;
@@ -76,6 +79,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     private Button linhasdoponto;
     private Button rotasdaqui;
     private Button outraslinhas;
+    private Button language;
     //private Button outrasrotas;
     private ImageView backfromlist;
     private String endereco = "";
@@ -122,6 +126,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         linhasdoponto = (Button) view.findViewById(R.id.linhas_desse_ponto);
         rotasdaqui = (Button) view.findViewById(R.id.rotasdaqui);
         outraslinhas = (Button) view.findViewById(R.id.outraslinhas);
+        language = (Button) view.findViewById(R.id.language);
         //outrasrotas = (Button) view.findViewById(R.id.outrasrotas);
         backfromlist = (ImageView) view.findViewById(R.id.backfromlist);
         layout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layouttab1);
@@ -148,6 +153,94 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
         exibirLoadingListaResultado();
         presenter = new ExibeOnibusProximosPresenter(this);
+
+        language.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                PopupMenu popup = new PopupMenu(getActivity().getBaseContext(), language);
+
+                try {
+                    Field[] fields = popup.getClass().getDeclaredFields();
+                    for (Field field : fields) {
+                        if ("mPopup".equals(field.getName())) {
+                            field.setAccessible(true);
+                            Object menuPopupHelper = field.get(popup);
+                            Class<?> classPopupHelper = Class.forName(menuPopupHelper.getClass().getName());
+                            Method setForceIcons = classPopupHelper.getMethod("setForceShowIcon", boolean.class);
+                            setForceIcons.invoke(menuPopupHelper, true);
+                            break;
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                popup.getMenuInflater().inflate(R.menu.popup_language, popup.getMenu());
+
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.portugues:
+                                String languageToLoad  = "pt";
+                                Locale locale = new Locale(languageToLoad);
+                                Locale.setDefault(locale);
+                                Configuration config = new Configuration();
+                                config.locale = locale;
+                                getContext().getResources().updateConfiguration(config,getContext().getResources().getDisplayMetrics());
+
+                                Intent i;
+                                i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), PrincipalActivity.class);
+                                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(i);
+                                return true;
+                            case R.id.ingles:
+                                String languageToLoad_En  = "en";
+                                Locale locale_En = new Locale(languageToLoad_En);
+                                Locale.setDefault(locale_En);
+                                Configuration config_En = new Configuration();
+                                config_En.locale = locale_En;
+                                getContext().getResources().updateConfiguration(config_En,getContext().getResources().getDisplayMetrics());
+
+                                Intent i_En;
+                                i_En = new Intent(ExibeOnibusProximosFragment.this.getActivity(), PrincipalActivity.class);
+                                i_En.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(i_En);
+                                return true;
+                            case R.id.espanhol:
+                                String languageToLoad_Es  = "es";
+                                Locale locale_Es = new Locale(languageToLoad_Es);
+                                Locale.setDefault(locale_Es);
+                                Configuration config_Es = new Configuration();
+                                config_Es.locale = locale_Es;
+                                getContext().getResources().updateConfiguration(config_Es,getContext().getResources().getDisplayMetrics());
+
+                                Intent i_Es;
+                                i_Es = new Intent(ExibeOnibusProximosFragment.this.getActivity(), PrincipalActivity.class);
+                                i_Es.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(i_Es);
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                });
+
+                popup.show();
+
+              /*  String languageToLoad  = "en";
+                Locale locale = new Locale(languageToLoad);
+                Locale.setDefault(locale);
+                Configuration config = new Configuration();
+                config.locale = locale;
+                getContext().getResources().updateConfiguration(config,getContext().getResources().getDisplayMetrics());
+
+                Intent i;
+                i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), PrincipalActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);*/
+            }
+        });
 
         linhasdoponto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -277,6 +370,8 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 } else if (position % 2 == 0) {
                     view.setBackgroundResource(R.color.color_primary4);
                 }
+
+                //((GradientDrawable)getView(position, convertView, parent).getBackground()).setColor(Color.parseColor(aList.get(position).get("corconsorcio")));
                 corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio")));
                 attachPopupHandler(new Linha(routeName, servico, "", corConsorcio, numero, referencia), popUp_btn);
 
