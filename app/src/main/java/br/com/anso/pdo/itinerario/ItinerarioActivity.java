@@ -83,6 +83,7 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
     private Timer timer = null;
     private int DELAY   = 280;
     private ImageView click5;
+    private ImageView home;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -105,6 +106,7 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
         detalhesItinerario = (Button) findViewById(R.id.botaoDeItinerario);
         click5 = (ImageView) findViewById(R.id.click5);
         click5.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
+        home = (ImageView) findViewById(R.id.home);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -112,6 +114,15 @@ public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapRea
         mapFragment.getMapAsync(this);
 
         exibirLoadingListaResultado();
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i;
+                i = new Intent(ItinerarioActivity.this, PrincipalActivity.class);
+                startActivity(i);
+            }
+        });
 
         new Handler().postDelayed(new Runnable() {
             @Override

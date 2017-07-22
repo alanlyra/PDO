@@ -40,6 +40,15 @@
             android:paddingLeft="45dp"
             android:layout_marginRight="20dp" />
 
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:id="@+id/home"
+            android:paddingLeft="10dp"
+            android:paddingRight="30dp"
+            android:background="@drawable/home"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="15dp" />
     </FrameLayout>
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout

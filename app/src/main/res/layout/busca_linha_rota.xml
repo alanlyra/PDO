@@ -77,6 +77,8 @@
                 android:layout_gravity="left|center_vertical"
                 android:layout_marginLeft="15dp"
                 android:nestedScrollingEnabled="true" />
+
+
         </LinearLayout>
 
 
@@ -91,6 +93,16 @@
             android:layout_marginLeft="55dp"
             android:textColor="#009FD6"
             android:paddingLeft="80dp" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:id="@+id/home"
+            android:paddingLeft="10dp"
+            android:paddingRight="30dp"
+            android:background="@drawable/home"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="15dp" />
     </FrameLayout>
 
         <android.support.v4.view.ViewPager

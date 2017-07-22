@@ -82,6 +82,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     private Button language;
     //private Button outrasrotas;
     private ImageView backfromlist;
+    private ImageView home;
     private String endereco = "";
     private boolean partida = true;
     private boolean atual = false;
@@ -129,6 +130,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         language = (Button) view.findViewById(R.id.language);
         //outrasrotas = (Button) view.findViewById(R.id.outrasrotas);
         backfromlist = (ImageView) view.findViewById(R.id.backfromlist);
+        home = (ImageView) view.findViewById(R.id.home);
         layout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layouttab1);
         icon1 = (ImageView) view.findViewById(R.id.icon1);
         icon2 = (ImageView) view.findViewById(R.id.icon2);
@@ -256,6 +258,13 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         });
 
         backfromlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 layout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);

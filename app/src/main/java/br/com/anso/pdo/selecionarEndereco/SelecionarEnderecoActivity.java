@@ -39,6 +39,7 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
     private String enderecoAtual;
     private LinearLayout clear;
     private ImageView back;
+    private ImageView home;
 
 
     public void onCreate(Bundle savedInstanceState){
@@ -52,7 +53,7 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
         String titulo = b.getString("titulo");
 
 
-
+        home = (ImageView) findViewById(R.id.home);
         TextView textLocal = (TextView) findViewById(R.id.textLocal);
         if(textLocal!=null) textLocal.setText(titulo);
 
@@ -64,6 +65,15 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
 
         adapter = new SuggestionAdapter(this);
         acTextView.setAdapter(adapter);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i;
+                i = new Intent(SelecionarEnderecoActivity.this, PrincipalActivity.class);
+                startActivity(i);
+            }
+        });
 
         acTextView.addTextChangedListener(new TextWatcher() {
             @Override

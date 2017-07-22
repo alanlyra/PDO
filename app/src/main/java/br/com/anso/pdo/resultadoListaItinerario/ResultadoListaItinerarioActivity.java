@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupMenu;
@@ -21,6 +22,7 @@ import java.util.List;
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.favoritos.Favorito;
 import br.com.anso.pdo.itinerario.ItinerarioActivity;
+import br.com.anso.pdo.principal.PrincipalActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Linha;
 
@@ -33,6 +35,7 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
     private LinearLayout emptyView;
     private LinearLayout bar;
     private LinearLayout optionsLayout;
+    private ImageView home;
 
 
     @Override
@@ -45,10 +48,20 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
 
         emptyView = (LinearLayout) findViewById(R.id.nenhumaLinhaEncontrada);
 
+        home = (ImageView) findViewById(R.id.home);
         bar = (LinearLayout) this.findViewById(R.id.barLinear);
         bar.setVisibility(View.VISIBLE);
 
         tituloTextView.setText(getResources().getString(R.string.resultado_busca_por).concat(app.getTextoBuscaLinha().concat("\"")));
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i;
+                i = new Intent(ResultadoListaItinerarioActivity.this, PrincipalActivity.class);
+                startActivity(i);
+            }
+        });
 
         exibirLoadingListaResultado();
         presenter = new ResultadoListaItinerarioPresenter(this);

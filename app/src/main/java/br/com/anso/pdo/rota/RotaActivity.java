@@ -78,6 +78,8 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
 
     private Usuario usuario;
 
+    private ImageView home;
+
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rota);
@@ -87,6 +89,7 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
         layoutLinhaSelecionada = (LinearLayout) findViewById(R.id.layoutViagemSelecionada);
         layout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layoutRota);
         detalhesRota = (Button) findViewById(R.id.botaoDeRotaDetalhes);
+        home = (ImageView) findViewById(R.id.home);
 
         bar = (LinearLayout) this.findViewById(R.id.barLinear);
         if(bar!=null) bar.setVisibility(View.VISIBLE);
@@ -104,6 +107,15 @@ public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCall
         viewsList = new ArrayList<>();
 
         inicializarListaViewsButtons();
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i;
+                i = new Intent(RotaActivity.this, PrincipalActivity.class);
+                startActivity(i);
+            }
+        });
 
         new Handler().postDelayed(new Runnable() {
             @Override

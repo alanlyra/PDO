@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import br.com.anso.pdo.R;
+import br.com.anso.pdo.principal.PrincipalActivity;
 import br.com.anso.pdo.rota.RotaActivity;
 import br.com.anso.pdo.selecionarEndereco.SelecionarEnderecoActivity;
 import br.com.anso.pdo.util.AppSingleton;
@@ -39,6 +40,7 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
     private String enderecoAtual;
     private String endereco = "";
     private ImageView back;
+    private ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
 
         emptyView = (LinearLayout) findViewById(R.id.nenhumaRotaEncontrada);
 
+        home = (ImageView) findViewById(R.id.home);
         bar = (LinearLayout) this.findViewById(R.id.barLinear);
         bar.setVisibility(View.VISIBLE);
         back = (ImageView) findViewById(R.id.backToAdress);
@@ -63,6 +66,14 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
         tituloTextView.setText(getResources().getString(R.string.origem).concat(" ").concat(app.getEnderecoOrigemExibicao()).concat(" - ").concat(app.getMunicipios().get(app.getIndexMunicipioOrigem())).concat("\n").
                                concat(getResources().getString(R.string.destino)).concat(" ").concat(app.getEnderecoDestinoExibicao()).concat(" - ").concat(app.getMunicipios().get(app.getIndexMunicipioDestino())));
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i;
+                i = new Intent(ResultadoRotasActivity.this, PrincipalActivity.class);
+                startActivity(i);
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -30,6 +30,7 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
     private Tab2Fragment tab2;
     private AppSingleton app = AppSingleton.getApp();
     private static int userTimeBuscaLinhaRota = 2000;
+    private ImageView home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
         setSupportActionBar(toolbar);
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        home = (ImageView) findViewById(R.id.home);
 
         if(tabLayout!=null){
             tabLayout.addTab(tabLayout.newTab().setText(getResources().getString(R.string.linhas)));
@@ -96,6 +98,15 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
             }
         }
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i;
+                i = new Intent(BuscaLinhaRotaActivity.this, PrincipalActivity.class);
+                startActivity(i);
+            }
+        });
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -131,7 +142,7 @@ public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBus
     public void voltar(View view){
         app.setAbaDefault(0);
         super.onBackPressed();
-        finish();
+        //finish();
     }
 
     public void definirlocalpartida(View v){
