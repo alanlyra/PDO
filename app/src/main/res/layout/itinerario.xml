@@ -105,14 +105,37 @@
                     android:layout_height="45dp"
                     android:background="@color/listview1">
 
-                    <LinearLayout
+                    <!--<LinearLayout
                         android:id="@+id/flag_itinerario"
                         android:layout_height="match_parent"
                         android:layout_width="5dp"
                         android:layout_marginTop="5dp"
                         android:orientation="vertical"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="5dp" />
+                        android:layout_marginBottom="5dp" />-->
+
+                    <LinearLayout
+                        android:id="@+id/flag_itinerario"
+                        android:layout_height="40dp"
+                        android:layout_width="40dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="-34dp"
+                        android:rotation = "16"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_vertical"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/flag3"
+                        android:layout_height="6dp"
+                        android:layout_width="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="-30dp"
+                        android:background="@color/listview1"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_vertical"
+                        />
 
                     <TextView
                         android:id="@+id/num_linha"

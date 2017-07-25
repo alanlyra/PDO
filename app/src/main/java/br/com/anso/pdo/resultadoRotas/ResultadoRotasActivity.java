@@ -41,6 +41,9 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
     private String endereco = "";
     private ImageView back;
     private ImageView home;
+    private LinearLayout flag6;
+    private LinearLayout flag7;
+    private LinearLayout flag8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,6 +183,9 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
                 TextView tempoviagem1 = (TextView) view.findViewById(R.id.tempoviagem1);
                 TextView tempoviagem2 = (TextView) view.findViewById(R.id.tempoviagem2);
                 TextView tempoviagem3 = (TextView) view.findViewById(R.id.tempoviagem3);
+                flag6 = (LinearLayout) view.findViewById(R.id.flag6);
+                flag7 = (LinearLayout) view.findViewById(R.id.flag7);
+                flag8 = (LinearLayout) view.findViewById(R.id.flag8);
 
                 LinearLayout corconsorcioLayout;
                 if(map.containsKey("corconsorcio1")){
@@ -225,9 +231,15 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
 
                 if (position % 2 == 1) {
                     view.setBackgroundResource(R.color.color_primary2);
+                    flag6.setBackgroundResource(R.color.color_primary2);
+                    flag7.setBackgroundResource(R.color.color_primary2);
+                    flag8.setBackgroundResource(R.color.color_primary2);
                 }
                 else if (position % 2 == 0) {
                     view.setBackgroundResource(R.color.color_primary4);
+                    flag6.setBackgroundResource(R.color.color_primary4);
+                    flag7.setBackgroundResource(R.color.color_primary4);
+                    flag8.setBackgroundResource(R.color.color_primary4);
 
                 }
 

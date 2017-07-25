@@ -44,7 +44,7 @@
             android:id="@+id/rotaitem1"
             >
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/flag1"
                 android:layout_height="45dp"
                 android:layout_width="5dp"
@@ -52,6 +52,32 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="1dp"
                 android:background="@android:color/holo_blue_light"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />-->
+
+            <LinearLayout
+                android:id="@+id/flag1"
+                android:layout_height="60dp"
+                android:layout_width="40dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="-34dp"
+                android:background="@color/color_primary3"
+                android:rotation = "14"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <LinearLayout
+                android:id="@+id/flag6"
+                android:layout_height="3dp"
+                android:layout_width="40dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="29dp"
+                android:layout_marginLeft="-32dp"
+                android:background="@color/color_primary4"
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
                 />
@@ -71,6 +97,7 @@
                     android:textSize="14dp"
                     android:textColor="@color/color_primary3"
                     android:layout_marginTop="2dp"
+                    android:layout_marginLeft="4dp"
                     android:paddingRight="3dp"
                     android:text="VISTA"/>
 
@@ -78,6 +105,7 @@
                     android:id="@+id/consorcio1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
                     android:textSize="10dp"
                     android:textColor="@color/light_gray_header_color"
                     android:text="@string/consorcio"
@@ -86,6 +114,7 @@
                     android:id="@+id/tempoviagem1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
                     android:textSize="10dp"
                     android:textColor="@color/color_primary" />
             </LinearLayout>
@@ -99,7 +128,7 @@
             android:id="@+id/rotaitem2"
             >
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/flag2"
                 android:layout_height="45dp"
                 android:layout_width="5dp"
@@ -107,6 +136,32 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="1dp"
                 android:background="@android:color/holo_blue_light"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />-->
+
+            <LinearLayout
+                android:id="@+id/flag2"
+                android:layout_height="60dp"
+                android:layout_width="40dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="-34dp"
+                android:background="@color/color_primary3"
+                android:rotation = "14"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <LinearLayout
+                android:id="@+id/flag7"
+                android:layout_height="3dp"
+                android:layout_width="40dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="29dp"
+                android:layout_marginLeft="-32dp"
+                android:background="@color/color_primary4"
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
                 />
@@ -123,6 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="1dp"
+                    android:layout_marginLeft="4dp"
                     android:textSize="14dp"
                     android:textColor="@color/color_primary3"
                     android:layout_marginTop="2dp"
@@ -133,6 +189,7 @@
                     android:id="@+id/consorcio2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
                     android:textSize="10dp"
                     android:textColor="@color/light_gray_header_color"
                     android:text="@string/consorcio"
@@ -141,6 +198,7 @@
                     android:id="@+id/tempoviagem2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
                     android:textSize="10dp"
                     android:textColor="@color/color_primary" />
             </LinearLayout>
@@ -154,7 +212,7 @@
             android:id="@+id/rotaitem3"
             >
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/flag3"
                 android:layout_height="45dp"
                 android:layout_width="5dp"
@@ -162,6 +220,32 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="1dp"
                 android:background="@android:color/holo_blue_light"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />-->
+
+            <LinearLayout
+                android:id="@+id/flag3"
+                android:layout_height="60dp"
+                android:layout_width="40dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="-34dp"
+                android:background="@color/color_primary3"
+                android:rotation = "14"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <LinearLayout
+                android:id="@+id/flag8"
+                android:layout_height="3dp"
+                android:layout_width="40dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="29dp"
+                android:layout_marginLeft="-32dp"
+                android:background="@color/color_primary4"
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
                 />
@@ -178,6 +262,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="1dp"
+                    android:layout_marginLeft="4dp"
                     android:textSize="14dp"
                     android:textColor="@color/color_primary3"
                     android:layout_marginTop="2dp"
@@ -188,6 +273,7 @@
                     android:id="@+id/consorcio3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
                     android:textSize="10dp"
                     android:textColor="@color/light_gray_header_color"
                     android:text="@string/consorcio"
@@ -197,6 +283,7 @@
                     android:id="@+id/tempoviagem3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
                     android:textSize="10dp"
                     android:textColor="@color/color_primary" />
             </LinearLayout>

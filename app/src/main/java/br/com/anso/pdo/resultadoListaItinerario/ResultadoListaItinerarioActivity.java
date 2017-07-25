@@ -36,6 +36,7 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
     private LinearLayout bar;
     private LinearLayout optionsLayout;
     private ImageView home;
+    private LinearLayout flag5;
 
 
     @Override
@@ -113,6 +114,7 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
 
                 LinearLayout corconsorcioLayout = (LinearLayout) view.findViewById(R.id.flag);
                 optionsLayout = (LinearLayout) view.findViewById(R.id.optionsLayout);
+                flag5 = (LinearLayout) view.findViewById(R.id.flag5);
 
                 corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio")));
 
@@ -122,10 +124,11 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
 
                 if (position % 2 == 1) {
                     view.setBackgroundResource(R.color.color_primary2);
+                    flag5.setBackgroundResource(R.color.color_primary2);
                 }
                 else if (position % 2 == 0) {
                     view.setBackgroundResource(R.color.color_primary4);
-
+                    flag5.setBackgroundResource(R.color.color_primary4);
                 }
 
                 return view;

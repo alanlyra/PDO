@@ -96,6 +96,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     private ImageView click3;
     private ImageView clock;
     private ImageView min;
+    private LinearLayout flag2;
 
 
 
@@ -155,6 +156,14 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
         exibirLoadingListaResultado();
         presenter = new ExibeOnibusProximosPresenter(this);
+
+        /*getActivity().getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);*/
 
         language.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -357,6 +366,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 TextView tempoviagem = (TextView) view.findViewById(R.id.tempochegada);
                 minORhour = (ImageView) view.findViewById(R.id.minORhour);
                 clock = (ImageView) view.findViewById(R.id.clock);
+                flag2 = (LinearLayout) view.findViewById(R.id.flag2);
 
                 //String txtviagem = Util.setString(getResources().getString(R.string.tempo_chegada), "#95a4a6");
                 String viagem = Util.setString(String.valueOf(tempo), "#009FD6");
@@ -376,8 +386,10 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
                 if (position % 2 == 1) {
                     view.setBackgroundResource(R.color.color_primary2);
+                    flag2.setBackgroundResource(R.color.color_primary2);
                 } else if (position % 2 == 0) {
                     view.setBackgroundResource(R.color.color_primary4);
+                    flag2.setBackgroundResource(R.color.color_primary4);
                 }
 
                 //((GradientDrawable)getView(position, convertView, parent).getBackground()).setColor(Color.parseColor(aList.get(position).get("corconsorcio")));

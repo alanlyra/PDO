@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -144,6 +145,8 @@ public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements 
 
 
         //time.restartUserTime();
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
 
         constroiListaMunicipios(this.partida);
     }

@@ -90,7 +90,7 @@
             android:id="@+id/textView6"
             android:layout_gravity="left|center_vertical"
             android:textSize="12dp"
-            android:layout_marginLeft="55dp"
+            android:layout_marginLeft="40dp"
             android:textColor="#009FD6"
             android:paddingLeft="80dp" />
 

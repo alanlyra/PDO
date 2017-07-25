@@ -369,7 +369,7 @@
                     android:id="@+id/textView4"
                     android:textColor="@color/color_primary"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="5dp"
                     android:textSize="12dp" />
 
                 <ImageView
