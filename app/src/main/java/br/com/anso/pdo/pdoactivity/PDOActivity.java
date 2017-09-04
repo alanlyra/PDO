@@ -1,8 +1,8 @@
-package br.com.anso.pdo.vdoactivity;
+package br.com.anso.pdo.pdoactivity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 
-public class VDOAppCompatActivity extends AppCompatActivity {
+public class PDOActivity extends Activity {
     public static boolean active = false;
 
     @Override

@@ -2,7 +2,6 @@ package br.com.anso.pdo.principal;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -25,13 +24,12 @@ import java.util.List;
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
 import br.com.anso.pdo.buscaPontosEstacoes.BuscaPontosEstacoesActivity;
-import br.com.anso.pdo.favoritos.FavoritoActivity;
 import br.com.anso.pdo.selecionarEndereco.SelecionarEnderecoActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Usuario;
-import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
+import br.com.anso.pdo.pdoactivity.PDOAppCompatActivity;
 
-public class PrincipalActivity extends VDOAppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, IPrincipalView {
+public class PrincipalActivity extends PDOAppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, IPrincipalView {
 
     private AppSingleton appPresenter = AppSingleton.getApp();
     private Usuario usuario = Usuario.getInstance();

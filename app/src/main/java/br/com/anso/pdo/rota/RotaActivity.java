@@ -35,7 +35,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import br.com.anso.pdo.R;
-import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
 import br.com.anso.pdo.principal.PrincipalActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Ponto;
@@ -44,9 +43,9 @@ import br.com.anso.pdo.util.Rota;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
 import br.com.anso.pdo.util.Viagem;
-import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
+import br.com.anso.pdo.pdoactivity.PDOAppCompatActivity;
 
-public class RotaActivity extends VDOAppCompatActivity implements OnMapReadyCallback, IRotaView {
+public class RotaActivity extends PDOAppCompatActivity implements OnMapReadyCallback, IRotaView {
 
     private ListView listView;
     private LinearLayout bar;

@@ -2,13 +2,10 @@ package br.com.anso.pdo.selecionarEndereco;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,15 +18,14 @@ import com.google.android.gms.maps.model.LatLng;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
-import br.com.anso.pdo.principal.ExibeOnibusProximosFragment;
 import br.com.anso.pdo.principal.PrincipalActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
+import br.com.anso.pdo.pdoactivity.PDOAppCompatActivity;
 
 
-public class SelecionarEnderecoActivity extends VDOAppCompatActivity implements ISelecionarEnderecoView {
+public class SelecionarEnderecoActivity extends PDOAppCompatActivity implements ISelecionarEnderecoView {
 
     private AutoCompleteEnderecoWidget acTextView;
     private SuggestionAdapter adapter;

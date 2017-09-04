@@ -48,9 +48,9 @@ import br.com.anso.pdo.util.Ponto;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
 import br.com.anso.pdo.util.PdoLocationCallback;
-import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
+import br.com.anso.pdo.pdoactivity.PDOAppCompatActivity;
 
-public class BuscaPontosEstacoesActivity extends VDOAppCompatActivity implements OnMapReadyCallback, IBuscaPontosEstacoesView, PdoLocationCallback, SeekBar.OnSeekBarChangeListener {
+public class BuscaPontosEstacoesActivity extends PDOAppCompatActivity implements OnMapReadyCallback, IBuscaPontosEstacoesView, PdoLocationCallback, SeekBar.OnSeekBarChangeListener {
 
     private IBuscaPontosEstacoesView.IBuscaPontosEstacoesPresenter presenter;
     private TextView localDestinoBuscaPontosEstacoes;

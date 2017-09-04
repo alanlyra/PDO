@@ -36,9 +36,9 @@ import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Linha;
 import br.com.anso.pdo.util.Ponto;
 import br.com.anso.pdo.util.PdoLocationCallback;
-import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
+import br.com.anso.pdo.pdoactivity.PDOAppCompatActivity;
 
-public class LinhasdopontoActivity extends VDOAppCompatActivity implements ILinhasdopontoView, OnMapReadyCallback, PdoLocationCallback {
+public class LinhasdopontoActivity extends PDOAppCompatActivity implements ILinhasdopontoView, OnMapReadyCallback, PdoLocationCallback {
 
     private ILinhasdopontoView.ILinhasdopontoPresenter presenter;
     private GoogleMap googleMap;

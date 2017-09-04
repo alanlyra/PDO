@@ -38,9 +38,9 @@ import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Linha;
 import br.com.anso.pdo.util.Ponto;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
+import br.com.anso.pdo.pdoactivity.PDOAppCompatActivity;
 
-public class FavoritoActivity extends VDOAppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class FavoritoActivity extends PDOAppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private AppSingleton appSingleton = AppSingleton.getApp();
     ListView listView, listView2;
     private FrameLayout frameoptions;

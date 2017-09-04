@@ -9,13 +9,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -47,16 +43,15 @@ import java.util.TimerTask;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.principal.PrincipalActivity;
-import br.com.anso.pdo.rota.RotaActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Linha;
 import br.com.anso.pdo.util.Ponto;
 import br.com.anso.pdo.util.Usuario;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
+import br.com.anso.pdo.pdoactivity.PDOAppCompatActivity;
 
 
-public class ItinerarioActivity extends VDOAppCompatActivity implements OnMapReadyCallback, IItinerarioView {
+public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapReadyCallback, IItinerarioView {
 
     private ArrayList<View> viewsList;
     private HashMap<String, Marker> markersMap;

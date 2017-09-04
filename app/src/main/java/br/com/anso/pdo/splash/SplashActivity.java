@@ -11,10 +11,9 @@ import org.json.JSONException;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.principal.PrincipalActivity;
-import br.com.anso.pdo.tutorial.TutorialActivity;
-import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
+import br.com.anso.pdo.pdoactivity.PDOAppCompatActivity;
 
-public class SplashActivity extends VDOAppCompatActivity implements ISplashView {
+public class SplashActivity extends PDOAppCompatActivity implements ISplashView {
 
     private static final int SPLASH_TIME = 2000;
     ISplashPresenter presenter;

@@ -19,13 +19,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.com.anso.pdo.R;
-import br.com.anso.pdo.principal.ExibeOnibusProximosFragment;
 import br.com.anso.pdo.principal.PrincipalActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Util;
-import br.com.anso.pdo.vdoactivity.VDOAppCompatActivity;
+import br.com.anso.pdo.pdoactivity.PDOAppCompatActivity;
 
-public class BuscaLinhaRotaActivity extends VDOAppCompatActivity implements IBuscaLinhaRotaView {
+public class BuscaLinhaRotaActivity extends PDOAppCompatActivity implements IBuscaLinhaRotaView {
     private TextView localPartidaLinhasRotas, localDestinoLinhasRotas;
     private Tab1Fragment tab1;
     private Tab2Fragment tab2;
