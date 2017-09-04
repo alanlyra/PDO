@@ -148,20 +148,7 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
 
     }
 
-
-
-
-
     public void InverterPartidaeDestino(View v) {
-
-
-        /*RotateAnimation rotate = new RotateAnimation(0, 180, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        rotate.setDuration(250);
-        rotate.setInterpolator(new LinearInterpolator());
-
-        ImageView image= (ImageView) findViewById(R.id.botaoDeInversao);
-
-        image.startAnimation(rotate);*/
 
         if (sentido == 1)
             sentido = 0;

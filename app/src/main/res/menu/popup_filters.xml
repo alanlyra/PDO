@@ -7,6 +7,5 @@
         android:title="@string/favoritar_essa_linha" />
 -->
     <item android:id="@+id/itinerario"
-        android:icon="@drawable/itinerary"
         android:title="@string/visualizar_itiner_rio_da_linha" />
 </menu>

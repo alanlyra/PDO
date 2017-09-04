@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import br.com.anso.pdo.R;
-import br.com.anso.pdo.favoritos.Favorito;
 import br.com.anso.pdo.itinerario.ItinerarioActivity;
 import br.com.anso.pdo.principal.PrincipalActivity;
 import br.com.anso.pdo.util.AppSingleton;
@@ -30,7 +29,6 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
 
     private IResultadoListaItinerarioView.IResultadoListaItinerarioPresenter presenter;
     private AppSingleton app = AppSingleton.getApp();
-    private Favorito favorito;
     private ListView listView;
     private LinearLayout emptyView;
     private LinearLayout bar;
@@ -167,49 +165,6 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
                 i = new Intent(getActivity(), ItinerarioActivity.class);
                 startActivity(i);
 
-                /*PopupMenu popup = new PopupMenu(getActivity().getBaseContext(), popUp_btn);
-
-                try {
-                    Field[] fields = popup.getClass().getDeclaredFields();
-                    for (Field field : fields) {
-                        if ("mPopup".equals(field.getName())) {
-                            field.setAccessible(true);
-                            Object menuPopupHelper = field.get(popup);
-                            Class<?> classPopupHelper = Class.forName(menuPopupHelper.getClass().getName());
-                            Method setForceIcons = classPopupHelper.getMethod("setForceShowIcon", boolean.class);
-                            setForceIcons.invoke(menuPopupHelper, true);
-                            break;
-                        }
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                popup.getMenuInflater().inflate(R.menu.popup_filters, popup.getMenu());
-
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            *//*case R.id.favoritar:
-                                favorito = new Favorito();
-                                favorito.atualizaFavoritos(getBaseContext(), linha);
-
-                                return true;*//*
-                            case R.id.itinerario:
-                                app.setRouteNameExibirIitnerario(linha.getRouteName());
-                                app.setServicoExibirIitnerario(linha.getServico());
-                                app.setCorConsorcio(linha.getCorConsorcio());
-                                Intent i;
-                                i = new Intent(getActivity(), ItinerarioActivity.class);
-                                startActivity(i);
-                                return true;
-                            default:
-                                return false;
-                        }
-                    }
-                });
-
-                popup.show();*/
             }
         });
 

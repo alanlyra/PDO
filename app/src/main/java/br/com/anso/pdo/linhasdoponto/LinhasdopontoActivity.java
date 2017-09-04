@@ -30,7 +30,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import br.com.anso.pdo.R;
-import br.com.anso.pdo.favoritos.Favorito;
 import br.com.anso.pdo.itinerario.ItinerarioActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Linha;
@@ -48,7 +47,6 @@ public class LinhasdopontoActivity extends PDOAppCompatActivity implements ILinh
     private LinearLayout bar;
     private LinearLayout emptyView;
 
-    private Favorito favorito;
     AppSingleton appSingleton = AppSingleton.getApp();
 
 
@@ -178,11 +176,6 @@ public class LinhasdopontoActivity extends PDOAppCompatActivity implements ILinh
 
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
-                            /*case R.id.favoritar:
-                                favorito = new Favorito();
-                                favorito.atualizaFavoritos(getBaseContext(), linha);
-
-                                return true;*/
                             case R.id.itinerario:
                                 appSingleton.setRouteNameExibirIitnerario(linha.getRouteName());
                                 appSingleton.setServicoExibirIitnerario(linha.getServico());

@@ -141,9 +141,6 @@ public class SelecionarEnderecoActivity extends PDOAppCompatActivity implements 
                     }
         });
 
-
-        //time.restartUserTime();
-
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
 
         constroiListaMunicipios(this.partida);

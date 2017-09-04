@@ -23,7 +23,7 @@ import java.util.List;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
-import br.com.anso.pdo.buscaPontosEstacoes.BuscaPontosEstacoesActivity;
+
 import br.com.anso.pdo.selecionarEndereco.SelecionarEnderecoActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Usuario;
@@ -37,7 +37,6 @@ public class PrincipalActivity extends PDOAppCompatActivity implements Navigatio
     private DrawerLayout drawer;
     public static TextView numeroLinhasProximas;
     private ExibeOnibusProximosFragment tab1;
-    private ExibePontosProximosFragment tab2;
 
 
     @Override
@@ -85,22 +84,14 @@ public class PrincipalActivity extends PDOAppCompatActivity implements Navigatio
         if(navigationView!=null){
             navigationView.setItemTextColor(ColorStateList.valueOf(ContextCompat.getColor(getBaseContext(), R.color.default_screen_bg)));
             navigationView.setItemIconTintList(ColorStateList.valueOf(ContextCompat.getColor(getBaseContext(), R.color.color_primary)));
-            navigationView.setItemBackgroundResource(R.drawable.itembackground);
+            //navigationView.setItemBackgroundResource(R.drawable.itembackground);
             navigationView.setNavigationItemSelectedListener(this);
         }
-
-       /* navigationView = (NavigationView) findViewById(R.id.nav_view2);
-        if(navigationView!=null){
-            navigationView.setItemTextColor(ColorStateList.valueOf(ContextCompat.getColor(getBaseContext(), R.color.default_screen_bg)));
-            navigationView.setItemIconTintList(ColorStateList.valueOf(ContextCompat.getColor(getBaseContext(), R.color.color_primary)));
-            navigationView.setItemBackgroundResource(R.drawable.itembackground);
-            navigationView.setNavigationItemSelectedListener(this);
-        }*/
 
         navigationView = (NavigationView) findViewById(R.id.nav_view3);
         if(navigationView!=null){
             navigationView.setItemTextColor(ColorStateList.valueOf(ContextCompat.getColor(getBaseContext(), R.color.not_selected_tab_color)));
-            navigationView.setItemBackgroundResource(R.drawable.itembackgroundpart3);
+            //navigationView.setItemBackgroundResource(R.drawable.itembackgroundpart3);
             navigationView.setNavigationItemSelectedListener(this);
         }
 
@@ -125,17 +116,6 @@ public class PrincipalActivity extends PDOAppCompatActivity implements Navigatio
         super.overridePendingTransition(enterAnim, exitAnim);
     }
 
-    public void buscalinhaerota(View view) {
-        Intent i;
-        i = new Intent(PrincipalActivity.this, BuscaLinhaRotaActivity.class);
-        startActivity(i);
-    }
-
-    public void buscaPontosEstacoes(View view) {
-        Intent i;
-        i = new Intent(PrincipalActivity.this, BuscaPontosEstacoesActivity.class);
-        startActivity(i);
-    }
 
     public void definirlocalpartida(View view) {
         Intent i;
@@ -157,20 +137,7 @@ public class PrincipalActivity extends PDOAppCompatActivity implements Navigatio
 
         if (id == R.id.onibusproximos) {
             // Handle the action
-        } /*else if (id == R.id.favoritos) {
-            Intent i;
-            i = new Intent(PrincipalActivity.this, FavoritoActivity.class);
-            startActivity(i);
-        } *//*else if (id == R.id.config) {
-
-        } else if (id == R.id.share) {
-
-        }*/ /*else if (id == R.id.avaliarapp) {
-            String url = "https://play.google.com/store/apps/details?id=br.com.fetranspor.vadeonibus";
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            startActivity(i);
-        }*/
+        }
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if(drawer!=null) drawer.closeDrawer(GravityCompat.START);
@@ -212,12 +179,6 @@ public class PrincipalActivity extends PDOAppCompatActivity implements Navigatio
     }
 
     public void centerUsuarioMapatab1(View v) {tab1.centerUsuarioMapa(v);}
-
-    public void centerUsuarioMapatab2(View v) {tab2.centerUsuarioMapa(v);}
-
-    public void tentarNovamenteCarregarPontos(View v){
-        tab2.tentarNovamenteCarregarPontos(v);
-    }
 
     public void atualizaNumLinhas(){
         numeroLinhasProximas.setText(String.valueOf(appPresenter.getNumeroOnibusProximos()));

@@ -74,7 +74,7 @@ public class Ponto {
     public void setMarkerOptions(Resources resources){
         this.markerOptions = new MarkerOptions()
                 .position(posicao)
-                .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(resources, R.drawable.pin_bus_station, 50, 65)))
+                .icon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(resources, R.drawable.pinperson, 50, 65)))
                 .title(endereco)
                 .anchor((float) 0.5, (float) 1);
     }

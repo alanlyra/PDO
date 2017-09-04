@@ -145,11 +145,6 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
         presenter.pesquisarRotas(c, this.getBaseContext());
     }
 
-
-
-
-
-
     @Override
     public void setErroTimeout(String msg){
         bar.setVisibility(View.GONE);
@@ -268,9 +263,6 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
             }
         });
     }
-
-
-
 
     private void exibirLoadingListaResultado(){
         listView.setVisibility(View.GONE);

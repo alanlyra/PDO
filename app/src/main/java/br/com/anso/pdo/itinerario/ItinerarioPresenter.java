@@ -26,7 +26,6 @@ public class ItinerarioPresenter implements IItinerarioView.IItinerarioPresenter
         if( Util.nonBlank( view.getRouteName() ) && Util.nonBlank( view.getServico() ) ) {
             String url = PDOConsulta.URL_BASE_WS + "obteritinerarioslinha?token=" + PDOConsulta.TOKEN + "&routeName=" + view.getRouteName() + "&servico=" + view.getServico();
 
-            //Log.d( "URL: ", url);
             new PDOConsulta(new PDOConsultaCallback() {
                 @Override
                 public void callback(String result) {
@@ -37,7 +36,6 @@ public class ItinerarioPresenter implements IItinerarioView.IItinerarioPresenter
     }
 
     public void carregarListaDeItinerarios(String result) {
-        //Log.d( "carregarItinerarios", "\n" + result );
 
         JSONObject linhas = null;
         try {
@@ -58,8 +56,6 @@ public class ItinerarioPresenter implements IItinerarioView.IItinerarioPresenter
         carregarItinerarios(sentidoInicial, createNewList);
     }
 
-
-
     public void carregarItinerarios(int sentido, int createNewList){
         boolean mostrarBotaoInverter = true;
 
@@ -71,7 +67,6 @@ public class ItinerarioPresenter implements IItinerarioView.IItinerarioPresenter
             JSONArray listaJson = listaItinerariosJson.optJSONObject(sentido).optJSONArray("paradas");
 
             List<HashMap<String, String>> aList = new ArrayList<>();
-
 
             try {
                 tempo = listaItinerariosJson.optJSONObject(sentido).getInt("tempo_viagem");

@@ -50,8 +50,6 @@ public class BuscaLinhaRotaActivity extends PDOAppCompatActivity implements IBus
             tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
             tabLayout.setTabTextColors(Color.parseColor("#95a4a6"), Color.parseColor("#009FD6"));
 
-            /*tabLayout.setTabTextColors(R.color.not_selected_tab_color, R.color.color_primary);*/
-
             final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
 
             final PagerAdapter adapter = new PagerAdapter
@@ -94,7 +92,6 @@ public class BuscaLinhaRotaActivity extends PDOAppCompatActivity implements IBus
                     }
                 });
 
-                //localDestinoLinhasRotas.setText(app.getLocalDestinoRota());
             }
         }
 
@@ -122,7 +119,7 @@ public class BuscaLinhaRotaActivity extends PDOAppCompatActivity implements IBus
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 

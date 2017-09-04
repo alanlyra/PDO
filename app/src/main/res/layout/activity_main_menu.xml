@@ -39,8 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView5"
-                android:layout_gravity="center"
-                android:background="@drawable/count" />
+                android:layout_gravity="center" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -47,7 +47,7 @@ import java.util.Timer;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
-import br.com.anso.pdo.favoritos.Favorito;
+
 import br.com.anso.pdo.itinerario.ItinerarioActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Linha;
@@ -62,25 +62,15 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
     private LinearLayout emptyView;
     private LinearLayout bar;
-    private Favorito favorito;
     private FrameLayout frameoptions;
     private Marker userMaker;
     private ArrayList<Marker> busMarkers;
-    private Timer timer = null;  //at class level;
-    private int DELAY   = 500;
-    private FrameLayout buscalinhas;
     private SlidingUpPanelLayout layout;
     private GoogleMap googleMap;
-    private boolean collapseLayout = false;
-    private float historicX = Float.NaN;
-    private float historicY = Float.NaN;
-    private static final int DELTA = 50;
-    private enum Direction {LEFT, RIGHT;}
     private Button linhasdoponto;
     private Button rotasdaqui;
     private Button outraslinhas;
     private Button language;
-    //private Button outrasrotas;
     private ImageView backfromlist;
     private ImageView home;
     private String endereco = "";
@@ -95,11 +85,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     private ImageView click2;
     private ImageView click3;
     private ImageView clock;
-    private ImageView min;
     private LinearLayout flag2;
-
-
-
 
     private AppSingleton appSingleton = AppSingleton.getApp();
     private Usuario usuario;
@@ -124,12 +110,10 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
         listView = (ListView) view.findViewById(R.id.list);
         emptyView = (LinearLayout) view.findViewById(R.id.nenhumaLinhaEncontrada);
-        //buscalinhas = (FrameLayout) view.findViewById(R.id.buscarlinhaserotas);
         linhasdoponto = (Button) view.findViewById(R.id.linhas_desse_ponto);
         rotasdaqui = (Button) view.findViewById(R.id.rotasdaqui);
         outraslinhas = (Button) view.findViewById(R.id.outraslinhas);
         language = (Button) view.findViewById(R.id.language);
-        //outrasrotas = (Button) view.findViewById(R.id.outrasrotas);
         backfromlist = (ImageView) view.findViewById(R.id.backfromlist);
         home = (ImageView) view.findViewById(R.id.home);
         layout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layouttab1);
@@ -139,9 +123,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         click1 = (ImageView) view.findViewById(R.id.click1);
         click2 = (ImageView) view.findViewById(R.id.click2);
         click3 = (ImageView) view.findViewById(R.id.click3);
-
-
-
 
         icon1.bringToFront();
         icon2.bringToFront();
@@ -264,7 +245,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         rotasdaqui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //localDestinoLinhasRotas = (TextView) view.findViewById(R.id.localDestinoLinhasRotas);
+
                 Util.selecionarLocal(getContext(), getResources().getString(R.string.definir_local_destino), new Util.ISetTextCallBack() {
                     @Override
                     public void setText(String value) {
@@ -274,7 +255,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
                         appSingleton.setAbaDefault(1);
                         appSingleton.setlocalDestinoRota(value.concat(municipio));
-                        //localDestinoLinhasRotas.setText( value.concat(municipio));
                         appSingleton.setEnderecoDestino( value, appSingleton.getEnderecoDestinoWS() );
                         appSingleton.setEnderecoDestino(appSingleton.getEnderecoDestinoExibicao(), value);
 
@@ -349,7 +329,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 clock = (ImageView) view.findViewById(R.id.clock);
                 flag2 = (LinearLayout) view.findViewById(R.id.flag2);
 
-                //String txtviagem = Util.setString(getResources().getString(R.string.tempo_chegada), "#95a4a6");
                 String viagem = Util.setString(String.valueOf(tempo), "#009FD6");
                 if(tempo.contains("h")){
                     minORhour.setBackgroundResource(R.drawable.de);
@@ -373,7 +352,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                     flag2.setBackgroundResource(R.color.color_primary4);
                 }
 
-                //((GradientDrawable)getView(position, convertView, parent).getBackground()).setColor(Color.parseColor(aList.get(position).get("corconsorcio")));
                 corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio")));
                 attachPopupHandler(new Linha(routeName, servico, "", corConsorcio, numero, referencia), popUp_btn);
 
@@ -467,17 +445,16 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
             for (Linha l: lista){
                 l.setMarkerOptions(getResources(), this.getContext());
-                Marker b = googleMap.addMarker(l.getMarker());//marcador das onibus proximos
+                Marker b = googleMap.addMarker(l.getMarker());
                 busMarkers.add(b);
-                //b.showInfoWindow();
+
             }
 
             appSingleton.setNumeroOnibusProximos(lista.size());
             PrincipalActivity.numeroLinhasProximas.setText(String.valueOf(appSingleton.getNumeroOnibusProximos()));
 
         }
-       /* for(int i =0;i<busMarkers.size();i++)
-            busMarkers.get(i).showInfoWindow();*/
+
     }
 
     @Override
@@ -553,10 +530,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
         Util.executaCallback("enderecoSelecionado", this);
 
-       /* appSingleton.setAbaDefault(1);
-        Intent i;
-        i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), BuscaLinhaRotaActivity.class);
-        startActivity(i);*/
     }
 
     public void setEnderecos(String endereco, String enderecoWS){

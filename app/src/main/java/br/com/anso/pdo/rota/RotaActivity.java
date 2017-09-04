@@ -343,12 +343,6 @@ public class RotaActivity extends PDOAppCompatActivity implements OnMapReadyCall
     private void selecionarPrimeiraViagem(Rota rota) {
 
         onibusButtons.get(0).performClick(); //Inicia com o Onibus (Otimizar mais tarde)
-        /*if(rota.getViagens().get(0).getTipoTransporte().equals("Caminhada")){
-            caminhadaButtons.get(0).performClick();
-        }
-        else{
-            onibusButtons.get(0).performClick();
-        }*/
     }
 
     private String construirTextoEndereco(String logradouro, String numero, String referencia) {

@@ -1,7 +1,5 @@
 package br.com.anso.pdo.util;
 
-import android.content.Intent;
-
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
@@ -10,11 +8,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.anso.pdo.buscaPontosEstacoes.BuscaPontosEstacoesActivity;
+
 import br.com.anso.pdo.principal.ExibeOnibusProximosFragment;
-import br.com.anso.pdo.principal.ExibePontosProximosFragment;
 import br.com.anso.pdo.principal.IPrincipalView;
-import br.com.anso.pdo.principal.PrincipalActivity;
 
 /**
  * Essa classe é um singleton e armazena as informações da aplicação.
@@ -23,9 +19,7 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
 
     private static AppSingleton app;
 
-    private ExibePontosProximosFragment viewPontos;
     private ExibeOnibusProximosFragment viewLinhas;
-    private BuscaPontosEstacoesActivity viewPontosEstacoes;
     private LatLng coordPonto;
 
     private int metodoOrdenacaoResultados = 3; // mínimo de transbordos
@@ -90,42 +84,17 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
         this.viewLinhas = viewLinhas;
     }
 
-    public ExibePontosProximosFragment getViewPontos() {
-        return viewPontos;
-    }
-
-    public void setViewPontos(ExibePontosProximosFragment viewPontos) {
-        this.viewPontos = viewPontos;
-    }
-
     public int getUserTime() {
         return userTime;
     }
 
-    public void setUserTime(int userTime) {
-        this.userTime = userTime;
-    }
 
-    public BuscaPontosEstacoesActivity getViewPontosEstacoes(){
-        return this.viewPontosEstacoes;
-    }
-
-    public void setViewPontosEstacoes(BuscaPontosEstacoesActivity viewPontosEstacoes){
-        this.viewPontosEstacoes = viewPontosEstacoes;
-    }
-
-    public ArrayList<Ponto> getPontosFavoritos() {
-        return pontosFavoritos;
-    }
 
     public void setPontoFavorito(Ponto pontoFavorito) {
         this.pontosFavoritos.add(pontoFavorito);
         //Util.createAndSaveFile("config.json", null, context);
     }
 
-    public ArrayList<Linha> getLinhasFavoritas() {
-        return linhasFavoritas;
-    }
 
     public void setLinhaFavorita(Linha linhaFavorita) {
         this.linhasFavoritas.add(linhaFavorita);
@@ -137,20 +106,13 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
     }
 
     public void atualizaUsuarioViews(LatLng pos){
-        ExibePontosProximosFragment viewPontos = getViewPontos();
-        if(viewPontos!=null){
-            viewPontos.posicionarUsuarioMapaGPS(pos);
-        }
 
         ExibeOnibusProximosFragment viewLinhas = getViewLinhas();
         if(viewLinhas!=null){
             viewLinhas.posicionarUsuarioMapaGPS(pos);
         }
 
-        BuscaPontosEstacoesActivity viewPontosEstacoes = getViewPontosEstacoes();
-        if(viewPontosEstacoes != null){
-            viewPontosEstacoes.posicionarUsuarioMapaGPS(pos);
-        }
+
     }
 
     public int getNumeroOnibusProximos(){
@@ -227,9 +189,6 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
         this.listaLinhas = listaLinhas;
     }
 
-    public JSONArray getListaLinhas(){
-        return this.listaLinhas;
-    }
 
     public String getTextoBuscaLinha() {
         return textoBuscaLinha;
