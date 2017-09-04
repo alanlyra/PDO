@@ -394,7 +394,7 @@ public class Util {
     }
 
     public static void carregarInformacoesVersaoApp(final Context context){
-        final AppSingleton app = AppSingleton.getApp();
+        /*final AppSingleton app = AppSingleton.getApp();
         PackageInfo pInfo = null;
 
         try {
@@ -424,7 +424,7 @@ public class Util {
 
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public static void animarNovaPosicaoListView(int pos, ListView listView){
