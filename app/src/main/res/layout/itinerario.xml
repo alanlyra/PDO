@@ -6,60 +6,197 @@
     android:background="#f7f7f7"
     tools:context="br.com.anso.pdo.itinerario.ItinerarioActivity">
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:id="@+id/top"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/color_primary3">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/color_primary3">
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="75dp"
+                android:onClick="voltarPrincipal">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/imageView9"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/arrow"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:nestedScrollingEnabled="true"
+                    android:onClick="voltarPrincipal" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_height="match_parent"
-            android:layout_width="75dp"
-            android:onClick="voltarPrincipal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/itiner_rio"
+                android:id="@+id/textView2"
+                android:layout_gravity="center"
+                android:textSize="12dp"
+                android:textColor="#009FD6"
+                android:paddingLeft="45dp"
+                android:layout_marginRight="20dp" />
+
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="20dp"
-                android:id="@+id/imageView9"
-                android:paddingRight="10dp"
-                android:background="@drawable/arrow"
-                android:layout_gravity="left|center_vertical"
-                android:layout_marginLeft="15dp"
-                android:nestedScrollingEnabled="true"
-                android:onClick="voltarPrincipal" />
-        </LinearLayout>
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:id="@+id/home"
+                android:paddingLeft="10dp"
+                android:paddingRight="30dp"
+                android:background="@drawable/home"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="15dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/itiner_rio"
-            android:id="@+id/textView2"
-            android:layout_gravity="center"
-            android:textSize="12dp"
-            android:textColor="#009FD6"
-            android:paddingLeft="45dp"
-            android:layout_marginRight="20dp" />
+        </FrameLayout>
 
         <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:id="@+id/home"
-            android:paddingLeft="10dp"
-            android:paddingRight="30dp"
-            android:background="@drawable/home"
+            android:id="@+id/click5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="right|center_vertical"
-            android:layout_marginRight="15dp" />
-    </FrameLayout>
+            android:rotation="90"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/touchpoint3"
+            android:duration="6000"
+            android:repeatCount="infinite"
+            android:visibility="gone"/>
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="280dp"
+            android:id="@+id/botaoDeItinerario"
+            android:text="@string/detalhes_Itinerario_Abrir"
+            android:textSize="9dp"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/cornerborder"
+            android:textColor="@color/color_primary1"
+            android:layout_marginRight="10dp"
+            android:onClick="MostrarDetalhesItinerario"
+            android:visibility="visible"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/linha"
+            android:background="@color/color_primary1"
+            android:layout_marginTop="0dp"
+            android:layout_below="@+id/top">
+
+            <LinearLayout
+                android:id="@+id/flag_itinerario"
+                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="-34dp"
+                android:rotation = "16"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <LinearLayout
+                android:id="@+id/flag3"
+                android:layout_height="6dp"
+                android:layout_width="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="-30dp"
+                android:background="@color/color_primary1"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <TextView
+                android:id="@+id/num_linha"
+                android:maxWidth="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="7dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:textColor="@color/color_primary3"
+                android:layout_marginTop="-2dp" />
+
+            <TextView
+                android:id="@+id/consorcio"
+                android:maxWidth="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11dp"
+                android:textColor="@color/color_primary3"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="-28dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/listview2"
+            android:id="@+id/tempodeviagem"
+            android:layout_below="@+id/linha">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tempodeviagem2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:id="@+id/sentido"
+                    android:textColor="@color/color_primary1"
+                    android:text="Sentido"
+                    android:layout_gravity="center"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColorHint="#002F3F"
+                    android:textIsSelectable="true"
+                    android:singleLine="false" />
+
+                <TextView
+                    android:id="@+id/duracao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:gravity="right"
+                    android:textAlignment="gravity"
+                    android:textColor="#009FD6"
+                    android:layout_marginLeft="240dp"
+                    android:layout_gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/duracaoTXT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:textColor="#95a4a6"
+                    android:layout_marginLeft="290dp"
+                    android:layout_gravity="center_vertical" />
+            </FrameLayout>
+
+        </LinearLayout>
+
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:sothree="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sliding_layoutItinerario"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_below="@+id/tempodeviagem"
+        android:layout_marginTop="0dp"
         android:gravity="bottom"
-        sothree:umanoPanelHeight="140dp"
-        sothree:umanoParallaxOffset="100dp"
+        sothree:umanoPanelHeight="0dp"
+        sothree:umanoParallaxOffset="10dp"
         sothree:umanoShadowHeight="0dp"
         sothree:umanoScrollableView="@+id/listlinhasdoponto"
         sothree:umanoAnchorPoint="1"
@@ -86,6 +223,20 @@
                 android:background="@drawable/gpsbutton"
                 android:alpha="0.8"
                 android:paddingRight="10dp"/>
+
+            <Button
+                android:layout_width="104dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/botaoDeInversao"
+                android:text="@string/inverter_sentido"
+                android:textSize="9dp"
+                android:background="@drawable/cornerborder"
+                android:textColor="@color/color_primary1"
+                android:layout_gravity="bottom|center_horizontal"
+                android:onClick="InverterPartidaeDestino"
+                android:visibility="visible"
+                android:layout_weight="0.01" />
         </fragment>
 
         <FrameLayout
@@ -94,236 +245,75 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_gravity="top"
-                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:background="@color/listview1">
-
-                    <!--<LinearLayout
-                        android:id="@+id/flag_itinerario"
-                        android:layout_height="match_parent"
-                        android:layout_width="5dp"
-                        android:layout_marginTop="5dp"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="5dp" />-->
-
-                    <LinearLayout
-                        android:id="@+id/flag_itinerario"
-                        android:layout_height="40dp"
-                        android:layout_width="40dp"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="-34dp"
-                        android:rotation = "16"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        />
-
-                    <LinearLayout
-                        android:id="@+id/flag3"
-                        android:layout_height="6dp"
-                        android:layout_width="40dp"
-                        android:layout_marginBottom="20dp"
-                        android:layout_marginLeft="-30dp"
-                        android:background="@color/listview1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        />
-
-                    <TextView
-                        android:id="@+id/num_linha"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="7dp"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="16dp"
-                        android:textColor="#f7f7f7"
-                        android:layout_marginTop="-2dp" />
-
-                    <TextView
-                        android:id="@+id/consorcio"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="11dp"
-                        android:textColor="#95a4a6"
-                        android:layout_gravity="left|center_vertical"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="-28dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="45dp"
-                    android:background="@color/listview2"
-                    android:id="@+id/tempodeviagem">
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/tempodeviagem2">
-
-                        <TextView
-                            android:id="@+id/duracao"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="12dp"
-                            android:textColor="#009FD6"
-                            android:layout_marginLeft="15dp"
-                            android:layout_gravity="center_vertical" />
-
-                        <TextView
-                            android:id="@+id/duracaoTXT"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="12dp"
-                            android:textColor="#95a4a6"
-                            android:layout_marginLeft="65dp"
-                            android:layout_gravity="center_vertical" />
-                    </FrameLayout>
-
-                </LinearLayout>
-
-
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:background="#f7f7f7"
-                    android:layout_weight="1.21"
-                    android:paddingTop="-20dp"
-                    android:layout_below="@+id/tempodeviagem">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:id="@+id/sentido"
-                        android:layout_marginTop="-20dp"
-                        android:textColor="#002F3F"
-                        android:text="Sentido"
-                        android:layout_gravity="center"
-                        android:textSize="12dp"
-                        android:textColorHint="#002F3F"
-                        android:textIsSelectable="true"
-                        android:textAlignment="center"
-                        android:singleLine="false" />
-
-                </FrameLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:weightSum="1">
-
-                    <!--<ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="70dp"
-                        android:id="@+id/botaoDeInversao"
-                        android:background="@drawable/reverse2"
-                        android:layout_marginRight="22dp"
-                        android:layout_gravity="right"
-                        android:onClick="InverterPartidaeDestino"
-                        android:visibility="visible"/>-->
-
-                    <Button
-                        android:layout_width="104dp"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="96dp"
-                        android:id="@+id/botaoDeInversao"
-                        android:text="@string/inverter_sentido"
-                        android:textSize="9dp"
-                        android:background="@drawable/cornerborder"
-                        android:textColor="@color/color_primary1"
-                        android:layout_gravity="center"
-                        android:onClick="InverterPartidaeDestino"
-                        android:visibility="visible"
-                        android:layout_weight="0.01" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="-115dp"
-                        android:id="@+id/botaoDeItinerario"
-                        android:text="@string/detalhes_Itinerario_Abrir"
-                        android:textSize="9dp"
-                        android:background="@drawable/cornerborder"
-                        android:textColor="@color/color_primary1"
-                        android:layout_marginRight="10dp"
-                        android:layout_gravity="right"
-                        android:onClick="MostrarDetalhesItinerario"
-                        android:visibility="visible"
-                        android:layout_weight="0.02" />
-
-                    <ImageView
-                        android:id="@+id/click5"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="right"
-                        android:layout_marginRight="40dp"
-                        android:layout_marginTop="-1dp"
-                        android:background="@drawable/touchpoint3"
-                        android:duration="6000"
-                        android:repeatCount="infinite" />
-
-                </LinearLayout>
-
-            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|bottom"
                 android:orientation="vertical"
-                android:layout_gravity="center_horizontal|bottom">
+                android:layout_below="@+id/detalhes">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/color_primary3"
+                    android:id="@+id/detalhes">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/detalhes"
+                        android:textSize="12dp"
+                        android:textColor="@color/color_primary"
+                        />
+
+                </LinearLayout>
 
                 <ListView
                     android:id="@+id/list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="140dp"
-                    android:dividerHeight="0.1dp"
-                    android:clickable="true"
-                    android:drawSelectorOnTop="false"
-                    android:visibility="visible"
+                    android:layout_marginTop="-10dp"
                     android:background="#f7f7f7"
-                    android:divider="#f7f7f7"/>
+                    android:clickable="true"
+                    android:divider="#f7f7f7"
+                    android:dividerHeight="0.1dp"
+                    android:drawSelectorOnTop="false"
+                    android:visibility="visible" />
 
                 <LinearLayout
+                    android:id="@+id/itinerarioNaoCarregado"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/itinerarioNaoCarregado"
-                    android:orientation="vertical"
-                    android:layout_marginTop="100dp">
+                    android:layout_marginTop="100dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/itinerarioNaoCarregadoText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="@string/falha_de_conex_o"
-                        android:gravity="center"
-                        android:textColor="#000"
-                        android:paddingTop="4dp"
+                        android:layout_marginBottom="10dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"/>
+                        android:gravity="center"
+                        android:paddingTop="4dp"
+                        android:text="@string/falha_de_conex_o"
+                        android:textColor="#000" />
 
                     <Button
+                        android:id="@+id/tentarNovamente"
                         android:layout_width="270dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/tentar_novamente"
-                        android:id="@+id/tentarNovamente"
-                        android:background="@drawable/cornerborder"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="10dp"
-                        android:onClick="tentarNovamente"/>
+                        android:background="@drawable/cornerborder"
+                        android:onClick="tentarNovamente"
+                        android:text="@string/tentar_novamente" />
 
                 </LinearLayout>
 
@@ -333,12 +323,12 @@
                     android:layout_marginTop="70dp">
 
                     <LinearLayout
-                        android:orientation="vertical"
+                        android:id="@+id/barLinear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/barLinear"
-                        android:visibility="gone"
-                        android:layout_centerInParent="true">
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <ProgressBar
                             android:id="@+id/progressBar"
@@ -346,20 +336,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-                            android:indeterminateDrawable="@drawable/progress_circle"
-                            android:layout_gravity="center_horizontal|top">
-                        </ProgressBar>
+                            android:layout_gravity="center_horizontal|top"
+                            android:indeterminateDrawable="@drawable/progress_circle"></ProgressBar>
 
                         <TextView
+                            android:id="@+id/progressTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="@string/buscando_dados"
-                            android:id="@+id/progressTxt"
                             android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal|bottom"
+                            android:text="@string/buscando_dados"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
                             android:textColor="@color/listview1"
-                            android:textSize="14dp"
-                            android:layout_gravity="center_horizontal|bottom" />
+                            android:textSize="14dp" />
                     </LinearLayout>
                 </RelativeLayout>
 

@@ -8,6 +8,7 @@
 
 
     <FrameLayout
+        android:id="@+id/topo"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
@@ -52,16 +53,251 @@
 
     </FrameLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/color_primary2"
+        android:id="@+id/layoutViagemSelecionada"
+        android:layout_below="@+id/topo">
+
+        <!--<LinearLayout
+            android:id="@+id/layoutCorConsorcio"
+            android:layout_height="match_parent"
+            android:layout_width="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="5dp" />-->
+
+        <LinearLayout
+            android:id="@+id/layoutCorConsorcio"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="-34dp"
+            android:rotation = "16"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            />
+
+        <LinearLayout
+            android:id="@+id/flag3"
+            android:layout_height="6dp"
+            android:layout_width="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="-30dp"
+            android:background="@color/color_primary1"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/layoutLinhaSelecionada">
+            <TextView
+                android:id="@+id/num_linha"
+                android:textColorHint="#95a4a6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:textColor="@color/color_primary3"
+                android:layout_marginTop="2dp"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/consorcio"
+                android:text=""
+                android:textColorHint="#95a4a6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11dp"
+                android:textColor="@color/color_primary3"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginTop="-29dp"
+                android:id="@+id/botaoDeRotaDetalhes"
+                android:text="@string/detalhes_Itinerario_Abrir"
+                android:textSize="9dp"
+                android:background="@drawable/cornerborder"
+                android:textColor="@color/color_primary1"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:onClick="MostrarDetalhesRota"
+                android:visibility="visible"
+                android:layout_weight="0.02" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/topo2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/color_primary3"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/layoutViagemSelecionada">
+
+        <Button
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/person3"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/caminhada_0"
+            android:visibility="gone"
+            />
+        <Button
+            android:layout_width="16dp"
+            android:layout_height="9dp"
+            android:background="@drawable/more_2"
+            android:layout_margin="3dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/transicao_0"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/bus3"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/onibus_0"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="16dp"
+            android:layout_height="9dp"
+            android:background="@drawable/more_2"
+            android:layout_margin="3dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/transicao_1"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/person3"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/caminhada_1"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="16dp"
+            android:layout_height="9dp"
+            android:background="@drawable/more_2"
+            android:layout_margin="3dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/transicao_2"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/bus3"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/onibus_1"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="16dp"
+            android:layout_height="9dp"
+            android:background="@drawable/more_2"
+            android:layout_margin="3dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/transicao_3"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/person3"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/caminhada_2"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="16dp"
+            android:layout_height="9dp"
+            android:background="@drawable/more_2"
+            android:layout_margin="3dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/transicao_4"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/bus3"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/onibus_2"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="16dp"
+            android:layout_height="9dp"
+            android:background="@drawable/more_2"
+            android:layout_margin="3dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/transicao_5"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/person3"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/caminhada_3"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:id="@+id/tempoViagem"
+            android:text=""
+            android:textColor="@color/color_primary"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+
+    <!--<LinearLayout
+        android:id="@+id/topo3"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/color_primary3"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/topo2">
+
+        <ImageView
+            android:id="@+id/click4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/touchpoint3"
+            android:repeatCount="infinite"
+            android:duration="6000"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="3dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clique_para_visualizar"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/not_selected_tab_color"/>
+
+    </LinearLayout>-->
+
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:sothree="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sliding_layoutRota"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="0dp"
         android:gravity="bottom"
-        sothree:umanoPanelHeight="104dp"
-        sothree:umanoParallaxOffset="100dp"
+        android:layout_below="@+id/topo2"
+        sothree:umanoPanelHeight="0dp"
+        sothree:umanoParallaxOffset="10dp"
         sothree:umanoShadowHeight="0dp"
         sothree:umanoScrollableView="@+id/listlinhasdoponto"
         sothree:umanoAnchorPoint="1"
@@ -88,6 +324,16 @@
                 android:background="@drawable/gpsbutton"
                 android:alpha="0.8"
                 android:paddingRight="10dp"/>
+
+            <ImageView
+                android:id="@+id/click4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/touchpoint4"
+                android:repeatCount="infinite"
+                android:duration="6000"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"/>
         </fragment>
 
         <LinearLayout
@@ -97,243 +343,6 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:background="#f7f7f7">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="105dp"
-                android:layout_gravity="top"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:background="@color/color_primary2"
-                    android:id="@+id/layoutViagemSelecionada">
-
-                    <!--<LinearLayout
-                        android:id="@+id/layoutCorConsorcio"
-                        android:layout_height="match_parent"
-                        android:layout_width="5dp"
-                        android:layout_marginTop="5dp"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="5dp" />-->
-
-                    <LinearLayout
-                        android:id="@+id/layoutCorConsorcio"
-                        android:layout_height="40dp"
-                        android:layout_width="40dp"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="-34dp"
-                        android:rotation = "16"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        />
-
-                    <LinearLayout
-                        android:id="@+id/flag3"
-                        android:layout_height="6dp"
-                        android:layout_width="40dp"
-                        android:layout_marginBottom="20dp"
-                        android:layout_marginLeft="-30dp"
-                        android:background="@color/color_primary1"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:id="@+id/layoutLinhaSelecionada">
-                        <TextView
-                            android:id="@+id/num_linha"
-                            android:textColorHint="#95a4a6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="2dp"
-                            android:layout_marginLeft="10dp"
-                            android:textSize="16dp"
-                            android:textColor="@color/color_primary3"
-                            android:layout_marginTop="2dp"
-                            android:text="" />
-
-                        <TextView
-                            android:id="@+id/consorcio"
-                            android:text=""
-                            android:textColorHint="#95a4a6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="11dp"
-                            android:textColor="@color/color_primary3"
-                            android:layout_gravity="left|center_vertical"
-                            android:layout_marginLeft="10dp"/>
-
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="22dp"
-                            android:layout_marginTop="-29dp"
-                            android:id="@+id/botaoDeRotaDetalhes"
-                            android:text="@string/detalhes_Itinerario_Abrir"
-                            android:textSize="9dp"
-                            android:background="@drawable/cornerborder"
-                            android:textColor="@color/color_primary1"
-                            android:layout_marginRight="10dp"
-                            android:layout_gravity="right"
-                            android:onClick="MostrarDetalhesRota"
-                            android:visibility="visible"
-                            android:layout_weight="0.02" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="45dp"
-                    android:background="@color/color_primary3"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
-                    
-                    <Button
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:background="@drawable/person3"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/caminhada_0"
-                        android:visibility="gone"
-                        />
-                    <Button
-                        android:layout_width="16dp"
-                        android:layout_height="9dp"
-                        android:background="@drawable/more_2"
-                        android:layout_margin="3dp"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/transicao_0"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/bus3"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/onibus_0"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="16dp"
-                        android:layout_height="9dp"
-                        android:background="@drawable/more_2"
-                        android:layout_margin="3dp"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/transicao_1"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:background="@drawable/person3"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/caminhada_1"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="16dp"
-                        android:layout_height="9dp"
-                        android:background="@drawable/more_2"
-                        android:layout_margin="3dp"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/transicao_2"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/bus3"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/onibus_1"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="16dp"
-                        android:layout_height="9dp"
-                        android:background="@drawable/more_2"
-                        android:layout_margin="3dp"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/transicao_3"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:background="@drawable/person3"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/caminhada_2"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="16dp"
-                        android:layout_height="9dp"
-                        android:background="@drawable/more_2"
-                        android:layout_margin="3dp"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/transicao_4"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/bus3"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/onibus_2"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="16dp"
-                        android:layout_height="9dp"
-                        android:background="@drawable/more_2"
-                        android:layout_margin="3dp"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/transicao_5"
-                        android:visibility="gone"/>
-                    <Button
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:background="@drawable/person3"
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/caminhada_3"
-                        android:visibility="gone"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:padding="5dp"
-                        android:id="@+id/tempoViagem"
-                        android:text=""
-                        android:textColor="@color/color_primary"
-                        android:gravity="center_vertical"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="75dp"
-                    android:background="@color/color_primary3"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
-
-                    <ImageView
-                        android:id="@+id/click4"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/touchpoint3"
-                        android:repeatCount="infinite"
-                        android:duration="6000"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginLeft="3dp"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/clique_para_visualizar"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="10dp"
-                        android:textColor="@color/not_selected_tab_color"/>
-
-                </LinearLayout>
-
-            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -376,6 +385,26 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_gravity="center_horizontal|bottom">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/color_primary3"
+                    android:id="@+id/detalhes">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/detalhes"
+                        android:textSize="12dp"
+                        android:textColor="@color/color_primary"
+                        />
+
+                </LinearLayout>
+
                 <ListView
                     android:id="@+id/list"
                     android:layout_width="match_parent"
