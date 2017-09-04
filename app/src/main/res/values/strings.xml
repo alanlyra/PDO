@@ -133,5 +133,6 @@
     <string name="clique_para_municipio">Touch to select city</string>
     <string name="buscar_por_linhas">SEARCH FOR LINES</string>
     <string name="clique_para_visualizar">Touch to view details</string>
+    <string name="ponto">Bus Stop</string>
 
 </resources>

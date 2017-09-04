@@ -157,14 +157,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         exibirLoadingListaResultado();
         presenter = new ExibeOnibusProximosPresenter(this);
 
-        /*getActivity().getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);*/
-
         language.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -239,17 +231,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
                 popup.show();
 
-              /*  String languageToLoad  = "en";
-                Locale locale = new Locale(languageToLoad);
-                Locale.setDefault(locale);
-                Configuration config = new Configuration();
-                config.locale = locale;
-                getContext().getResources().updateConfiguration(config,getContext().getResources().getDisplayMetrics());
-
-                Intent i;
-                i = new Intent(ExibeOnibusProximosFragment.this.getActivity(), PrincipalActivity.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);*/
             }
         });
 
@@ -417,51 +398,6 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 i = new Intent(getActivity(), ItinerarioActivity.class);
                 startActivity(i);
 
-
-                /*PopupMenu popup = new PopupMenu(getActivity().getBaseContext(), popUp_btn);
-
-                try {
-                    Field[] fields = popup.getClass().getDeclaredFields();
-                    for (Field field : fields) {
-                        if ("mPopup".equals(field.getName())) {
-                            field.setAccessible(true);
-                            Object menuPopupHelper = field.get(popup);
-                            Class<?> classPopupHelper = Class.forName(menuPopupHelper.getClass().getName());
-                            Method setForceIcons = classPopupHelper.getMethod("setForceShowIcon", boolean.class);
-                            setForceIcons.invoke(menuPopupHelper, true);
-                            break;
-                        }
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                popup.getMenuInflater().inflate(R.menu.popup_filters, popup.getMenu());
-
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-
-                    public boolean onMenuItemClick(MenuItem item) {
-
-                        switch (item.getItemId()) {
-                           *//* case R.id.favoritar:
-                                favorito = new Favorito();
-                                favorito.atualizaFavoritos(getContext(), linha);
-
-                                return true;*//*
-                            case R.id.itinerario:
-                                appSingleton.setRouteNameExibirIitnerario(linha.getRouteName());
-                                appSingleton.setServicoExibirIitnerario(linha.getServico());
-                                appSingleton.setCorConsorcio(linha.getCorConsorcio());
-                                Intent i;
-                                i = new Intent(getActivity(), ItinerarioActivity.class);
-                                startActivity(i);
-                                return true;
-                            default:
-                                return false;
-                        }
-                    }
-                });
-
-                popup.show();*/
             }
         });
     }

@@ -132,4 +132,5 @@
     <string name="clique_para_municipio">Toca para seleccionar ciudad</string>
     <string name="buscar_por_linhas">BÚSQUEDA DE LÍNEAS</string>
     <string name="clique_para_visualizar">Toca para mirar detalles</string>
+    <string name="ponto">Parada de Autobús</string>
 </resources>
