@@ -1,6 +1,9 @@
 package br.com.anso.pdo.rota;
 
+import android.annotation.TargetApi;
 import android.graphics.Color;
+import android.graphics.drawable.VectorDrawable;
+import android.os.Build;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -98,6 +101,7 @@ public class OnibusRotaObject implements RecursoMapaObject, View.OnClickListener
         tratarCliqueNoBotaoTransbordo(true);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void tratarCliqueNoBotaoTransbordo(boolean centralizarPelaPolyline) {
         View view = this.botao;
@@ -114,7 +118,9 @@ public class OnibusRotaObject implements RecursoMapaObject, View.OnClickListener
         view.setBackgroundResource(R.drawable.bus);
         ((TextView) layoutLinhaSelecionada.findViewById(R.id.num_linha)).setText(viagem.getLinha().getNumero());
         ((TextView) layoutLinhaSelecionada.findViewById(R.id.consorcio)).setText(viagem.getLinha().getConsorcio());
-        (layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio)).setBackgroundColor(Color.parseColor(viagem.getLinha().getCorConsorcio()));
+        VectorDrawable gd = (VectorDrawable) layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio).getBackground().getCurrent();
+        gd.setTint(Color.parseColor(viagem.getLinha().getCorConsorcio()));
+        //(layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio)).setBackgroundColor(Color.parseColor(viagem.getLinha().getCorConsorcio()));
 
         for(Polyline p : polylineArraList) {
             p.setColor(Color.parseColor(COR_LINE_ONIBUS_SELECIONADO));

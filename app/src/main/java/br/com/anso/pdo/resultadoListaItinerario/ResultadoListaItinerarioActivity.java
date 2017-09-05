@@ -1,8 +1,11 @@
 package br.com.anso.pdo.resultadoListaItinerario;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.VectorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -98,6 +101,7 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
 
         SimpleAdapter adapter = new SimpleAdapter(this.getBaseContext(), aList, R.layout.listview_resultadolinhas_layout, from, to) {
 
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             public View getView(int position, View convertView, ViewGroup parent) {
                 Linha linha = new Linha();
 
@@ -112,22 +116,20 @@ public class ResultadoListaItinerarioActivity extends Activity implements IResul
 
                 LinearLayout corconsorcioLayout = (LinearLayout) view.findViewById(R.id.flag);
                 optionsLayout = (LinearLayout) view.findViewById(R.id.optionsLayout);
-                flag5 = (LinearLayout) view.findViewById(R.id.flag5);
 
-                corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio")));
+                VectorDrawable gd = (VectorDrawable) corconsorcioLayout.getBackground().getCurrent();
+                gd.setTint(Color.parseColor(aList.get(position).get("corconsorcio")));
+                //corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio")));
 
 
                 attachPopupHandler(linha, optionsLayout);
                 attachClickItemHandler(linha.getRouteName(), linha.getServico(), (LinearLayout) view.findViewById(R.id.itemLista));
 
-                if (position % 2 == 1) {
+                if (position % 2 == 1)
                     view.setBackgroundResource(R.color.color_primary2);
-                    flag5.setBackgroundResource(R.color.color_primary2);
-                }
-                else if (position % 2 == 0) {
+
+                else if (position % 2 == 0)
                     view.setBackgroundResource(R.color.color_primary4);
-                    flag5.setBackgroundResource(R.color.color_primary4);
-                }
 
                 return view;
             }

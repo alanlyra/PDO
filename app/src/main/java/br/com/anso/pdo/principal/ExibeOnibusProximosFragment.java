@@ -1,10 +1,13 @@
 package br.com.anso.pdo.principal;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.VectorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -86,6 +89,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
     private ImageView click3;
     private ImageView clock;
     private LinearLayout flag2;
+    private ArrayList<View> viewsList;
 
     private AppSingleton appSingleton = AppSingleton.getApp();
     private Usuario usuario;
@@ -107,6 +111,8 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
 
         appSingleton.setViewLinhas(this);
         usuario = Usuario.getInstance();
+
+        viewsList = new ArrayList<>();
 
         listView = (ListView) view.findViewById(R.id.list);
         emptyView = (LinearLayout) view.findViewById(R.id.nenhumaLinhaEncontrada);
@@ -309,7 +315,10 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
         }
 
         SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), aList, R.layout.listview_layout, from, to) {
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             public View getView(int position, View convertView, ViewGroup parent) {
+
+
 
                 String routeName = aList.get(position).get("route_name");
                 String servico = aList.get(position).get("servico");
@@ -318,7 +327,13 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 String numero =  aList.get(position).get("txt");
                 String tempo =  aList.get(position).get("tempochegada");
 
-                View view = super.getView(position, convertView, parent);
+                final View view = super.getView(position, convertView, parent);
+
+                if(!viewsList.contains(view)){
+                    viewsList.add(view);
+                }
+
+
                 ImageView popUp_btn = (ImageView) view.findViewById(R.id.options);
 
                 LinearLayout corconsorcioLayout = (LinearLayout) view.findViewById(R.id.flag);
@@ -344,15 +359,19 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 else
                     tempoViagem.setVisibility(View.VISIBLE);
 
+
                 if (position % 2 == 1) {
                     view.setBackgroundResource(R.color.color_primary2);
-                    flag2.setBackgroundResource(R.color.color_primary2);
+                    //flag2.setBackgroundResource(R.color.color_primary2);
                 } else if (position % 2 == 0) {
                     view.setBackgroundResource(R.color.color_primary4);
-                    flag2.setBackgroundResource(R.color.color_primary4);
+                    //flag2.setBackgroundResource(R.color.color_primary4);
                 }
 
-                corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio")));
+                VectorDrawable gd = (VectorDrawable) corconsorcioLayout.getBackground().getCurrent();
+                gd.setTint(Color.parseColor(aList.get(position).get("corconsorcio")));
+
+                //corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio")));
                 attachPopupHandler(new Linha(routeName, servico, "", corConsorcio, numero, referencia), popUp_btn);
 
                 return view;

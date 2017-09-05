@@ -1,8 +1,11 @@
 package br.com.anso.pdo.resultadoRotas;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.VectorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,9 +44,6 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
     private String endereco = "";
     private ImageView back;
     private ImageView home;
-    private LinearLayout flag6;
-    private LinearLayout flag7;
-    private LinearLayout flag8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -173,6 +173,7 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
 
         SimpleAdapter adapter = new SimpleAdapter(this.getBaseContext(), aList, R.layout.listview_resultadorotas_layout, from, to) {
 
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
 
@@ -181,14 +182,13 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
                 TextView tempoviagem1 = (TextView) view.findViewById(R.id.tempoviagem1);
                 TextView tempoviagem2 = (TextView) view.findViewById(R.id.tempoviagem2);
                 TextView tempoviagem3 = (TextView) view.findViewById(R.id.tempoviagem3);
-                flag6 = (LinearLayout) view.findViewById(R.id.flag6);
-                flag7 = (LinearLayout) view.findViewById(R.id.flag7);
-                flag8 = (LinearLayout) view.findViewById(R.id.flag8);
 
                 LinearLayout corconsorcioLayout;
                 if(map.containsKey("corconsorcio1")){
                     corconsorcioLayout = (LinearLayout) view.findViewById(R.id.flag1);
-                    corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio1")));
+                    VectorDrawable gd = (VectorDrawable) corconsorcioLayout.getBackground().getCurrent();
+                    gd.setTint(Color.parseColor(aList.get(position).get("corconsorcio1")));
+                    //corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio1")));
                     view.findViewById(R.id.rotaitem1).setVisibility(LinearLayout.VISIBLE);
                     String tempo1 =  aList.get(position).get("tempoviagem1");
                     if(tempo1.contains("N/D"))
@@ -200,7 +200,9 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
                 }
                 if(map.containsKey("corconsorcio2")){
                     corconsorcioLayout = (LinearLayout) view.findViewById(R.id.flag2);
-                    corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio2")));
+                    VectorDrawable gd = (VectorDrawable) corconsorcioLayout.getBackground().getCurrent();
+                    gd.setTint(Color.parseColor(aList.get(position).get("corconsorcio2")));
+                    //corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio2")));
                     view.findViewById(R.id.rotaitem2).setVisibility(LinearLayout.VISIBLE);
                     String tempo2 =  aList.get(position).get("tempoviagem2");
                     if(tempo2.contains("N/D"))
@@ -213,7 +215,9 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
                 }
                 if(map.containsKey("corconsorcio3")){
                     corconsorcioLayout = (LinearLayout) view.findViewById(R.id.flag3);
-                    corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio3")));
+                    VectorDrawable gd = (VectorDrawable) corconsorcioLayout.getBackground().getCurrent();
+                    gd.setTint(Color.parseColor(aList.get(position).get("corconsorcio3")));
+                    //corconsorcioLayout.setBackgroundColor(Color.parseColor(aList.get(position).get("corconsorcio3")));
                     view.findViewById(R.id.rotaitem3).setVisibility(LinearLayout.VISIBLE);
                     String tempo3 =  aList.get(position).get("tempoviagem3");
                     if(tempo3.contains("N/D"))
@@ -227,19 +231,11 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
 
                 attachClickItemHandler(position, (LinearLayout) view.findViewById(R.id.itemLista));
 
-                if (position % 2 == 1) {
+                if (position % 2 == 1)
                     view.setBackgroundResource(R.color.color_primary2);
-                    flag6.setBackgroundResource(R.color.color_primary2);
-                    flag7.setBackgroundResource(R.color.color_primary2);
-                    flag8.setBackgroundResource(R.color.color_primary2);
-                }
-                else if (position % 2 == 0) {
+                else if (position % 2 == 0)
                     view.setBackgroundResource(R.color.color_primary4);
-                    flag6.setBackgroundResource(R.color.color_primary4);
-                    flag7.setBackgroundResource(R.color.color_primary4);
-                    flag8.setBackgroundResource(R.color.color_primary4);
 
-                }
 
                 return view;
             }

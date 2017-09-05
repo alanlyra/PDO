@@ -92,6 +92,19 @@
             <LinearLayout
                 android:id="@+id/flag_itinerario"
                 android:layout_height="40dp"
+                android:layout_width="35dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="-2dp"
+                android:background="@drawable/busvector"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <!--<LinearLayout
+                android:id="@+id/flag_itinerario"
+                android:layout_height="40dp"
                 android:layout_width="40dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="6dp"
@@ -110,7 +123,7 @@
                 android:background="@color/color_primary1"
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
-                />
+                />-->
 
             <TextView
                 android:id="@+id/num_linha"
@@ -118,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="7dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="6dp"
                 android:textSize="16dp"
                 android:textColor="@color/color_primary3"
                 android:layout_marginTop="-2dp" />
@@ -171,7 +184,7 @@
                     android:gravity="right"
                     android:textAlignment="gravity"
                     android:textColor="#009FD6"
-                    android:layout_marginLeft="240dp"
+                    android:layout_marginLeft="247dp"
                     android:layout_gravity="center_vertical" />
 
                 <TextView
@@ -180,9 +193,11 @@
                     android:layout_height="wrap_content"
                     android:textSize="12dp"
                     android:textColor="#95a4a6"
-                    android:layout_marginLeft="290dp"
+                    android:layout_marginLeft="297dp"
                     android:layout_gravity="center_vertical" />
+
             </FrameLayout>
+
 
         </LinearLayout>
 
@@ -241,7 +256,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="380dp"
+            android:layout_height="300dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true">
 

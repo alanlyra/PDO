@@ -58,6 +58,18 @@
 
             <LinearLayout
                 android:id="@+id/flag1"
+                android:layout_height="40dp"
+                android:layout_width="35dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="-2dp"
+                android:background="@drawable/busvector"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <!--<LinearLayout
+                android:id="@+id/flag1"
                 android:layout_height="60dp"
                 android:layout_width="40dp"
                 android:layout_marginTop="1dp"
@@ -68,19 +80,7 @@
                 android:rotation = "14"
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
-                />
-
-            <LinearLayout
-                android:id="@+id/flag6"
-                android:layout_height="3dp"
-                android:layout_width="40dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="29dp"
-                android:layout_marginLeft="-32dp"
-                android:background="@color/color_primary4"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                />
+                />-->
 
             <LinearLayout
                 android:layout_width="320dp"
@@ -142,6 +142,19 @@
 
             <LinearLayout
                 android:id="@+id/flag2"
+                android:layout_height="40dp"
+                android:layout_width="35dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="-2dp"
+                android:background="@drawable/busvector"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+
+            <!--<LinearLayout
+                android:id="@+id/flag2"
                 android:layout_height="60dp"
                 android:layout_width="40dp"
                 android:layout_marginTop="1dp"
@@ -152,19 +165,8 @@
                 android:rotation = "14"
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
-                />
+                />-->
 
-            <LinearLayout
-                android:id="@+id/flag7"
-                android:layout_height="3dp"
-                android:layout_width="40dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="29dp"
-                android:layout_marginLeft="-32dp"
-                android:background="@color/color_primary4"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                />
 
             <LinearLayout
                 android:layout_width="320dp"
@@ -224,7 +226,20 @@
                 android:layout_gravity="center_vertical"
                 />-->
 
+
             <LinearLayout
+                android:id="@+id/flag3"
+                android:layout_height="40dp"
+                android:layout_width="35dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="-2dp"
+                android:background="@drawable/busvector"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />
+
+            <!--<LinearLayout
                 android:id="@+id/flag3"
                 android:layout_height="60dp"
                 android:layout_width="40dp"
@@ -236,19 +251,8 @@
                 android:rotation = "14"
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
-                />
+                />-->
 
-            <LinearLayout
-                android:id="@+id/flag8"
-                android:layout_height="3dp"
-                android:layout_width="40dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="29dp"
-                android:layout_marginLeft="-32dp"
-                android:background="@color/color_primary4"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                />
 
             <LinearLayout
                 android:layout_width="320dp"

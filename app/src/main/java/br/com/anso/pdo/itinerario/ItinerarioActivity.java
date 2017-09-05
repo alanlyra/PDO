@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -177,6 +178,7 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
 
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void exibirItinerariosNoMapa(JSONObject itinerarioJSON, boolean mostrarBotaoInverter) {
         if (mostrarBotaoInverter)
             botaoDeInversao.setVisibility(View.VISIBLE);
@@ -280,7 +282,10 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
 
             consorcioTV.setText(getConsorcioExibirItinerario());
             numLinhaTV.setText(getNumOnibusExibirItinerario());
-            corConsorcio.setBackgroundColor(Color.parseColor(appSingleton.getCorConsorcio()));
+
+            VectorDrawable gd = (VectorDrawable) corConsorcio.getBackground().getCurrent();
+            gd.setTint(Color.parseColor(appSingleton.getCorConsorcio()));
+            //corConsorcio.setBackgroundColor(Color.parseColor(appSingleton.getCorConsorcio()));
 
             String txtsentido = Util.setString(getResources().getString(R.string.sentido), "#95a4a6");
             String sentidoLinha = Util.setStringNegrito(getSentidoExibirItinerario(), "2c3e50");
@@ -358,15 +363,21 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
         int[] to = {R.id.referencia};
 
         TextView tempoviagem = (TextView) findViewById(R.id.duracao);
+        TextView tempoviagem2 = (TextView) findViewById(R.id.duracaoTXT);
         String viagem = Util.setString(String.valueOf(tempo), "#009FD6");
         String txtviagem = Util.setString(getResources().getString(R.string.de_viagem), "#95a4a6");
         tempoviagem.setText(Html.fromHtml(viagem + " " + txtviagem));
 
 
-        if(tempo.contains("N/D"))
-            tempoViagem.setVisibility(View.GONE);
-        else
-            tempoViagem.setVisibility(View.VISIBLE);
+        if(tempo.contains("N/D")){
+            tempoviagem.setVisibility(View.GONE);
+            tempoviagem2.setVisibility(View.GONE);
+        }
+        else{
+            tempoviagem.setVisibility(View.VISIBLE);
+            tempoviagem2.setVisibility(View.VISIBLE);
+        }
+
 
         adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.listview_itinerarios_layout, from, to) {
             public View getView(final int position, View convertView, ViewGroup parent) {
