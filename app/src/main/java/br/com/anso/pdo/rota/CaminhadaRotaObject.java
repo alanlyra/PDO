@@ -1,6 +1,9 @@
 package br.com.anso.pdo.rota;
 
+import android.annotation.TargetApi;
 import android.graphics.Color;
+import android.graphics.drawable.VectorDrawable;
+import android.os.Build;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -92,6 +95,7 @@ public class CaminhadaRotaObject implements RecursoMapaObject, View.OnClickListe
         tratarCliqueNoBotaoTransbordo(true);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void tratarCliqueNoBotaoTransbordo(boolean centralizarPelaPolyline){
         View v = this.botao;
 
@@ -99,7 +103,12 @@ public class CaminhadaRotaObject implements RecursoMapaObject, View.OnClickListe
 
         ((TextView) layoutLinhaSelecionada.findViewById(R.id.num_linha)).setText("Caminhada");
         ((TextView) layoutLinhaSelecionada.findViewById(R.id.consorcio)).setText("");
-        (layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio)).setBackgroundColor(Color.parseColor(CaminhadaRotaObject.COR_LINE_CAMINHADA));
+
+        layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio).setBackgroundResource(R.drawable.walk);
+        VectorDrawable gd = (VectorDrawable) layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio).getBackground().getCurrent();
+        gd.setTint(Color.parseColor(CaminhadaRotaObject.COR_LINE_CAMINHADA));
+
+        //(layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio)).setBackgroundColor(Color.parseColor(CaminhadaRotaObject.COR_LINE_CAMINHADA));
 
         tempoViagemTextView.setText((tempoViagemInfo == null ? "01 min" : tempoViagemInfo).concat(activity.getResources().getString(R.string.de_caminhada)));
         v.setBackgroundResource(R.drawable.person1);

@@ -57,14 +57,6 @@
             android:name="br.com.anso.pdo.linhasdoponto.LinhasdopontoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="br.com.anso.pdo.buscaPontosEstacoes.BuscaPontosEstacoesActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="br.com.anso.pdo.chegarAoPonto.ChegarAoPontoActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="br.com.anso.pdo.resultadoListaItinerario.ResultadoListaItinerarioActivity" />
         <activity
             android:name="br.com.anso.pdo.resultadoRotas.ResultadoRotasActivity"
@@ -73,14 +65,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="br.com.anso.pdo.rota.RotaActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="br.com.anso.pdo.favoritos.FavoritoActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="br.com.anso.pdo.tutorial.TutorialActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

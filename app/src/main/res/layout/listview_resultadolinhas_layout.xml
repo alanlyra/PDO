@@ -58,7 +58,7 @@
 
 
     <LinearLayout
-        android:layout_width="291dp"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center_vertical"
@@ -91,18 +91,18 @@
         android:layout_height="60dp"
         android:layout_gravity="center_vertical"
         android:id="@+id/optionsLayout"
-        android:layout_weight="0.86">
+        android:layout_weight="0.86"
+        android:layout_marginRight="0dp">
 
         <ImageView
             android:id="@+id/options"
-            android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:src="@drawable/more"
-            android:background="@android:color/transparent"
-            android:paddingRight="8dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/touchpoint"
             android:nestedScrollingEnabled="true"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="5dp"/>
     </LinearLayout>
 
 

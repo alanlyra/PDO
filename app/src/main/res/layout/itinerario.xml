@@ -52,21 +52,8 @@
 
         </FrameLayout>
 
-        <ImageView
-            android:id="@+id/click5"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="right|center_vertical"
-            android:rotation="90"
-            android:layout_marginLeft="230dp"
-            android:layout_marginTop="60dp"
-            android:background="@drawable/touchpoint3"
-            android:duration="6000"
-            android:repeatCount="infinite"
-            android:visibility="gone"/>
-
         <Button
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:layout_marginTop="60dp"
             android:layout_marginLeft="280dp"
@@ -80,6 +67,18 @@
             android:onClick="MostrarDetalhesItinerario"
             android:visibility="visible"/>
 
+        <Button
+            android:id="@+id/click12"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right"
+            android:rotation="90"
+            android:background="@drawable/touchpoint"
+            android:repeatCount="infinite"
+            android:duration="6000"
+            android:layout_marginTop="63dp"
+            android:layout_marginLeft="257dp"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,6 +88,20 @@
             android:layout_marginTop="0dp"
             android:layout_below="@+id/top">
 
+
+            <!--<LinearLayout
+                android:id="@+id/flag_itinerario"
+                android:layout_height="32dp"
+                android:layout_width="32dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/walk"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                />-->
+
             <LinearLayout
                 android:id="@+id/flag_itinerario"
                 android:layout_height="40dp"
@@ -96,34 +109,11 @@
                 android:layout_marginTop="1dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="0dp"
-                android:layout_marginLeft="-2dp"
+                android:layout_marginLeft="2dp"
                 android:background="@drawable/busvector"
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
                 />
-
-            <!--<LinearLayout
-                android:id="@+id/flag_itinerario"
-                android:layout_height="40dp"
-                android:layout_width="40dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="6dp"
-                android:layout_marginLeft="-34dp"
-                android:rotation = "16"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                />
-
-            <LinearLayout
-                android:id="@+id/flag3"
-                android:layout_height="6dp"
-                android:layout_width="40dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="-30dp"
-                android:background="@color/color_primary1"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                />-->
 
             <TextView
                 android:id="@+id/num_linha"
@@ -242,16 +232,30 @@
             <Button
                 android:layout_width="104dp"
                 android:layout_height="25dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="-43dp"
                 android:id="@+id/botaoDeInversao"
                 android:text="@string/inverter_sentido"
                 android:textSize="9dp"
+                android:rotation="90"
                 android:background="@drawable/cornerborder"
                 android:textColor="@color/color_primary1"
-                android:layout_gravity="bottom|center_horizontal"
+                android:layout_gravity="left"
                 android:onClick="InverterPartidaeDestino"
                 android:visibility="visible"
-                android:layout_weight="0.01" />
+                android:layout_weight="2" />
+
+            <ImageView
+                android:id="@+id/click5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:rotation="-90"
+                android:background="@drawable/touchpoint"
+                android:repeatCount="infinite"
+                android:duration="6000"
+                android:layout_marginTop="65dp"
+                android:layout_marginLeft="18dp"/>
+
         </fragment>
 
         <FrameLayout

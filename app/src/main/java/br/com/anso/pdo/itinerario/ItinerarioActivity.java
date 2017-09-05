@@ -79,6 +79,7 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
     private Timer timer = null;
     private int DELAY   = 280;
     private ImageView click5;
+    private Button click12;
     private ImageView home;
 
 
@@ -102,6 +103,8 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
         detalhesItinerario = (Button) findViewById(R.id.botaoDeItinerario);
         click5 = (ImageView) findViewById(R.id.click5);
         click5.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
+        click12 = (Button) findViewById(R.id.click12);
+        click12.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
         home = (ImageView) findViewById(R.id.home);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -119,6 +122,19 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
                 startActivity(i);
             }
         });
+
+        layout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener(){
+            @Override
+            public void onPanelSlide(View view, float v) {
+
+            }
+
+            @Override
+            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
+                if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED)
+                    detalhesItinerario.setText(R.string.detalhes_Itinerario_Abrir);
+            }
+        } );
 
         new Handler().postDelayed(new Runnable() {
             @Override

@@ -72,6 +72,7 @@ public class RotaActivity extends PDOAppCompatActivity implements OnMapReadyCall
     private Button detalhesRota;
 
     private ImageView click4;
+    private Button click13;
 
     private HashMap<Integer, RecursoMapaObject> associacaoListaObjeto;
 
@@ -98,6 +99,8 @@ public class RotaActivity extends PDOAppCompatActivity implements OnMapReadyCall
         tempoViagem = (TextView) findViewById(R.id.tempoViagem);
         click4 = (ImageView) findViewById(R.id.click4);
         click4.startAnimation(AnimationUtils.loadAnimation(RotaActivity.this, R.anim.flicker));
+        click13 = (Button) findViewById(R.id.click13);
+        click13.startAnimation(AnimationUtils.loadAnimation(RotaActivity.this, R.anim.flicker));
 
         onibusRota = new ArrayList<>();
         caminhadaRota = new ArrayList<>();
@@ -115,6 +118,19 @@ public class RotaActivity extends PDOAppCompatActivity implements OnMapReadyCall
                 startActivity(i);
             }
         });
+
+        layout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener(){
+            @Override
+            public void onPanelSlide(View view, float v) {
+
+            }
+
+            @Override
+            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
+                if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED)
+                    detalhesRota.setText(R.string.detalhes_Itinerario_Abrir);
+            }
+        } );
 
         new Handler().postDelayed(new Runnable() {
             @Override

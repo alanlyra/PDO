@@ -53,21 +53,25 @@
 
     </FrameLayout>
 
+    <Button
+        android:id="@+id/click13"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="right"
+        android:rotation="90"
+        android:background="@drawable/touchpoint"
+        android:repeatCount="infinite"
+        android:duration="6000"
+        android:layout_marginTop="63dp"
+        android:layout_marginLeft="238dp"
+        android:visibility="visible"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@color/color_primary2"
         android:id="@+id/layoutViagemSelecionada"
         android:layout_below="@+id/topo">
-
-        <!--<LinearLayout
-            android:id="@+id/layoutCorConsorcio"
-            android:layout_height="match_parent"
-            android:layout_width="5dp"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="5dp" />-->
 
         <LinearLayout
             android:id="@+id/layoutCorConsorcio"
@@ -76,24 +80,11 @@
             android:layout_marginTop="1dp"
             android:layout_marginRight="0dp"
             android:layout_marginBottom="0dp"
-            android:layout_marginLeft="-2dp"
+            android:layout_marginLeft="2dp"
             android:background="@drawable/busvector"
             android:orientation="vertical"
             android:layout_gravity="center_vertical"
             />
-
-        <!--<LinearLayout
-            android:id="@+id/layoutCorConsorcio"
-            android:layout_height="40dp"
-            android:layout_width="40dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="6dp"
-            android:layout_marginLeft="-34dp"
-            android:rotation = "16"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical"
-            />-->
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -137,6 +128,10 @@
                 android:onClick="MostrarDetalhesRota"
                 android:visibility="visible"
                 android:layout_weight="0.02" />
+
+
+
+
         </LinearLayout>
     </LinearLayout>
 
@@ -330,9 +325,9 @@
 
             <ImageView
                 android:id="@+id/click4"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/touchpoint4"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/touchpoint"
                 android:repeatCount="infinite"
                 android:duration="6000"
                 android:layout_marginTop="3dp"

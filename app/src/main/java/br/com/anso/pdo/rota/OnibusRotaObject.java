@@ -118,6 +118,8 @@ public class OnibusRotaObject implements RecursoMapaObject, View.OnClickListener
         view.setBackgroundResource(R.drawable.bus);
         ((TextView) layoutLinhaSelecionada.findViewById(R.id.num_linha)).setText(viagem.getLinha().getNumero());
         ((TextView) layoutLinhaSelecionada.findViewById(R.id.consorcio)).setText(viagem.getLinha().getConsorcio());
+
+        layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio).setBackgroundResource(R.drawable.busvector);
         VectorDrawable gd = (VectorDrawable) layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio).getBackground().getCurrent();
         gd.setTint(Color.parseColor(viagem.getLinha().getCorConsorcio()));
         //(layoutLinhaSelecionada.findViewById(R.id.layoutCorConsorcio)).setBackgroundColor(Color.parseColor(viagem.getLinha().getCorConsorcio()));

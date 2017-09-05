@@ -350,11 +350,28 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
                 }
                 tempoviagem.setText(Html.fromHtml(viagem));
 
+                if(tempoviagem.getText().toString().contains("0") ||
+                    tempoviagem.getText().toString().contains("1") ||
+                    tempoviagem.getText().toString().contains("2") ||
+                    tempoviagem.getText().toString().contains("3") ||
+                    tempoviagem.getText().toString().contains("4") ||
+                    tempoviagem.getText().toString().contains("5") ||
+                    tempoviagem.getText().toString().contains("6") ||
+                    tempoviagem.getText().toString().contains("7") ||
+                    tempoviagem.getText().toString().contains("8") ||
+                    tempoviagem.getText().toString().contains("9")){
+                        clock.setVisibility(View.VISIBLE);
+                        minORhour.setVisibility(View.VISIBLE);
+               }
+               else {
+                    clock.setVisibility(View.GONE);
+                    minORhour.setVisibility(View.GONE);
+                }
+
+
                 if(tempo.contains("N/D")) {
                     //tempoViagem.setVisibility(View.GONE);
                     tempoviagem.setText("");
-                    clock.setVisibility(View.GONE);
-                    minORhour.setVisibility(View.GONE);
                 }
                 else
                     tempoViagem.setVisibility(View.VISIBLE);
