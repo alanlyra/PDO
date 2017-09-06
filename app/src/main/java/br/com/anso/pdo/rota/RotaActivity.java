@@ -97,7 +97,7 @@ public class RotaActivity extends PDOAppCompatActivity implements OnMapReadyCall
 
         bar = (LinearLayout) this.findViewById(R.id.barLinear);
         if(bar!=null) bar.setVisibility(View.VISIBLE);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        final SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
         tempoViagem = (TextView) findViewById(R.id.tempoViagem);
@@ -145,7 +145,6 @@ public class RotaActivity extends PDOAppCompatActivity implements OnMapReadyCall
                     arrow2.setRotation(90);
                     arrow3.setRotation(90);
                     arrow4.setRotation(90);
-                    //googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 0));
                 }
                 if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED){
                     detalhesRota.setText(R.string.detalhes_Itinerario_Fechar);
@@ -153,10 +152,11 @@ public class RotaActivity extends PDOAppCompatActivity implements OnMapReadyCall
                     arrow2.setRotation(-90);
                     arrow3.setRotation(-90);
                     arrow4.setRotation(-90);
-                    //googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 300));
-                    //googleMap.animateCamera(CameraUpdateFactory.newLatLng(markersMap.get(1).getPosition()));
-                    //googleMap.animateCamera(CameraUpdateFactory.newLatLng(markersMap.get(0).getPosition()));
-                    //googleMap.setPadding(0,-listView.getHeight(),0,0);
+                }
+                if(detalhesRota.getText().toString().contains("Fechar")){
+                    ViewGroup.LayoutParams params = mapFragment.getView().getLayoutParams();
+                    params.height = layout.getHeight()-listView.getHeight();
+                    mapFragment.getView().setLayoutParams(params);
                 }
             }
         } );
