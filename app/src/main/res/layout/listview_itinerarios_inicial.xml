@@ -46,15 +46,4 @@
             android:textColor="#002F3F" />
     </LinearLayout>
 
-
-    <!--<ImageView
-        android:id="@+id/options"
-        android:layout_width="13dp"
-        android:layout_height="62dp"
-        android:background="@android:color/transparent"
-        android:paddingRight="8dp"
-        android:nestedScrollingEnabled="true"
-        android:layout_gravity="center_vertical"
-        />-->
-
 </LinearLayout>

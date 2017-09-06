@@ -25,59 +25,6 @@
         android:layout_gravity="center_vertical"
         />
 
-    <!--<LinearLayout
-        android:id="@+id/flag"
-        android:layout_height="50dp"
-        android:layout_width="50dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="-26dp"
-        android:background="@drawable/busvector"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"
-        />-->
-
-    <!--<LinearLayout
-        android:id="@+id/flag"
-        android:layout_height="50dp"
-        android:layout_width="40dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="9dp"
-        android:layout_marginLeft="-34dp"
-        android:background="@color/color_primary3"
-        android:rotation = "14"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"
-         />
-
-    <LinearLayout
-        android:id="@+id/flag2"
-        android:layout_height="8dp"
-        android:layout_width="40dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="28dp"
-        android:layout_marginLeft="-32dp"
-        android:background="@color/color_primary4"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"-->
-        />
-
-    <!--
-    <LinearLayout
-        android:id="@+id/flag"
-        android:layout_height="50dp"
-        android:layout_width="5dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="1dp"
-        android:background="@android:color/holo_blue_light"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"
-        />
-    -->
-
     <LinearLayout
         android:layout_width="228dp"
         android:layout_height="60dp"
@@ -103,31 +50,6 @@
             android:textColor="@color/color_primary3"
             android:layout_marginTop="-3dp" />
 
-        <!--<FrameLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:paddingTop="2dp"-->
-            <!--android:id="@+id/tempodeviagem2">-->
-
-            <!--<ImageView-->
-                <!--android:layout_width="9dp"-->
-                <!--android:layout_height="9dp"-->
-                <!--android:id="@+id/imageView3"-->
-                <!--android:layout_gravity="left|top"-->
-                <!--android:background="@drawable/time"-->
-                <!--android:adjustViewBounds="true"-->
-                <!--android:paddingTop="2dp"-->
-                <!--android:layout_marginTop="2dp" />-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/tempochegada2"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textSize="10dp"-->
-                <!--android:textColor="@color/light_gray_header_color"-->
-                <!--android:layout_marginLeft="13dp" />-->
-
-        <!--</FrameLayout>-->
     </LinearLayout>
 
 

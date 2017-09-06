@@ -83,6 +83,10 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
     private ImageView click5;
     private Button click12;
     private ImageView home;
+    private ImageView arrow1;
+    private ImageView arrow2;
+    private ImageView arrow3;
+    private ImageView arrow4;
 
     private LatLngBounds bounds;
 
@@ -109,6 +113,14 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
         click5.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
         click12 = (Button) findViewById(R.id.click12);
         click12.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
+        arrow1 = (ImageView) findViewById(R.id.arrow1);
+        arrow1.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
+        arrow2 = (ImageView) findViewById(R.id.arrow2);
+        arrow2.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
+        arrow3 = (ImageView) findViewById(R.id.arrow3);
+        arrow3.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
+        arrow4 = (ImageView) findViewById(R.id.arrow4);
+        arrow4.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
         home = (ImageView) findViewById(R.id.home);
 
         final SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -137,9 +149,18 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
             public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
                 if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
                     detalhesItinerario.setText(R.string.detalhes_Itinerario_Abrir);
+                    arrow1.setRotation(90);
+                    arrow2.setRotation(90);
+                    arrow3.setRotation(90);
+                    arrow4.setRotation(90);
                     //googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 0));
                 }
                 if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED){
+                    detalhesItinerario.setText(R.string.detalhes_Itinerario_Fechar);
+                    arrow1.setRotation(-90);
+                    arrow2.setRotation(-90);
+                    arrow3.setRotation(-90);
+                    arrow4.setRotation(-90);
                     //googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 300));
                     //googleMap.animateCamera(CameraUpdateFactory.newLatLng(markersMap.get(1).getPosition()));
                     //googleMap.animateCamera(CameraUpdateFactory.newLatLng(markersMap.get(0).getPosition()));

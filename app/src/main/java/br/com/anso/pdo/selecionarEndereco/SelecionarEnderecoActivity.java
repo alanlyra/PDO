@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import com.google.android.gms.maps.model.LatLng;
 
 import br.com.anso.pdo.R;
 import br.com.anso.pdo.buscaLinhaRota.BuscaLinhaRotaActivity;
+import br.com.anso.pdo.principal.ExibeOnibusProximosFragment;
 import br.com.anso.pdo.principal.PrincipalActivity;
 import br.com.anso.pdo.util.AppSingleton;
 import br.com.anso.pdo.util.Usuario;
@@ -39,6 +41,7 @@ public class SelecionarEnderecoActivity extends PDOAppCompatActivity implements 
     private LinearLayout clear;
     private ImageView back;
     private ImageView home;
+    private ImageView click15;
 
 
     public void onCreate(Bundle savedInstanceState){
@@ -55,6 +58,8 @@ public class SelecionarEnderecoActivity extends PDOAppCompatActivity implements 
         home = (ImageView) findViewById(R.id.home);
         TextView textLocal = (TextView) findViewById(R.id.textLocal);
         if(textLocal!=null) textLocal.setText(titulo);
+        click15 = (ImageView) findViewById(R.id.click15);
+        click15.startAnimation(AnimationUtils.loadAnimation(SelecionarEnderecoActivity.this, R.anim.flicker));
 
         partida = titulo != null && titulo.toUpperCase().contains("PARTIDA");
 
@@ -148,7 +153,6 @@ public class SelecionarEnderecoActivity extends PDOAppCompatActivity implements 
 
 
     private void constroiListaMunicipios(final boolean isPartida) {
-        // Verifico Lista de municípios pois quando há uma Uncaught Exception o ArrayList fica nulo
         if(app.getMunicipios() == null || app.getMunicipios().size() == 0){
             Util.carregarListaMunicipiosAtendidos();
         }
@@ -181,18 +185,12 @@ public class SelecionarEnderecoActivity extends PDOAppCompatActivity implements 
     }
 
     private void enderecoSelecionado(String selecionado) {
-
-
         endereco = selecionado;
         setEnderecos(endereco,endereco);
-
         Util.executaCallback("enderecoSelecionado", this);
-
         Intent i;
         i = new Intent(SelecionarEnderecoActivity.this, BuscaLinhaRotaActivity.class);
         startActivity(i);
-
-        //super.onBackPressed();
     }
 
     public void setEnderecos(String endereco, String enderecoWS){
@@ -204,21 +202,23 @@ public class SelecionarEnderecoActivity extends PDOAppCompatActivity implements 
         }
     }
 
-    /*public void voltar(View view){
+
+    @Override
+    public void onBackPressed()
+    {
         super.onBackPressed();
-    }*/
+        startActivity(new Intent(SelecionarEnderecoActivity.this, PrincipalActivity.class));
+        finish();
+    }
 
     @Override
     public String getEndereco() {
-
         if (atual) {
             return enderecoAtual;
         } else {
             return endereco;
-
         }
     }
-
 
     public LatLng getPosicao(){
         return Usuario.getInstance().getPosicao();

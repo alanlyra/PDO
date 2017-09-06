@@ -88,20 +88,6 @@
             android:layout_marginTop="0dp"
             android:layout_below="@+id/top">
 
-
-            <!--<LinearLayout
-                android:id="@+id/flag_itinerario"
-                android:layout_height="32dp"
-                android:layout_width="32dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/walk"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                />-->
-
             <LinearLayout
                 android:id="@+id/flag_itinerario"
                 android:layout_height="40dp"
@@ -200,7 +186,7 @@
         android:layout_below="@+id/tempodeviagem"
         android:layout_marginTop="0dp"
         android:gravity="bottom"
-        sothree:umanoPanelHeight="0dp"
+        sothree:umanoPanelHeight="20dp"
         sothree:umanoParallaxOffset="10dp"
         sothree:umanoShadowHeight="0dp"
         sothree:umanoScrollableView="@+id/listlinhasdoponto"
@@ -273,7 +259,7 @@
                 android:orientation="vertical"
                 android:layout_below="@+id/detalhes">
 
-                <LinearLayout
+                <FrameLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
@@ -281,17 +267,65 @@
                     android:background="@color/color_primary3"
                     android:id="@+id/detalhes">
 
+                    <ImageView
+                        android:id="@+id/arrow1"
+                        android:layout_width="9dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/arrow5"
+                        android:repeatCount="infinite"
+                        android:duration="6000"
+                        android:rotation="90"/>
+
+                    <ImageView
+                        android:id="@+id/arrow2"
+                        android:layout_width="9dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="125dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/arrow5"
+                        android:repeatCount="infinite"
+                        android:duration="6000"
+                        android:rotation="90"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="4dp"
                         android:text="@string/detalhes"
                         android:textSize="12dp"
                         android:textColor="@color/color_primary"
                         />
 
-                </LinearLayout>
+                    <ImageView
+                        android:id="@+id/arrow3"
+                        android:layout_width="9dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="225dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/arrow5"
+                        android:repeatCount="infinite"
+                        android:duration="6000"
+                        android:rotation="90"/>
+
+                    <ImageView
+                        android:id="@+id/arrow4"
+                        android:layout_width="9dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="260dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/arrow5"
+                        android:repeatCount="infinite"
+                        android:duration="6000"
+                        android:rotation="90"/>
+
+                </FrameLayout>
 
                 <ListView
                     android:id="@+id/list"

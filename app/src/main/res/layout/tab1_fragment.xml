@@ -66,10 +66,13 @@
             android:onClick="pesquisarLinhas"/>
 
         <ImageView
+            android:id="@+id/click16"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:background="@drawable/touchpoint3"
             android:layout_marginTop="-15dp"
+            android:repeatCount="infinite"
+            android:duration="6000"
             android:layout_gravity="center"/>
     </LinearLayout>
 

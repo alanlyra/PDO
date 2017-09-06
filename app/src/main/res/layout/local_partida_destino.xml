@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_primary1"
-    tools:context="br.com.anso.pdo.buscaPontosEstacoes.BuscaPontosEstacoesActivity">
+    tools:context="br.com.anso.pdo.selecionarEndereco.SelecionarEnderecoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -97,7 +97,6 @@
             android:background="#263646"
             android:onClick="definirPosicaoAtual"
             android:visibility="gone">
-            <!--android:onClick="buscapontoseestacoes"> -->
 
             <ImageView
                 android:layout_width="22dp"
@@ -220,11 +219,14 @@
             android:background="@drawable/cornerborder" />
 
         <ImageView
+            android:id="@+id/click15"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:background="@drawable/touchpoint3"
             android:layout_marginTop="-5dp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:repeatCount="infinite"
+            android:duration="6000"/>
 
     </LinearLayout>
 </RelativeLayout>

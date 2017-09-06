@@ -269,6 +269,63 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
         bar.setVisibility(View.VISIBLE);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Util.selecionarLocal(ResultadoRotasActivity.this, getResources().getString(R.string.definir_local_destino), new Util.ISetTextCallBack() {
+            @Override
+            public void setText(String value) {
+                String municipio = "";
+                if(Util.nonBlank(value))
+                    municipio = " - " + app.getMunicipios().get(app.getIndexMunicipioDestino());
+
+                app.setAbaDefault(1);
+                app.setlocalDestinoRota(value.concat(municipio));
+                //localDestinoLinhasRotas.setText( value.concat(municipio));
+                app.setEnderecoDestino( value, app.getEnderecoDestinoWS() );
+                app.setEnderecoDestino(app.getEnderecoDestinoExibicao(), value);
+
+                atual = true;
+                String pontoWS = "POINT(";
+                double lat = getPosicao().latitude;
+                double lon = getPosicao().longitude;
+                pontoWS=pontoWS+lon+" "+lat+")";
+                enderecoSelecionado(pontoWS);
+                if(partida) {
+                    app.setEnderecoOrigem(enderecoAtual, pontoWS);
+                }
+                else{
+                    app.setEnderecoDestino(enderecoAtual, pontoWS);
+                }
+
+            }
+
+            public LatLng getPosicao(){
+                return Usuario.getInstance().getPosicao();
+            }
+
+
+            public void enderecoSelecionado(String selecionado) {
+
+
+                endereco = selecionado;
+                setEnderecos(endereco,endereco);
+
+                Util.executaCallback("enderecoSelecionado", this);
+
+            }
+
+            public void setEnderecos(String endereco, String enderecoWS){
+                if(partida) {
+                    app.setEnderecoOrigem(endereco, enderecoWS);
+                }
+                else{
+                    app.setEnderecoDestino(endereco, enderecoWS);
+                }
+            }
+        });
+    }
+
     public void tentarNovamente(View v){
         exibirLoadingListaResultado();
         Consulta c = ConsultaFactory.construirConsulta();

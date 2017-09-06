@@ -129,9 +129,6 @@
                 android:visibility="visible"
                 android:layout_weight="0.02" />
 
-
-
-
         </LinearLayout>
     </LinearLayout>
 
@@ -250,41 +247,10 @@
             android:padding="5dp"
             android:id="@+id/tempoViagem"
             android:text=""
+            android:textSize="12dp"
             android:textColor="@color/color_primary"
             android:gravity="center_vertical"/>
     </LinearLayout>
-
-    <!--<LinearLayout
-        android:id="@+id/topo3"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/color_primary3"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:layout_below="@+id/topo2">
-
-        <ImageView
-            android:id="@+id/click4"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/touchpoint3"
-            android:repeatCount="infinite"
-            android:duration="6000"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="3dp"/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clique_para_visualizar"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/not_selected_tab_color"/>
-
-    </LinearLayout>-->
-
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:sothree="http://schemas.android.com/apk/res-auto"
@@ -294,7 +260,7 @@
         android:layout_marginTop="0dp"
         android:gravity="bottom"
         android:layout_below="@+id/topo2"
-        sothree:umanoPanelHeight="0dp"
+        sothree:umanoPanelHeight="20dp"
         sothree:umanoParallaxOffset="10dp"
         sothree:umanoShadowHeight="0dp"
         sothree:umanoScrollableView="@+id/listlinhasdoponto"
@@ -384,13 +350,37 @@
                 android:orientation="vertical"
                 android:layout_gravity="center_horizontal|bottom">
 
-                <LinearLayout
+                <FrameLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:layout_marginTop="0dp"
                     android:background="@color/color_primary3"
                     android:id="@+id/detalhes">
+
+                    <ImageView
+                        android:id="@+id/arrow1"
+                        android:layout_width="9dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/arrow5"
+                        android:repeatCount="infinite"
+                        android:duration="6000"
+                        android:rotation="90"/>
+
+                    <ImageView
+                        android:id="@+id/arrow2"
+                        android:layout_width="9dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="125dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/arrow5"
+                        android:repeatCount="infinite"
+                        android:duration="6000"
+                        android:rotation="90"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -401,7 +391,31 @@
                         android:textColor="@color/color_primary"
                         />
 
-                </LinearLayout>
+                    <ImageView
+                        android:id="@+id/arrow3"
+                        android:layout_width="9dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="225dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/arrow5"
+                        android:repeatCount="infinite"
+                        android:duration="6000"
+                        android:rotation="90"/>
+
+                    <ImageView
+                        android:id="@+id/arrow4"
+                        android:layout_width="9dp"
+                        android:layout_height="12dp"
+                        android:layout_marginLeft="260dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/arrow5"
+                        android:repeatCount="infinite"
+                        android:duration="6000"
+                        android:rotation="90"/>
+
+                </FrameLayout>
 
                 <ListView
                     android:id="@+id/list"

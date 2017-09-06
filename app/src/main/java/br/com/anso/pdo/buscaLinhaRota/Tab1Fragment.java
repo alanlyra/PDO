@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -23,11 +25,16 @@ public class Tab1Fragment extends Fragment {
     private LinearLayout clear;
     int duration = Toast.LENGTH_SHORT;
     private AppSingleton app = AppSingleton.getApp();
+    private ImageView click16;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.tab1_fragment, container, false);
         text = getResources().getString(R.string.definir_nome_numero_linha);
-        return inflater.inflate(R.layout.tab1_fragment, container, false);
+        click16 = (ImageView) view.findViewById(R.id.click16);
+        click16.startAnimation(AnimationUtils.loadAnimation(Tab1Fragment.this.getActivity(), R.anim.flicker));
+        return view;
     }
 
     @Override

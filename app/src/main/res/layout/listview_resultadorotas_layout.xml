@@ -214,19 +214,6 @@
             android:id="@+id/rotaitem3"
             >
 
-            <!--<LinearLayout
-                android:id="@+id/flag3"
-                android:layout_height="45dp"
-                android:layout_width="5dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="1dp"
-                android:background="@android:color/holo_blue_light"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                />-->
-
-
             <LinearLayout
                 android:id="@+id/flag3"
                 android:layout_height="40dp"
@@ -238,21 +225,6 @@
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
                 />
-
-            <!--<LinearLayout
-                android:id="@+id/flag3"
-                android:layout_height="60dp"
-                android:layout_width="40dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_marginLeft="-34dp"
-                android:background="@color/color_primary3"
-                android:rotation = "14"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical"
-                />-->
-
 
             <LinearLayout
                 android:layout_width="320dp"
