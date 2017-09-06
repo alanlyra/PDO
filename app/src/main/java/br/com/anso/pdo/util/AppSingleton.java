@@ -29,7 +29,7 @@ public class AppSingleton implements IPrincipalView.IPrincipalPresenter {
     private int indexMunicipioDestino = 0;
     private int positionOpcaoRota;
     private int abaDefault;
-    private int userTime = 180000; //2000
+    private int userTime = 600000; //10min //180000 //3min
 
     private String enderecoOrigemExibicao = "";
     private String enderecoDestinoExibicao = "";
