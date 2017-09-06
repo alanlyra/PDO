@@ -112,6 +112,33 @@ public class SelecionarEnderecoActivity extends PDOAppCompatActivity implements 
 
 
         Button ok = (Button) findViewById(R.id.confirmarEndereco);
+
+        AutoCompleteEnderecoWidget auto = (AutoCompleteEnderecoWidget) findViewById(R.id.autoComplete);
+
+        auto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String campo = String.valueOf(acTextView.getText()).trim();
+                String num = "";
+
+                if(campo.contains(",")){
+                    String tmp = campo.split(",")[1].trim();
+                    num = tmp.matches("\\d+") ? ", "+tmp : num;
+                }
+
+                if(adapter.getResultList() != null && adapter.getCount() > 0) {
+                    if (!adapter.getResultList().get(0).equals("---")) {
+                        acTextView.setText(adapter.getResultList().get(0).concat(num));
+                    }
+                    else if(adapter.getCount() > 1) {
+                        acTextView.setText(adapter.getResultList().get(1));
+                    }
+                }
+
+                enderecoSelecionado(acTextView.getEditableText().toString());
+            }
+        });
+
         if(ok!=null){
             ok.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -218,6 +245,10 @@ public class SelecionarEnderecoActivity extends PDOAppCompatActivity implements 
         } else {
             return endereco;
         }
+    }
+
+    public void voltar(View view){
+        super.onBackPressed();
     }
 
     public LatLng getPosicao(){

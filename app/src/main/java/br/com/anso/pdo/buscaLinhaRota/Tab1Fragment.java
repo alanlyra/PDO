@@ -52,6 +52,13 @@ public class Tab1Fragment extends Fragment {
 
         clear = (LinearLayout)getActivity().findViewById(R.id.clear);
 
+        buscaEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pesquisarLinhas(v);
+            }
+        });
+
         if(clear!=null){
             clear.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {

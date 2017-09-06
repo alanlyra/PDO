@@ -186,6 +186,8 @@
                     android:textColorHint="#95a4a6"
                     android:textSize="12dp"
                     android:layout_marginStart="6dp"
+                    android:imeActionLabel="Ok"
+                    android:singleLine="true"
                     android:textColor="@color/color_primary"
                     android:backgroundTint="@color/color_primary2"
                     android:layout_marginTop="-5dp" />
