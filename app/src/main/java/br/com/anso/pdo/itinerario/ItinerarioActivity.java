@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -82,6 +84,8 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
     private Button click12;
     private ImageView home;
 
+    private LatLngBounds bounds;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,7 +111,7 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
         click12.startAnimation(AnimationUtils.loadAnimation(ItinerarioActivity.this, R.anim.flicker));
         home = (ImageView) findViewById(R.id.home);
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        final SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
@@ -131,8 +135,16 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
 
             @Override
             public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
-                if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED)
+                if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
                     detalhesItinerario.setText(R.string.detalhes_Itinerario_Abrir);
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 0));
+                }
+                if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED){
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 300));
+                    //googleMap.animateCamera(CameraUpdateFactory.newLatLng(markersMap.get(1).getPosition()));
+                    //googleMap.animateCamera(CameraUpdateFactory.newLatLng(markersMap.get(0).getPosition()));
+                    //googleMap.setPadding(0,-listView.getHeight(),0,0);
+                }
             }
         } );
 
@@ -322,8 +334,8 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
                     b.include(arr.get(i));
                 }
 
-                LatLngBounds bounds = b.build();
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 15));
+                bounds = b.build();
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 35));
             }
         }
     }
@@ -461,6 +473,7 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
     public void selectMarkerMap(String key){
         markersMap.get(key).setIcon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(getResources(), R.drawable.circle3, 36, 36)));
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(markersMap.get(key).getPosition()));
+        Log.e("marker", key );
     }
     public void unselectMarkerMap(String key){
         markersMap.get(key).setIcon(BitmapDescriptorFactory.fromBitmap(Util.resizeMapIcons(getResources(), R.drawable.circle1, 26, 26)));

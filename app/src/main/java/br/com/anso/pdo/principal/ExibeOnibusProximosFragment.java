@@ -487,7 +487,7 @@ public class ExibeOnibusProximosFragment extends Fragment implements OnMapReadyC
             }
 
             appSingleton.setNumeroOnibusProximos(lista.size());
-            PrincipalActivity.numeroLinhasProximas.setText(String.valueOf(appSingleton.getNumeroOnibusProximos()));
+            //PrincipalActivity.numeroLinhasProximas.setText(String.valueOf(appSingleton.getNumeroOnibusProximos()));
 
         }
 

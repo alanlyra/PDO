@@ -56,7 +56,7 @@ public class PrincipalActivity extends PDOAppCompatActivity implements Navigatio
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         if(tabLayout!=null) tabLayout.setupWithViewPager(viewPager);
 
-        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        //drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
     }
 
@@ -70,11 +70,11 @@ public class PrincipalActivity extends PDOAppCompatActivity implements Navigatio
         adapter.addFragment(tab1, getResources().getString(R.string.titulo_tab_linhas));
         //adapter.addFragment(tab2, getResources().getString(R.string.titulo_tab_pontos));
         viewPager.setAdapter(adapter);
-        criaMenu();
+        //criaMenu();
     }
 
     private void criaMenu() {
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -96,7 +96,7 @@ public class PrincipalActivity extends PDOAppCompatActivity implements Navigatio
         }
 
         numeroLinhasProximas = (TextView) findViewById(R.id.numerolinhas);
-        atualizaNumLinhas();
+        atualizaNumLinhas();*/
 
     }
 
