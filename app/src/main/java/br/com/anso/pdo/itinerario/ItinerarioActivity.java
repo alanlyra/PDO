@@ -137,10 +137,10 @@ public class ItinerarioActivity extends PDOAppCompatActivity implements OnMapRea
             public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
                 if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
                     detalhesItinerario.setText(R.string.detalhes_Itinerario_Abrir);
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 0));
+                    //googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 0));
                 }
                 if(layout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED){
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 300));
+                    //googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 300));
                     //googleMap.animateCamera(CameraUpdateFactory.newLatLng(markersMap.get(1).getPosition()));
                     //googleMap.animateCamera(CameraUpdateFactory.newLatLng(markersMap.get(0).getPosition()));
                     //googleMap.setPadding(0,-listView.getHeight(),0,0);

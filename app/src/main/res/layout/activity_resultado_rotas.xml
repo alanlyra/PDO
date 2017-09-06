@@ -68,7 +68,7 @@ tools:context="br.com.anso.pdo.resultadoRotas.ResultadoRotasActivity">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:textColor="@color/color_primary3"
                 android:text="@string/resultado_da_busca_por_rotas"
                 android:id="@+id/tituloResultadoBuscaRotas"

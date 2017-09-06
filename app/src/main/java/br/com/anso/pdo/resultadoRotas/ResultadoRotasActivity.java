@@ -66,9 +66,12 @@ public class ResultadoRotasActivity extends Activity implements IResultadoRotasV
 
         Consulta c = ConsultaFactory.construirConsulta();
 
-        tituloTextView.setText(getResources().getString(R.string.origem).concat(" ").concat(getString(R.string.ponto)).concat("\n").
-                concat(getResources().getString(R.string.destino)).concat(" ").concat(app.getEnderecoDestinoExibicao()).concat(" - ").concat(app.getMunicipios().get(app.getIndexMunicipioDestino())));
+        tituloTextView.setText(getResources().getString(R.string.destino).concat(" ").concat(app.getEnderecoDestinoExibicao()).concat(" - ").concat(app.getMunicipios().get(app.getIndexMunicipioDestino())));
 
+
+        /*tituloTextView.setText(getResources().getString(R.string.origem).concat(" ").concat(getString(R.string.ponto)).concat("\n").
+                concat(getResources().getString(R.string.destino)).concat(" ").concat(app.getEnderecoDestinoExibicao()).concat(" - ").concat(app.getMunicipios().get(app.getIndexMunicipioDestino())));
+*/
         /*tituloTextView.setText(getResources().getString(R.string.origem).concat(" ").concat(app.getEnderecoOrigemExibicao()).concat(" - ").concat(app.getMunicipios().get(app.getIndexMunicipioOrigem())).concat("\n").
                                concat(getResources().getString(R.string.destino)).concat(" ").concat(app.getEnderecoDestinoExibicao()).concat(" - ").concat(app.getMunicipios().get(app.getIndexMunicipioDestino())));
 */
